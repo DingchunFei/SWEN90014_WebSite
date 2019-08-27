@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Layout :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+<script th:src="@{/js/jquery.min.js}"> </script>
+<script th:src="@{/js/bootstrap.min.js}"> </script>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+<!-- Custom and plugin javascript -->
+<link th:href="@{/css/custom.css}" rel="stylesheet">
+<script th:src="@{/js/custom.js}"></script>
+<script th:src="@{/js/screenfull.js}"></script>
+<script th:src="@{/js/jquery.nicescroll.js}"></script>
+<script th:src="@{/js/scripts.js}"></script>
+<script>
+$(function () {
+	$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+	if (!screenfull.enabled) {
+		return false;
+	}
+	$('#toggle').click(function () {
+		screenfull.toggle($('#container')[0]);
+	});
+
+});
+
+function favourite_star (id,favourite_id,user_id){
+	if(id.style.color =="rgb(192, 192, 192)") {			//非ie格式颜色表示
+		id.style.color = "rgb(0,0,0)";
+		favourite_ajax(favourite_id,user_id,true);			//true表示喜欢
+	}else if(id.style.color =="#C0C0C0"){				//ie格式颜色表示
+		id.style.color="#000000";
+		favourite_ajax(favourite_id,user_id,true);
+	}else if(id.style.color =="rgb(0, 0, 0)"){
+		id.style.color = "rgb(192,192,192)";
+		favourite_ajax(favourite_id,user_id,false);				//false表示取消喜欢
+	}else if(id.style.color =="#000000"){
+		id.style.color="#C0C0C0";
+		favourite_ajax(favourite_id,user_id,false);
+	}
+}
+
+function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发favourite的ajax请求
+	$.post("/stimuli/favourite/favourite_ajax", {id: favourite_id,user_id: user_id ,flag: flag}, function (data, status) {
+	});
+
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+        <!----->
+
+	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
+
+
+
+		 <div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="content-main">
+ 
+ 	<!--banner-->	
+		    <div class="banner">
+		    	<h2>
+				<a href="index.html">Home</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Web App Templates</span>
+				</h2>
+		    </div>
+		<!--//banner-->
+ 	<!--grid-->
+ 	<div class="grid-system">
+ 		<!---->
+ 		<div class="horz-grid">
+ 		<div class="grid-hor">
+			<h3 id="grid-example-basic">WebApp Templates</h3>
+			<!--  		<p class="">Using a single set of <code>.col-md-*</code> grid classes,
+                         you can create a basic grid system that starts out stacked on mobile devices and tablet devices
+                         (the extra small to small range)
+                         before becoming horizontal on desktop (medium) devices. Place grid columns in any <code>.row</code>.</p> -->
+		</div>
+
+			<div class="mailbox-content">
+
+						<div th:include="Web_App_Nav :: Web_App_Nav"></div>				<!--引入公共元素-->
+
+				<table class="table">
+					<tbody>
+
+					<tr class="table-row" th:each="favourite : ${session.userInfo.favourites}">
+<!--						<td class="table-img" style="width:10%">
+							<img src="images/in.jpg" alt="" />
+						</td>-->
+						<span th:if="${favourite.webApp.age.charAt(1)==favourite.webApp.test.charAt(0)}">
+						<td style="width:2%">
+<!---->						<div th:if="${favourite.flag==false}">
+								<a href="#">
+									<i th:onclick="'favourite_star(this,\''+${favourite.id}+'\',\''+${session.userInfo.getId()}+'\')'" style="color: #C0C0C0" class="fa fa-star"></i>
+								</a>
+							</div>
+							<div th:if="${favourite.flag==true}">
+								<a href="#">
+									<i th:onclick="'favourite_star(this,\''+${favourite.id}+'\',\''+${session.userInfo.getId()}+'\')'" style="color: #000000" class="fa fa-star"></i>
+								</a>
+							</div>
+						</td>
+
+
+						<td class="table-text" style="width:20%">
+
+							<a th:href="@{/stimuli/web_app_detail(webApp_id = ${favourite.web_app_id})}">
+
+								<h6 th:text="${favourite.webApp.app_name}"> Web App Name</h6>
+								<p>Create Date: <t6 th:text="${favourite.webApp.date_string}">2019-08-16</t6></p>
+							</a>
+						</td>
+						<td style="width:15%">
+							<div>
+								Age group:
+							</div>
+							<div style="margin-top:10px">
+								Gender Preferrence:
+							</div>
+						</td>
+						<td style="width:15%">
+							<div>
+								<span  th:if="${favourite.webApp.age.charAt(0) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #c4c4c4;">Young</span>
+								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #888888;">Adult</span>
+								<span  th:if="${favourite.webApp.age.charAt(2) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #4a4a4a;">Old</span>
+
+							</div>
+							<div style="margin-top:10px">
+								<span  th:if="${favourite.webApp.gender_preferrence==1 || favourite.webApp.gender_preferrence==2}" class="fam">Male</span>
+								<span th:if="${favourite.webApp.gender_preferrence==0 || favourite.webApp.gender_preferrence==2}" class="fem" style="background: #e094b6;">Female</span>
+							</div>
+						</td>
+
+						<td style="width:15%">
+							<div>
+								Row:&nbsp;&nbsp; <h5 style="display: inline-block" th:text="${favourite.webApp.grid_row}"></h5>
+							</div>
+							<div style="margin-top:10px">
+								Column: <h5 style="display: inline-block" th:text="${favourite.webApp.grid_column}"></h5>
+							</div>
+						</td>
+
+<!--						<td style="width:15%">
+							<a href=""><i class="fa fa-2x fa-share"></i></a>
+							&nbsp;&nbsp;
+							<a href=""><i class="fa fa-2x fa-info-circle"></i></a>
+						</td>-->
+
+						<td style="width:8%">
+							<div >
+								<div class="dropdown">
+									<a href="#" title="" class="btn btn-default" data-toggle="dropdown" aria-expanded="false">
+										<i class="fa fa-cog icon_8"></i>
+										<i class="fa fa-chevron-down icon_8"></i>
+										<div class="ripple-wrapper"></div></a>
+									<ul class="dropdown-menu float-right">
+										<li>
+											<a th:href="@{/stimuli/edit_webApp(webApp_id=${favourite.webApp.getId()})}" title="">
+												<i class="fa fa-pencil-square-o icon_9"></i>
+												Edit
+											</a>
+										</li>
+										<li>
+											<a href="#" title="">
+												<i class="fa fa-download icon_9"></i>
+												Download
+											</a>
+										</li>
+
+										<li>
+											<a th:href="@{/stimuli/delete_webApp(webApp_id=${favourite.webApp.getId()})}" class="font-red" title="">
+												<i class="fa fa-times" icon_9=""></i>
+													Delete
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</td>
+
+						</span>
+					</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+
+  </div>
+
+
+<!---->
+		<div class="copy">
+			<div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       </div>
+</div>
+<!---->
+<!--scrolling js-->
+
+	<!--//scrolling js-->
+
+</body>
+</html>
+
+

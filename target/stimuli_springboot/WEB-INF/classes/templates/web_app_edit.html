@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Forms :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+<script th:src="@{/js/jquery.min.js}"> </script>
+<script th:src="@{/js/bootstrap.min.js}"> </script>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+<!-- Custom and plugin javascript -->
+<link th:href="@{/css/custom.css}" rel="stylesheet">
+<script th:src="@{/js/custom.js}"></script>
+<script th:src="@{/js/screenfull.js}"></script>
+<script type="text/javascript">
+	$(function () {
+		$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+		if (!screenfull.enabled) {
+			return false;
+		}
+		$('#toggle').click(function () {
+			screenfull.toggle($('#container')[0]);
+		});
+	});
+
+	function checkbox(){
+		var isChecked = document.getElementById("timed-checkbox").checked;
+		if(isChecked){
+			$('#timed-checkbox-span').empty();
+			$('#timed-checkbox-span').append('<input type="text"  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+			$("#timed-checkbox-input").focus();
+		}else{
+			$('#timed-checkbox-span').empty();
+			$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+		}
+	}
+
+	function reset(){
+		$("#NewStimuli_Input").val("");
+		$('#timed-checkbox').prop("checked",false);
+		$('#timed-checkbox-span').empty();
+		$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+
+		$('#row_selector').val(1);
+		$('#column_selector').val(1);
+		$('#numbersOfTarget_Input').val("");
+		$('#Target_selector').val(1);
+		$('#numberOfTrials_selector').val(1);
+		$('#percentage_Input').val("");
+		$('#notes_Input').val("");
+	}
+
+	function checkAndSubmit(){
+		var NewStimuli_Input=$("#NewStimuli_Input").val();
+
+		var timed = document.getElementById("timed-checkbox").checked;
+		if(timed){
+			timed = $('#timed-checkbox-input').val();
+		}else{
+			timed = 0;
+		}
+
+		var gender = false
+		var gender0 = document.getElementById("gender-checkbox0").checked;
+		var gender1 = document.getElementById("gender-checkbox1").checked;
+		if(gender0 || gender1){
+			gender = true
+		}
+
+		var age = false
+		var age0 = document.getElementById("age-checkbox0").checked;
+		var age1 = document.getElementById("age-checkbox1").checked;
+		var age2 = document.getElementById("age-checkbox2").checked;
+		if(age0 || age1 || age2){
+			age = true
+		}
+
+		var row_selector=$("#row_selector").val();
+		var column_selector= $("#column_selector").val();
+		var numbersOfTarget_Input= $('#numbersOfTarget_Input').val();
+		var far_percentage_Input= $('#far_percentage_Input').val();
+		var near_percentage_Input= $('#near_percentage_Input').val();
+		var Target_selector= $('#Target_selector').val();
+		var numberOfTrials_selector= $('#numberOfTrials_selector').val();
+
+		if(NewStimuli_Input==null||NewStimuli_Input==""){
+			alert("Please name your Stimuli!");
+			$("#NewStimuli_Input").focus();
+			return false;
+		}else if(!gender){
+			alert("Gender can not be blank!");
+			return false;
+		}else if(!age){
+			alert("Age can not be blank!");
+			return false;
+		}else if(numbersOfTarget_Input==null||numbersOfTarget_Input==""){
+			alert("Numbers of target can not be blank!");
+			$("#numbersOfTarget_Input").focus();
+			return false;
+		}else if(near_percentage_Input==null||near_percentage_Input==""){
+			alert("Far_percentage can not be blank!");
+			$("#near_percentage_Input").focus();
+			return false;
+		}else if(far_percentage_Input==null||far_percentage_Input==""){
+			alert("Far_percentagecan not be blank!");
+			$("#far_percentage_Input").focus();
+			return false;
+		}else{
+			$("#newStimuli_form").submit();
+		}
+	}
+
+	function backToNewApp(){
+		window.location.href="/stimuli/home";
+	}
+
+
+	$(document).ready(function(){
+		addLabelPractitioner();		//看看是否第一个贴了标签
+	});
+
+	function delEmail(id){
+		var $id = $(id);
+		$div = $id.parent().parent().parent();		//获取当前删除框的容器div
+		$div.remove();
+		addLabelPractitioner();		//看看是否第一个贴了标签
+	}
+
+	function addLabelPractitioner() {
+		var $practitionerLabel = $(document.getElementsByName("practitonerLabel")).first();		//获取最后一个email，以便再加一个
+		if($practitionerLabel.html()=="" || $practitionerLabel.html()==null){		//发现为空需要贴Label Practitioner
+			$practitionerLabel.html("Practitioners");
+		}
+	}
+
+	function addNewEmail(){
+		var $addButton = $(document.getElementById("addButton"));
+		$addButton.remove();			//把上一个+去除
+
+		var $addEmail = $(document.getElementsByName("addEmail")).last();		//获取最后一个email，以便再加一个
+		var $secondToLastContainer = $(".add_delete_container").last();				//获取倒数第二个container，用来给上一个加 times 标签
+		if($secondToLastContainer!=null && $secondToLastContainer.children("i.fa-times-circle").length==0){		//判断是否已经有叉叉了
+			$secondToLastContainer.append("<i onclick=\"delEmail(this)\" name=\"delButton\" class=\"fa fa-times-circle\"></i>");
+		}
+
+		$addEmail.after("\t\t\t\t\t\t<div class='form-group' name=\"addEmail\">\n" +
+				"\t\t\t\t\t\t\t<label for=\"focusedinput\" class=\"col-sm-2 control-label\"><span name=\"practitonerLabel\"></span></label>\n" +
+				"\t\t\t\t\t\t\t<span class=\"col-sm-8\">\n" +
+				"\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control1\"  name=\"Email\" placeholder=\"Add a new practitioner's Email here ...\">\n" +
+				"\t\t\t\t\t\t\t</span>\n" +
+				"\t\t\t\t\t\t\t<label for=\"focusedinput\" class=\"col-sm-1 control-label\">\n" +
+				"\t\t\t\t\t\t\t\t<div style=\"text-align: left\" class=\"add_delete_container\">\n" +
+				"\t\t\t\t\t\t\t\t\t<i onclick=\"addNewEmail()\" id=\"addButton\" class=\"fa fa-plus-circle\"></i>\n" +
+
+				"\t\t\t\t\t\t\t\t</div>\n" +
+				"\t\t\t\t\t\t\t</label>\n" +
+				"\t\t\t\t\t\t</div>")
+		addLabelPractitioner();		//看看是否第一个贴了标签
+	}
+
+	$(document).ready(function(){
+		var $row = $(document.getElementById("row_selector"));
+		var $col = $(document.getElementById("column_selector"));
+
+		var row_val = $row.attr("value");
+		var col_val = $col.attr("value");
+
+		$row.children("option")[row_val-1].selected=true;
+		$col.children("option")[col_val-1].selected=true;
+
+
+		var $num_of_trials = $(document.getElementById("numberOfTrials_selector"));
+		var num_of_trials_val = $row.attr("value");
+		$num_of_trials.children("option")[num_of_trials_val-1].selected=true;
+
+
+	});
+
+</script>
+
+
+
+
+<style>
+	i.fa-plus-circle{
+		color: #66F364;
+	}
+	i.fa-times-circle{
+		color: #F36464;
+	}
+</style>
+
+<!----->
+
+</head>
+<body>
+<div id="wrapper">
+	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
+
+	<div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="content-main">
+ 
+ 	<!--banner-->	
+		     <div class="banner">
+		    	<h2>
+				<a href="/stimuli/home">Home</a>
+				<i class="fa fa-angle-right"></i>
+				<a href="/stimuli/home">Web App Templates</a>
+				<i class="fa fa-angle-right"></i>
+				<span>New WebApp Template</span>
+				</h2>
+		    </div>
+		<!--//banner-->
+ 	<!--grid-->
+ 	<div class="grid-form">
+		<!---->
+		<div class="grid-form1">
+			<h3>Edit Stimuli</h3>
+			<div class="tab-content">
+				<div class="tab-pane active" id="horizontal-form">
+					<form id="newStimuli_form" class="form-horizontal" action="addNewWebApp">
+						<div class="form-group">
+							<label for="focusedinput" class="col-sm-2 control-label" >Stimuli Name</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control1" id="NewStimuli_Input" th:value="${session.webApp.app_name}" name="app_name">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<span th:if="${session.webApp.timed>0}">
+								<label for="checkbox" class="col-sm-2 control-label">Timed</label>
+								<span class="col-sm-3">
+									<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox" type="checkbox" onclick="checkbox(this)" checked="">Select</label></div>
+								</span>
+								<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
+								<span class="col-sm-3" id="timed-checkbox-span">
+									<input  th:value="${session.webApp.timed}" type="text" class="form-control1" id="timed-checkbox-input"  name="timed">
+								</span>
+							</span>
+							<span th:if="${session.webApp.timed==0}">
+								<label for="checkbox" class="col-sm-2 control-label">Timed</label>
+								<span class="col-sm-3">
+									<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox" type="checkbox" onclick="checkbox(this)" >Select</label></div>
+								</span>
+								<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
+								<span class="col-sm-3" id="timed-checkbox-span">
+									<input disabled="" value=0 type="text" class="form-control1" id="timed-checkbox-input"  name="timed">
+								</span>
+							</span>
+						</div>
+
+						<div class="form-group">
+							<label for="checkbox" class="col-sm-2 control-label">Gender Preferrence</label>
+							<span class="col-sm-6">
+								<span th:if="${session.webApp.gender_preferrence==1}">
+									<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox1" type="checkbox" value="1" checked="">Male</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox0" type="checkbox" value="2">Female</label></div>
+								</span>
+								<span th:if="${session.webApp.gender_preferrence==0}">
+									<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox1" type="checkbox" value="1" >Male</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox0" type="checkbox" value="2" checked="">Female</label></div>
+								</span>
+								<span th:if="${session.webApp.gender_preferrence==2}">
+									<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox1" type="checkbox" value="1" checked="">Male</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox0" type="checkbox" value="2" checked="">Female</label></div>
+								</span>
+							</span>
+						</div>
+
+						<div class="form-group">
+							<label for="checkbox" class="col-sm-2 control-label">Age</label>
+							<span class="col-sm-6">
+								<span th:if="${session.webApp.age.charAt(0)==session.webApp.test.charAt(0)}">
+									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox0" type="checkbox" value="1" checked="">Young</label></div>
+								</span>
+								<span th:if="${session.webApp.age.charAt(0)==session.webApp.test.charAt(1)}">
+									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox0" type="checkbox" value="1" >Young</label></div>
+								</span>
+								<span th:if="${session.webApp.age.charAt(1)==session.webApp.test.charAt(0)}">
+									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2" checked="">Adult</label></div>
+								</span>
+								<span th:if="${session.webApp.age.charAt(1)==session.webApp.test.charAt(1)}">
+									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2" >Adult</label></div>
+								</span>
+								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(0)}">
+									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="4" checked="">Old</label></div>
+								</span>
+								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(1)}">
+									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="4" >Old</label></div>
+								</span>
+
+							</span>
+
+						</div>
+
+
+						<div class="form-group">
+							<label for="selector1" class="col-sm-2 control-label">Rows</label>
+							<span class="col-sm-3"><select  id="row_selector" class="form-control1" name="grid_row" th:value="${session.webApp.grid_row}">
+									<option value ="1">1</option>
+									<option value ="2">2</option>
+									<option value ="3">3</option>
+									<option value ="4">4</option>
+									<option value ="5">5</option>
+									<option value ="6">6</option>
+									<option value ="7">7</option>
+									<option value ="8">8</option>
+								</select></span>
+							<label for="selector1" class="col-sm-2 control-label">Columns</label>
+							<span class="col-sm-3"><select  id="column_selector" class="form-control1" name="grid_column" th:value="${session.webApp.grid_column}">
+									<option value ="1">1</option>
+									<option value ="2">2</option>
+									<option value ="3">3</option>
+									<option value ="4">4</option>
+									<option value ="5">5</option>
+									<option value ="6">6</option>
+									<option value ="7">7</option>
+									<option value ="8">8</option>
+								</select></span>
+						</div>
+
+						<div class="form-group">
+							<label for="selector1" class="col-sm-2 control-label">URL</label>
+
+							<span class="col-sm-3">
+									<input type="text" class="form-control1" id="URL;_Input" name="URL" th:value="${session.webApp.URL}">
+							</span>
+
+							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
+
+							<span class="col-sm-3">
+									<input type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" th:value="${session.webApp.numbers_of_targets}">
+							</span>
+						</div>
+
+
+						<div class="form-group">
+							<label for="selector1" class="col-sm-2 control-label" >Near Percentage</label>
+							<span class="col-sm-3">
+								<input type="text" class="form-control1" id="near_percentage_Input" name="near_percentage" th:value="${session.webApp.near_percentage}">
+							</span>
+							<label for="selector1" class="col-sm-2 control-label">Far Percentage</label>
+							<span class="col-sm-3">
+								<input type="text" class="form-control1" id="far_percentage_Input" name="far_percentage" th:value="${session.webApp.far_percentage}">
+							</span>
+						</div>
+
+						<div class="form-group">
+							<label for="selector1" class="col-sm-2 control-label">Target</label>
+							<span class="col-sm-3"><select  id="Target_selector" name="target_shape" class="form-control1">
+									<option value ="1">1-Node Square Shapes</option>
+									<option value ="2">2-Node Square Shapes</option>
+									<option value ="3">3-Node Square Shapes</option>
+									<option value ="4">4-Node Square Shapes</option>
+									<option value ="5">1-Node Curve Shapes</option>
+									<option value ="6">2-Node Curve Shapes</option>
+									<option value ="7">3-Node Curve Shapes</option>
+									<option value ="8">4-Node Curve Shapes</option>
+								</select></span>
+							<label for="selector1" class="col-sm-2 control-label">Numbers of Trials</label>
+							<span class="col-sm-3"><select  id="numberOfTrials_selector" name="round" class="form-control1" th:value="${session.webApp.numbers_of_trials}">
+									<option value ="1">1</option>
+									<option value ="2">2</option>
+									<option value ="3">3</option>
+									<option value ="4">4</option>
+									<option value ="5">5</option>
+									<option value ="6">6</option>
+									<option value ="7">7</option>
+									<option value ="8">8</option>
+									<option value ="9">9</option>
+									<option value ="10">10</option>
+								</select></span>
+						</div>
+
+						<div class='form-group' th:each="practitioner,practitionerStat : ${session.webApp.practitioners}" th:if="${practitioner.user}!=null">
+							<label for="focusedinput" class="col-sm-2 control-label" th:if="${practitioner.user}!=null">
+								<span name="practitonerLabel" th:text="${practitionerStat.first}? Practitioners" ></span>
+							</label>
+							<span class="col-sm-8"  th:if="${practitioner.user}!=null">
+								<input type="text"  class="form-control1"  name="Email" th:value="${practitioner.user.email}">
+							</span>
+							<label for="focusedinput" class="col-sm-1 control-label" th:if="${practitioner.user}!=null">
+								<div style="text-align: left">
+									<i onclick="delEmail(this)" name="delButton" class="fa fa-times-circle"></i>
+								</div>
+							</label>
+						</div>
+
+						<div class='form-group' name="addEmail">
+							<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>
+							<span class="col-sm-8">
+								<input type="text" class="form-control1"  name="Email" placeholder="Add a new practitioner's Email here ...">
+							</span>
+							<label for="focusedinput" class="col-sm-1 control-label">
+								<div style="text-align: left" class="add_delete_container">
+									<i onclick="addNewEmail()" id="addButton" class="fa fa-plus-circle"></i>
+								</div>
+							</label>
+						</div>
+
+						<div class="form-group" id="notes">
+							<label for="txtarea1" class="col-sm-2 control-label">Notes</label>
+							<div class="col-sm-8"><textarea name="notes" id="notes_Input" cols="50" rows="4" class="form-control1" th:text="${session.webApp.notes}"></textarea></div>
+						</div>
+						<input style="visibility: hidden"  type="text" name="id" th:value="${session.webApp.getId()}" >
+
+					</form>
+				</div>
+
+			</div>
+
+
+
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2">
+						<button class="btn-primary btn" onclick = "checkAndSubmit()">Submit</button>
+						<button id="backToNewApp" class="btn-default btn" onclick = "backToNewApp()">Cancel</button>
+						<button id="reset_button" class="btn-inverse btn" onclick="reset()">Reset</button>
+					</div>
+				</div>
+			</div>
+			</form>
+  </div>
+ 	</div>
+ 	<!--//grid-->
+		<!---->
+<div class="copy">
+	<div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       </div>
+     <!--scrolling js-->
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!--//scrolling js-->
+<!---->
+
+</body>
+</html>
+

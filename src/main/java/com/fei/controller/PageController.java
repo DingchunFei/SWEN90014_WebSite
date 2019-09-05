@@ -74,9 +74,10 @@ public class PageController {
                 strBuilder.setCharAt(0, '1');
             }else if(age[i].equals("2")){
                 strBuilder.setCharAt(1, '1');
-            }else if(age[i].equals("4")){
-                strBuilder.setCharAt(2, '1');
             }
+/*            else if(age[i].equals("4")){
+                strBuilder.setCharAt(2, '1');
+            }*/
         }
         webApp.setAge(strBuilder.toString());
 

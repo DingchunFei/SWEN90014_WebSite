@@ -79,8 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		var age = false
 		var age0 = document.getElementById("age-checkbox0").checked;
 		var age1 = document.getElementById("age-checkbox1").checked;
-		var age2 = document.getElementById("age-checkbox2").checked;
-		if(age0 || age1 || age2){
+		if(age0 || age1){
 			age = true
 		}
 
@@ -100,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			alert("Gender can not be blank!");
 			return false;
 		}else if(!age){
-			alert("Age can not be blank!");
+			alert("Age Group can not be blank!");
 			return false;
 		}else if(numbersOfTarget_Input==null||numbersOfTarget_Input==""){
 			alert("Numbers of target can not be blank!");
@@ -277,7 +276,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 						<div class="form-group">
-							<label for="checkbox" class="col-sm-2 control-label">Age</label>
+							<label for="checkbox" class="col-sm-2 control-label">Age Group</label>
 							<span class="col-sm-6">
 								<span th:if="${session.webApp.age.charAt(0)==session.webApp.test.charAt(0)}">
 									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox0" type="checkbox" value="1" checked="">Young</label></div>
@@ -291,12 +290,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span th:if="${session.webApp.age.charAt(1)==session.webApp.test.charAt(1)}">
 									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2" >Adult</label></div>
 								</span>
-								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="4" checked="">Old</label></div>
-								</span>
-								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="4" >Old</label></div>
-								</span>
+<!--								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(0)}">-->
+<!--									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="4" checked="">Old</label></div>-->
+<!--								</span>-->
+<!--								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(1)}">-->
+<!--									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="4" >Old</label></div>-->
+<!--								</span>-->
 
 							</span>
 

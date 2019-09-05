@@ -23,7 +23,7 @@
                 <li><a href="web_app_list_young">Young Only</a></li>
 
                 <li><a href="web_app_list_adult">Adult Only</a></li>
-                <li><a href="web_app_list_old">Old Only</a></li>
+<!--                <li><a href="web_app_list_old">Old Only</a></li>-->
                 <li><a href="web_app_list_favourite">Favourite Only</a></li>
                 <li><a href="home">All</a></li>
             </ul>
@@ -33,7 +33,7 @@
 
 </div>
 <div class="float-right">
-    <div class="dropdown">
+    <div th:if="${session.userInfo.status>0}"  class="dropdown">
         <a href="#" title="" class="btn btn-default" data-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-cog icon_8"></i>
             <i class="fa fa-chevron-down icon_8"></i>

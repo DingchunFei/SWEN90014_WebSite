@@ -29,19 +29,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<script>
 		$(function () {
 			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
-
 			if (!screenfull.enabled) {
 				return false;
 			}
-
-			
-
 			$('#toggle').click(function () {
 				screenfull.toggle($('#container')[0]);
 			});
-			
+		});
 
-			
+		$(document).ready(function(){
+			$(".user_img,.user_img_d").hover(
+					function(){
+						$(".user_img").attr("style","filter:brightness(70%);");
+						$(".user_img_div").attr("style","visibility:display");
+					},
+					function(){
+						$(".user_img").attr("style","filter:brightness(100%);");
+						$(".user_img_div").attr("style","visibility:hidden");
+					}
+			);
+
+			//通过button触发input的点击事件！
+			$(".btn_img").click(function(){
+				$(".image_upload").trigger("click");
+			});
+
 		});
 		</script>
 
@@ -51,170 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div id="wrapper">
       <!----->
-        <nav class="navbar-default navbar-static-top" role="navigation">
-             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-               <h1> <a class="navbar-brand" href="index.html">Minimal</a></h1>         
-			   </div>
-			 <div class=" border-bottom">
-        	<div class="full-left">
-        	  <section class="full-top">
-				<button id="toggle"><i class="fa fa-arrows-alt"></i></button>	
-			</section>
-			<form class=" navbar-left-right">
-              <input type="text"  value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
-              <input type="submit" value="" class="fa fa-search">
-            </form>
-            <div class="clearfix"> </div>
-           </div>
-     
-       
-            <!-- Brand and toggle get grouped for better mobile display -->
-		 
-		   <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="drop-men" >
-		        <ul class=" nav_1">
-		           
-		    		<li class="dropdown at-drop">
-		              <a href="#" class="dropdown-toggle dropdown-at " data-toggle="dropdown"><i class="fa fa-globe"></i> <span class="number">5</span></a>
-		              <ul class="dropdown-menu menu1 " role="menu">
-		                <li><a href="#">
-		               
-		                	<div class="user-new">
-		                	<p>New user registered</p>
-		                	<span>40 seconds ago</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-user-plus"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                	</a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>Someone special liked this</p>
-		                	<span>3 minutes ago</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-heart"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>John cancelled the event</p>
-		                	<span>4 hours ago</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-times"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>The server is status is stable</p>
-		                	<span>yesterday at 08:30am</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-info"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#">
-		                	<div class="user-new">
-		                	<p>New comments waiting approval</p>
-		                	<span>Last Week</span>
-		                	</div>
-		                	<div class="user-new-left">
-		                
-		                	<i class="fa fa-rss"></i>
-		                	</div>
-		                	<div class="clearfix"> </div>
-		                </a></li>
-		                <li><a href="#" class="view">View all messages</a></li>
-		              </ul>
-		            </li>
-					<li class="dropdown">
-		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret">Rackham<i class="caret"></i></span><img src="images/wo.jpg"></a>
-		              <ul class="dropdown-menu " role="menu">
-		                <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
-		                <li><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox</a></li>
-		                <li><a href="calendar.html"><i class="fa fa-calendar"></i>Calender</a></li>
-		                <li><a href="inbox.html"><i class="fa fa-clipboard"></i>Tasks</a></li>
-		              </ul>
-		            </li>
-		           
-		        </ul>
-		     </div><!-- /.navbar-collapse -->
-			<div class="clearfix">
-       
-     </div>
-	  
-		    <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-				
-                    <li>
-                        <a href="index.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label">Dashboards</span> </a>
-                    </li>
-                   
-                    <li>
-                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-indent nav_icon"></i> <span class="nav-label">Menu Levels</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="graphs.html" class=" hvr-bounce-to-right"> <i class="fa fa-area-chart nav_icon"></i>Graphs</a></li>
-                            
-                            <li><a href="maps.html" class=" hvr-bounce-to-right"><i class="fa fa-map-marker nav_icon"></i>Maps</a></li>
-			
-						<li><a href="typography.html" class=" hvr-bounce-to-right"><i class="fa fa-file-text-o nav_icon"></i>Typography</a></li>
-
-					   </ul>
-                    </li>
-					 <li>
-                        <a href="inbox.html" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label">Inbox</span> </a>
-                    </li>
-                    
-                    <li>
-                        <a href="gallery.html" class=" hvr-bounce-to-right"><i class="fa fa-picture-o nav_icon"></i> <span class="nav-label">Gallery</span> </a>
-                    </li>
-                     <li>
-                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-desktop nav_icon"></i> <span class="nav-label">Pages</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="404.html" class=" hvr-bounce-to-right"> <i class="fa fa-info-circle nav_icon"></i>Error 404</a></li>
-                            <li><a href="faq.html" class=" hvr-bounce-to-right"><i class="fa fa-question-circle nav_icon"></i>FAQ</a></li>
-                            <li><a href="blank.html" class=" hvr-bounce-to-right"><i class="fa fa-file-o nav_icon"></i>Blank</a></li>
-                       </ul>
-                    </li>
-                     <li>
-                        <a href="web_app_list.html" class=" hvr-bounce-to-right"><i class="fa fa-th nav_icon"></i> <span class="nav-label">Grid Layouts</span> </a>
-                    </li>
-                   
-                    <li>
-                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-list nav_icon"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="new_web_app.html" class=" hvr-bounce-to-right"><i class="fa fa-align-left nav_icon"></i>Basic forms</a></li>
-                            <li><a href="validation.html" class=" hvr-bounce-to-right"><i class="fa fa-check-square-o nav_icon"></i>Validation</a></li>
-                        </ul>
-                    </li>
-                   
-                    <li>
-                        <a href="#" class=" hvr-bounce-to-right"><i class="fa fa-cog nav_icon"></i> <span class="nav-label">Settings</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="signin.html" class=" hvr-bounce-to-right"><i class="fa fa-sign-in nav_icon"></i>Signin</a></li>
-                            <li><a href="signup.html" class=" hvr-bounce-to-right"><i class="fa fa-sign-in nav_icon"></i>Singup</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-			</div>
-        </nav>
+	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
 		 <div id="page-wrapper" class="gray-bg dashbard-1">
        <div class="content-main">
  
@@ -233,78 +82,122 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="profile-bottom">
 			<h3><i class="fa fa-user"></i>Profile</h3>
 			<div class="profile-bottom-top">
-			<div class="col-md-4 profile-bottom-img">
-				<img src="images/pr.jpg" alt="">
-			</div>
-			<div class="col-md-8 profile-text">
-				<h6>Jack Dorsey</h6>
-				<table>
-				<tr><td>Department</td>  
-				<td>:</td>  
-				<td>Web Designer</td></tr>
-				
-				<tr>
-				<td>Email</td>
-				<td> :</td>
-				<td><a href="info@gmail.com">info@lorem.com</a></td>
-				</tr>
-				<tr>
-				<td>Skills</td>
-				<td> :</td>
-				<td> HTML, CSS,Jqury, Bootstrap</td>
-				</tr>
-				<tr>
-				<td>Country </td>
-				<td>:</td>
-				<td> United Arab Emirates</td>
-				</tr>
-				</table>
-			</div>
-			<div class="clearfix"></div>
-			</div>
-			<div class="profile-bottom-bottom">
-			<div class="col-md-4 profile-fo">
-				<h4>23,5k</h4>
-				<p>Followers</p>
-				<a href="#" class="pro"><i class="fa fa-plus-circle"></i>Follow</a>
-			</div>
-			<div class="col-md-4 profile-fo">
-				<h4>348</h4>
-				<p>Following</p>
-				<a href="#" class="pro1"><i class="fa fa-user"></i>View Profile</a>
-			</div>
-			<div class="col-md-4 profile-fo">
-				<h4>23,5k</h4>
-				<p>Snippets</p>
-				<a href="#"><i class="fa fa-cog"></i>Options</a>
-			</div>
-			<div class="clearfix"></div>
-			</div>
-			<div class="profile-btn">
+				<form id="form" enctype="multipart/form-data" action="uploadImg" method="post">
+					<!--隐藏图片input，由button来引导-->
+					<input type="file" class="image_upload" name="image_upload" id="image_upload" style="display:none;">
 
-                <button type="button" href="#" class="btn bg-red">Save changes</button>
-           <div class="clearfix"></div>
+					<div  class="col-md-4 profile-bottom-img">
+						<button class="btn_img" type="button" style="border:none; background: none">
+							<div style="position:relative;">
+								<a class="select"  href="#">
+                                    <img class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}!=null" th:src="@{${session.userInfo.img_src}}">
+									<img class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}==null" th:src="@{/images/default.jpg}">
+
+									<div class="user_img_d" style="position:absolute; z-index:1; left:62px; top:62px">
+										<div class="user_img_div"  style="visibility: hidden; ">
+											<i style="color: #DCDCDC" class="fa fa-2x fa-plus"></i>
+										</div>
+									</div>
+								</a>
+							</div>
+						</button>
+					</div>
+					<input type="text"  name="userId" style="display: none" th:value="${session.userInfo.id}">
+				<div class="col-md-8 profile-text">
+					<h6 th:text="${session.userInfo.full_name}">Jack Dorsey</h6>
+					<table>
+						<tr>
+							<td>Username</td>
+							<td>:</td>
+							<td th:text="${session.userInfo.username}">Username</td>
+						</tr>
+						<tr>
+							<td>User Level</td>
+							<td>:</td>
+							<td th:if="${session.userInfo.status}==0">Practitoner</td>
+							<td th:if="${session.userInfo.status}==1">Researcher</td>
+						</tr>
+
+						<tr>
+							<td>Email</td>
+							<td> :</td>
+							<td><a th:href="${session.userInfo.id}" th:text="${session.userInfo.email}">info@lorem.com</a></td>
+						</tr>
+
+						<tr>
+							<td>Institution</td>
+							<td>:</td>
+							<td th:value="${session.userInfo.institution}"></td>
+						</tr>
+						<tr>
+							<td>Gender</td>
+							<td>:</td>
+							<td th:if="${session.userInfo.gender}==1">Male</td>
+							<td th:if="${session.userInfo.gender}==0">Female</td>
+						</tr>
+					</table>
+				</div>
+				<div class="clearfix"></div>
+
+				</form>
 			</div>
-			 
+
+			<script>
+
+				function submitForm(){
+					if($("#image_upload").val()!=""){
+						$("#form").submit();
+					}
+				}
+
+				function back(){
+					window.location.href="/stimuli/home";
+				}
+			</script>
+
+			<div class="profile-btn" style="float:left">
+				<!--				<a href="/stimuli/home" class="pro">Back</a>-->
+
+				<button type="button" href="#" class="btn bg-red" onclick="back();" style="background: #5e5e5e">Back</button>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="profile-btn">
+<!--				<a href="/stimuli/home" class="pro">Back</a>-->
+
+				<button type="button" href="#" class="btn bg-red" onclick="submitForm();">Save changes</button>
+				<div class="clearfix"></div>
+			</div>
+
+<!--			<div class="col-md-6 profile-btn">
+			</div>
+			<div class="col-md-6 profile-btn">
+				<div class="col-md-6">
+					<a href="/stimuli/home" class="pro">Back</a>
+				</div>
+				<div class="col-md-6">
+					<button type="button" href="#" class="btn bg-red" onclick="submitForm();">Save changes</button>
+				</div>
+				<div class="clearfix"></div>
+			</div>-->
+
 			
 		</div>
 	</div>
 	<!--//gallery-->
 		<!---->
-<div class="copy">
-            <p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>	    </div>
-		</div>
-		</div>
-		<div class="clearfix"> </div>
-       </div>
-     
-<!---->
+		   <div class="copy">
+			   <div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
+		   </div>
+	   </div>
+			 <div class="clearfix"> </div>
+		 </div>
 
 <!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/scripts.js"></script>
 	<!--//scrolling js-->
-
+</div>
 </body>
 </html>
 

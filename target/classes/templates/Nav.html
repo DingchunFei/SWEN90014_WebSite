@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <h1> <a class="navbar-brand" href="index.html">Stimuli</a></h1>
+        <h1> <a class="navbar-brand" href="/stimuli/home">Stimuli</a></h1>
     </div>
     <div class=" border-bottom">
         <div class="full-left">
@@ -94,9 +94,12 @@
                     </ul>
                 </li>-->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span th:text="${session.userInfo.username}" class=" name-caret">Rackham<i class="caret"></i></span><img th:src="@{/images/wo.jpg}"></a>
+                    <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span th:text="${session.userInfo.username}" class=" name-caret">Rackham<i class="caret"></i></span>
+                        <img height="60" width="60" th:if="${session.userInfo.img_src}!=null" th:src="@{${session.userInfo.img_src}}">
+                        <img height="60" width="60" th:if="${session.userInfo.img_src}==null" th:src="@{/images/default.jpg}">
+
                     <ul class="dropdown-menu " role="menu">
-                        <li><a href="profile.html"><i class="fa fa-user"></i>Edit Profile</a></li>
+                        <li><a href="/stimuli/editProfile"><i class="fa fa-user"></i>Edit Profile</a></li>
                         <li><a href="inbox.html"><i class="fa fa-envelope"></i>Inbox</a></li>
                         <li><a href="calendar.html"><i class="fa fa-calendar"></i>Calender</a></li>
                         <li><a href="inbox.html"><i class="fa fa-clipboard"></i>Tasks</a></li>

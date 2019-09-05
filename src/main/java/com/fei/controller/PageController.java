@@ -8,17 +8,19 @@ import com.fei.service.WebAppService;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
 
 
 @Controller
@@ -48,6 +50,45 @@ public class PageController {
     @RequestMapping("newWebApp")
     public Object newWebApp(){
         return "new_web_app";
+    }
+
+    //请求转发到new webapp界面
+    @RequestMapping("editProfile")
+    public Object editProfile(){
+        return "profile";
+    }
+
+    @RequestMapping("uploadImg")
+    public Object uploadImg(@RequestParam("image_upload")MultipartFile file, HttpServletRequest request) throws FileNotFoundException {
+
+        String userId = request.getParameter("userId");
+        System.out.println("图片上传的userid为"+userId);
+
+        //获取文件名
+        String fileName = file.getOriginalFilename();
+        //获取文件的后缀名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));
+
+        fileName = UUID.randomUUID() + suffixName;
+        //获取项目的绝对路径 ResourceUtils.getURL()
+        File dest = new File(ResourceUtils.getURL("classpath:").getPath()+"/static/images/"+fileName);
+        System.out.println("static/images/"+fileName);
+
+        User user = new User();
+        user.setId(userId);
+        user.setImg_src("/images/"+fileName);
+
+        try{
+            file.transferTo(dest);
+            userService.updateUser(user);
+            //刷新用戶信息
+            user = userService.refreshUserInfo(user.getId());
+            request.getSession().setAttribute("userInfo",user);
+            return "profile";
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "profile";
     }
 
     //插入一个新的webapp

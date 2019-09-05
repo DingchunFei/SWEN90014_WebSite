@@ -24,7 +24,8 @@ public interface UserMapper {
 			@Result(column = "status",property = "status"),
 			@Result(column = "full_name",property = "full_name"),
 			@Result(column = "instituion",property = "instituion"),
-			@Result(column = "gender",property = "gender")
+			@Result(column = "gender",property = "gender"),
+            @Result(column = "img_src",property = "img_src")
 	})
 	List<User> getAllUser();
 
@@ -43,6 +44,7 @@ public interface UserMapper {
 			@Result(column = "full_name",property = "full_name"),
 			@Result(column = "instituion",property = "instituion"),
 			@Result(column = "gender",property = "gender"),
+            @Result(column = "img_src",property = "img_src"),
 			@Result(property = "favourites" , column="id",
 				many = @Many(select ="com.fei.mapper.FavouriteMapper.findFavouriteByUserId")),
 
@@ -72,6 +74,7 @@ public interface UserMapper {
 			@Result(column = "full_name",property = "full_name"),
 			@Result(column = "instituion",property = "instituion"),
 			@Result(column = "gender",property = "gender"),
+            @Result(column = "img_src",property = "img_src"),
 			@Result(property = "favourites" , column="id",
 					many = @Many(select ="com.fei.mapper.FavouriteMapper.findFavouriteByUserId")),
 	})
@@ -91,6 +94,7 @@ public interface UserMapper {
 			@Result(column = "full_name",property = "full_name"),
 			@Result(column = "instituion",property = "instituion"),
 			@Result(column = "gender",property = "gender"),
+            @Result(column = "img_src",property = "img_src"),
 	})
 	User getUserInfoWithoutFavourites(String user_id);
 
@@ -120,6 +124,13 @@ public interface UserMapper {
 	@Update("UPDATE t_user SET password=#{password}, gender=#{gender}, email=#{email}, " +
 			"full_name=#{full_name}, institution=#{institution} WHERE id =#{id}")
 	int updateUserById(User user);
+
+
+	/**
+	 * 暂时只用来更新用户的头像地址
+	 */
+	@Update("UPDATE t_user SET img_src=#{img_src} WHERE id =#{id}")
+	int updateUser(User user);
 
 
 	/**

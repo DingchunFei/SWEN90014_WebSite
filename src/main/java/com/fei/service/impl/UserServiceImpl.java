@@ -43,6 +43,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public Integer updateUser(User user) {
+		return userMapper.updateUser(user);
+	}
+
+	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
 	public User getUserInfo(String email, String password) {
 		User user = userMapper.getUserInfo(email,password);

@@ -23,6 +23,8 @@ public class User {
 
 	private List<Favourite> favourites;
 
+	private String img_src;
+
 
 	@Override
 	public String toString() {
@@ -47,6 +49,14 @@ public class User {
 		this.email = email;
 		this.gender = gender;
 		this.status = status;
+	}
+
+	public String getImg_src() {
+		return img_src;
+	}
+
+	public void setImg_src(String img_src) {
+		this.img_src = img_src;
 	}
 
 	public String getId() {

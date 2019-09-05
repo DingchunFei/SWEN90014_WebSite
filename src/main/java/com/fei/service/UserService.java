@@ -17,6 +17,8 @@ public interface UserService {
 
 	public Integer updateUserById(User user);
 
+	public Integer updateUser(User user);
+
 	public User getUserInfo(String email, String password);
 
 	public Long checkEmail(String email);

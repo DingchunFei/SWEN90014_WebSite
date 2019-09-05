@@ -37,24 +37,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		});
 
-		$(document).ready(function(){
-			$(".user_img,.user_img_d").hover(
-					function(){
-						$(".user_img").attr("style","filter:brightness(70%);");
-						$(".user_img_div").attr("style","visibility:display");
-					},
-					function(){
-						$(".user_img").attr("style","filter:brightness(100%);");
-						$(".user_img_div").attr("style","visibility:hidden");
-					}
-			);
-
-			//通过button触发input的点击事件！
-			$(".btn_img").click(function(){
-				$(".image_upload").trigger("click");
-			});
-
-		});
+		function changepic(file) {
+/*			var reads= new FileReader();
+			f=document.getElementById('image_upload').files[0];
+			reads.readAsDataURL(f);
+			reads.οnlοad=function (e) {
+				alert(this.result);
+				document.getElementById('user_img').src=this.result;
+			};*/
+			var MAXWIDTH = 120;  // 最大图片宽度
+			var MAXHEIGHT = 120;  // 最大图片高度
+			if (file.files && file.files[0]) {
+				var img = document.getElementById('user_img');
+				img.onload = function () {
+					var rect = getZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+					img.width = rect.width;
+					img.height = rect.height;
+				}
+				var reader = new FileReader();
+				reader.onload = function (evt) {
+					img.src = evt.target.result;
+				}
+				reader.readAsDataURL(file.files[0]);
+			} else {
+				//兼容IE
+				file.select();
+				var src = document.selection.createRange().text;
+				var img = document.getElementById('preview');
+				img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+			}
+		}
 		</script>
 
 
@@ -84,14 +96,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="profile-bottom-top">
 				<form id="form" enctype="multipart/form-data" action="uploadImg" method="post">
 					<!--隐藏图片input，由button来引导-->
-					<input type="file" class="image_upload" name="image_upload" id="image_upload" style="display:none;">
+					<input type="file" class="image_upload" name="image_upload" id="image_upload" accept="image/png, image/jpeg, image/gif, image/jpg" onchange="changepic(this)" style="display:none;">
 
 					<div  class="col-md-4 profile-bottom-img">
 						<button class="btn_img" type="button" style="border:none; background: none">
 							<div style="position:relative;">
 								<a class="select"  href="#">
-                                    <img class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}!=null" th:src="@{${session.userInfo.img_src}}">
-									<img class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}==null" th:src="@{/images/default.jpg}">
+                                    <img id="user_img" class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}!=null" th:src="@{${session.userInfo.img_src}}">
+									<img id="user_img" class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}==null" th:src="@{/images/default.jpg}">
 
 									<div class="user_img_d" style="position:absolute; z-index:1; left:62px; top:62px">
 										<div class="user_img_div"  style="visibility: hidden; ">
@@ -153,6 +165,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				function back(){
 					window.location.href="/stimuli/home";
 				}
+
+
+				$(document).ready(function(){
+					$(".user_img,.user_img_d").hover(
+							function(){
+								$(".user_img").attr("style","filter:brightness(70%);");
+								$(".user_img_div").attr("style","visibility:display");
+							},
+							function(){
+								$(".user_img").attr("style","filter:brightness(100%);");
+								$(".user_img_div").attr("style","visibility:hidden");
+							}
+					);
+
+					//通过button触发input的点击事件！
+					$(".btn_img").click(function(){
+						$(".image_upload").trigger("click");
+					});
+
+				});
+
 			</script>
 
 			<div class="profile-btn" style="float:left">

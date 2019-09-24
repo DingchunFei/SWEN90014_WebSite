@@ -93,10 +93,10 @@ public class PageController {
 
     //插入一个新的webapp
     @RequestMapping("addNewWebApp")
-    public Object addNewWebApp(String [] gender_preferrence, String [] age , WebApp webApp, @RequestParam(name = "Email") String [] email , HttpServletRequest req){
+    public Object addNewWebApp(/*String [] gender_preferrence,*/ String [] age , WebApp webApp, @RequestParam(name = "Email") String [] email , HttpServletRequest req){
         System.out.println("-------------------------------------------------------");
 
-        if(gender_preferrence.length==2) {        //表示两个性别都可以
+/*        if(gender_preferrence.length==2) {        //表示两个性别都可以
             webApp.setGender_preferrence(2);
         }else{
             if(gender_preferrence[0].equals("1")){  //男的
@@ -104,9 +104,9 @@ public class PageController {
             }else if(gender_preferrence[0].equals("2")){  //女的
                 webApp.setGender_preferrence(0);
             }
-        }
+        }*/
 
-        String str="000";           //String不可变，需要变成StringBuilder
+        String str="0000000";           //String不可变，需要变成StringBuilder
         StringBuilder strBuilder = new StringBuilder(str);
 
         for(int i=0;i<age.length; i++){
@@ -115,10 +115,17 @@ public class PageController {
                 strBuilder.setCharAt(0, '1');
             }else if(age[i].equals("2")){
                 strBuilder.setCharAt(1, '1');
-            }
-/*            else if(age[i].equals("4")){
+            }else if(age[i].equals("3")){
                 strBuilder.setCharAt(2, '1');
-            }*/
+            }else if(age[i].equals("4")){
+                strBuilder.setCharAt(3, '1');
+            }else if(age[i].equals("5")){
+                strBuilder.setCharAt(4, '1');
+            }else if(age[i].equals("6")){
+                strBuilder.setCharAt(5, '1');
+            }else if(age[i].equals("7")){
+                strBuilder.setCharAt(6, '1');
+            }
         }
         webApp.setAge(strBuilder.toString());
 

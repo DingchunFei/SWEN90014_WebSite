@@ -134,15 +134,12 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 						</td>
 						<td style="width:15%">
 							<div>
-								<span  th:if="${favourite.webApp.age.charAt(0) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #c4c4c4;">Young</span>
-								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #888888;">Adult</span>
-<!--								<span  th:if="${favourite.webApp.age.charAt(2) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #4a4a4a;">Old</span>-->
+								<span  th:if="${favourite.webApp.age.charAt(0) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #1abc9c;">Children</span>
+								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #25c3cd;">Young Adults</span>
+								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #7897DA;">Adults</span>
 
 							</div>
-							<div style="margin-top:10px">
-								<span  th:if="${favourite.webApp.gender_preferrence==1 || favourite.webApp.gender_preferrence==2}" class="fam">Male</span>
-								<span th:if="${favourite.webApp.gender_preferrence==0 || favourite.webApp.gender_preferrence==2}" class="fem" style="background: #e094b6;">Female</span>
-							</div>
+
 						</td>
 
 						<td style="width:15%">

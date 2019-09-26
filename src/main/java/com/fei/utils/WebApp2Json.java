@@ -1,8 +1,7 @@
 package com.fei.utils;
 
 import com.fei.domain.Favourite;
-import com.fei.domain.ResultList;
-import com.fei.domain.WebAppTarget;
+
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.text.SimpleDateFormat;

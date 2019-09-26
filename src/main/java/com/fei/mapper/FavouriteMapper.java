@@ -2,7 +2,6 @@ package com.fei.mapper;
 
 
 import com.fei.domain.Favourite;
-import com.fei.domain.ResultList;
 import com.fei.domain.User;
 import com.fei.domain.WebApp;
 import org.apache.ibatis.annotations.*;

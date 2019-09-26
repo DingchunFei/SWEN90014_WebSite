@@ -38,9 +38,9 @@ public class WebApp {
 
     private Integer numbers_of_trials;
 
-    private List<ResultList> resultLists;
+    private List<AppResult> resultLists;
 
-    private List <WebAppTarget> webAppTargets;
+    //private List <WebAppTarget> webAppTargets;
 
     private String notes;
 
@@ -72,9 +72,9 @@ public class WebApp {
                 ", practitioners=" + practitioners +
                 ", practitioners_Num=" + practitioners_Num +
                 ", resultLists=" + resultLists +
-                ", webAppTargets=" + webAppTargets +
                 '}';
     }
+
 
     public Integer getNumbers_of_trials() {
         return numbers_of_trials;
@@ -238,19 +238,11 @@ public class WebApp {
         this.age = age;
     }
 
-    public List<ResultList> getResultLists() {
+    public List<AppResult> getResultLists() {
         return resultLists;
     }
 
-    public void setResultLists(List<ResultList> resultLists) {
+    public void setResultLists(List<AppResult> resultLists) {
         this.resultLists = resultLists;
-    }
-
-    public List<WebAppTarget> getWebAppTargets() {
-        return webAppTargets;
-    }
-
-    public void setWebAppTargets(List<WebAppTarget> webAppTargets) {
-        this.webAppTargets = webAppTargets;
     }
 }

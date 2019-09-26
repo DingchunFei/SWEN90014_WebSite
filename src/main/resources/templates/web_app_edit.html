@@ -383,26 +383,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</select>
 							</span>
 
-							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
+							<!--<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
 
 							<span class="col-sm-3">
 									<input disabled="" type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" th:value="${session.webApp.numbers_of_targets}">
-							</span>
-						</div>
-
-
-						<div class="form-group">
-							<label for="selector1" disabled="" class="col-sm-2 control-label" >Near Percentage</label>
-							<span class="col-sm-3">
-								<input type="text" disabled="" class="form-control1" id="near_percentage_Input" name="near_percentage" th:value="${session.webApp.near_percentage}">
-							</span>
-							<label for="selector1" disabled="" class="col-sm-2 control-label">Far Percentage</label>
-							<span class="col-sm-3">
-								<input type="text" disabled="" class="form-control1" id="far_percentage_Input" name="far_percentage" th:value="${session.webApp.far_percentage}">
-							</span>
-						</div>
-
-						<div class="form-group">
+							</span>-->
 
 							<label for="selector1" class="col-sm-2 control-label">Numbers of Trials</label>
 							<span class="col-sm-3"><select disabled="" id="numberOfTrials_selector" name="round" class="form-control1" th:value="${session.webApp.numbers_of_trials}">
@@ -417,6 +402,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="9">9</option>
 									<option value ="10">10</option>
 								</select></span>
+						</div>
+
+
+						<div class="form-group">
+							<label for="selector1" disabled="" class="col-sm-2 control-label" >Near Percentage</label>
+							<span class="col-sm-3">
+								<input type="text" disabled="" class="form-control1" id="near_percentage_Input" name="near_percentage" th:value="${session.webApp.near_percentage}">
+							</span>
+							<label for="selector1" disabled="" class="col-sm-2 control-label">Far Percentage</label>
+							<span class="col-sm-3">
+								<input type="text" disabled="" class="form-control1" id="far_percentage_Input" name="far_percentage" th:value="${session.webApp.far_percentage}">
+							</span>
 						</div>
 
 

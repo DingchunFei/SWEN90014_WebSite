@@ -132,10 +132,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				}*/else if(!age){
 					alert("Age Group has not been choosen!");
 					return false;
-				}else if(numbersOfTarget_Input==null||numbersOfTarget_Input==""){
-					alert("Numbers of target can not be blank!");
-					$("#numbersOfTarget_Input").focus();
-					return false;
 				}else if(near_percentage_Input==null||near_percentage_Input==""){
 					alert("Far_percentage can not be blank!");
 					$("#near_percentage_Input").focus();
@@ -259,27 +255,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="8">4-Node Curve Shapes</option>
 								</select></span>
 
-							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets<em style="color:red;">*</em></label>
+<!--							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets<em style="color:red;">*</em></label>
 
 							<span class="col-sm-3">
 									<input type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" placeholder="1">
-							</span>
-						</div>
-
-
-						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label" >Near Percentage<em style="color:red;">*</em></label>
-							<span class="col-sm-3">
-								<input type="text" class="form-control1" id="near_percentage_Input" name="near_percentage" placeholder="50%">
-								</span>
-							<label for="selector1" class="col-sm-2 control-label">Far Percentage<em style="color:red;">*</em></label>
-							<span class="col-sm-3">
-								<input type="text" class="form-control1" id="far_percentage_Input" name="far_percentage" placeholder="50%">
-								</span>
-						</div>
-
-						<div class="form-group">
-
+							</span>-->
 							<label for="selector1" class="col-sm-2 control-label">Number of Trials<em style="color:red;">*</em></label>
 							<span class="col-sm-3"><select  id="numberOfTrials_selector" name="round" class="form-control1">
 									<option value ="1">1</option>
@@ -294,6 +274,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="10">10</option>
 								</select></span>
 						</div>
+
+
+						<div class="form-group">
+							<label for="selector1" class="col-sm-2 control-label" >Near Percentage<em style="color:red;">*</em></label>
+							<span class="col-sm-3">
+								<input type="text" class="form-control1" id="near_percentage_Input" name="near_percentage" placeholder="50%">
+								</span>
+							<label for="selector1" class="col-sm-2 control-label">Far Percentage<em style="color:red;">*</em></label>
+							<span class="col-sm-3">
+								<input type="text" class="form-control1" id="far_percentage_Input" name="far_percentage" placeholder="50%">
+								</span>
+						</div>
+
 
 						<script>
 							function addLabelPractitioner() {

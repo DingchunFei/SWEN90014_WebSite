@@ -1,3 +1,4 @@
+/*
 package com.fei.mapper;
 
 
@@ -7,15 +8,19 @@ import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+*/
 /**
  * 功能描述：访问数据库的接口
- */
+ *//*
+
 
 public interface WebAppTargetMapper {
 
-	/**
+	*/
+/**
 	 * 根据web_app_id查看由该web_app下的所有测试信息
-	 */
+	 *//*
+
 	@Select("SELECT * FROM t_web_app_target WHERE web_app_id = #{web_app_id}")
 	@Results({
 			@Result(column = "id",property = "id"),
@@ -28,4 +33,4 @@ public interface WebAppTargetMapper {
 	List<WebAppTarget> findWebAppTargetByWebAppIdWithoutWebApp(String web_app_id);
 
 
-}
+}*/

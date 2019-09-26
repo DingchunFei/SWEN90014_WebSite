@@ -1,22 +1,24 @@
+/*
 package com.fei.service.impl;
 
-import com.fei.domain.ResultList;
-import com.fei.mapper.ResultListMapper;
-import com.fei.service.ResultListService;
+import com.fei.domain.AppResult;
+import com.fei.mapper.ResultsMapper;
+import com.fei.service.ResultsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class ResultListServiceImpl implements ResultListService {
+public class ResultsServiceImpl implements ResultsService {
 
     @Autowired
-    private ResultListMapper resultListMapper;
+    private ResultsMapper resultsMapper;
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public ResultList findResultListByWebAppId(String web_app_id) {
-        return resultListMapper.findResultListByWebAppId(web_app_id);
+    public AppResult findResultListByWebAppId(String web_app_id) {
+        return resultsMapper.findResultListByWebAppId(web_app_id);
     }
 }
+*/

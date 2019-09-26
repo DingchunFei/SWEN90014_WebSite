@@ -34,12 +34,15 @@ public interface WebAppMapper {
 			@Result(column = "numbers_of_targets",property = "numbers_of_targets"),
 			@Result(column = "numbers_of_trials",property = "numbers_of_trials"),
 			@Result(column = "notes",property = "notes"),
-			@Result(property = "practitioners_Num", column = "id",
+			@Result(property = "practitioners_Num", column = "id",			//查看一共有几个Practitoner有权限使用这个模板
 					one = @One(select = "com.fei.mapper.FavouriteMapper.findPractitionersNumByWebAppId")),
-			@Result(property = "resultLists" , column="id",
+/*			@Result(property = "resultLists" , column="id",
 					many = @Many(select ="com.fei.mapper.ResultListMapper.findResultListByWebAppIdWithoutWebApp")),
 			@Result(property = "webAppTargets" , column="id",
-					many = @Many(select ="com.fei.mapper.WebAppTargetMapper.findWebAppTargetByWebAppIdWithoutWebApp")),
+					many = @Many(select ="com.fei.mapper.WebAppTargetMapper.findWebAppTargetByWebAppIdWithoutWebApp")),*/
+
+			@Result(property = "resultLists" , column="id",
+					many = @Many(select ="com.fei.mapper.ResultsMapper.findResultsByWebAppIdWithoutWebApp")),
 			@Result(property = "practitioners" , column="id",
 					many = @Many(select ="com.fei.mapper.FavouriteMapper.findPractitionersByWebAppId")),
 	})
@@ -67,7 +70,7 @@ public interface WebAppMapper {
 			@Result(column = "numbers_of_trials",property = "numbers_of_trials"),
 			@Result(column = "notes",property = "notes"),
 	})
-	List<WebApp> findWebAppByWebAppIdWithoutList(String web_app_id);
+	WebApp findWebAppByWebAppIdWithoutList(String web_app_id);
 
 	@SelectKey(keyProperty = "id",resultType = String.class, before = true,
 			statement = "select uuid()")

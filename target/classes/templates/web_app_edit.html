@@ -231,19 +231,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<div class="form-group">
 							<span th:if="${session.webApp.timed>0}">
-								<label for="checkbox" class="col-sm-2 control-label">Timed</label>
+								<label disabled="" for="checkbox" class="col-sm-2 control-label">Timed</label>
 								<span class="col-sm-3">
-									<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox" type="checkbox" onclick="checkbox(this)" checked="">Select</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" id="timed-checkbox" type="checkbox" onclick="checkbox(this)" checked="">Select</label></div>
 								</span>
 								<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
 								<span class="col-sm-3" id="timed-checkbox-span">
-									<input  th:value="${session.webApp.timed}" type="text" class="form-control1" id="timed-checkbox-input"  name="timed">
+									<input  disabled="" th:value="${session.webApp.timed}" type="text" class="form-control1" id="timed-checkbox-input"  name="timed">
 								</span>
 							</span>
 							<span th:if="${session.webApp.timed==0}">
 								<label for="checkbox" class="col-sm-2 control-label">Timed</label>
 								<span class="col-sm-3">
-									<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox" type="checkbox" onclick="checkbox(this)" >Select</label></div>
+									<div disabled="" class="checkbox-inline col-sm-2"><label><input disabled="" id="timed-checkbox" type="checkbox" onclick="checkbox(this)" >Select</label></div>
 								</span>
 								<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
 								<span class="col-sm-3" id="timed-checkbox-span">
@@ -285,28 +285,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<label for="checkbox" class="col-sm-2 control-label">Age Group</label>
 							<span class="col-sm-8">
 								<span th:if="${session.webApp.age.charAt(0)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input  name="age" id="age-checkbox0" type="checkbox" value="1" checked="">0-5</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox0" type="checkbox" value="1" checked="">0-5</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(0)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox0" type="checkbox" value="1" >0-5</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox0" type="checkbox" value="1" >0-5</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(1)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2" checked="">5-10</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox1" type="checkbox" value="2" checked="">5-10</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(1)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2" >5-10</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox1" type="checkbox" value="2" >5-10</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="3" checked="">10-15</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox2" type="checkbox" value="3" checked="">10-15</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(2)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="3" >10-15</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox2" type="checkbox" value="3" >10-15</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(3)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox3" type="checkbox" value="4" checked="">15-18</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox3" type="checkbox" value="4" checked="">15-18</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(3)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox3" type="checkbox" value="4" >15-18</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox3" type="checkbox" value="4" >15-18</label></div>
 								</span>
 							</span>
 
@@ -317,22 +317,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="col-sm-8">
 
 								<span th:if="${session.webApp.age.charAt(4)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox4" type="checkbox" value="5" checked="">18-45</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox4" type="checkbox" value="5" checked="">18-45</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(4)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox4" type="checkbox" value="5" >18-45</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox4" type="checkbox" value="5" >18-45</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(5)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox5" type="checkbox" value="6" checked="">45-60</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox5" type="checkbox" value="6" checked="">45-60</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(5)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox5" type="checkbox" value="6" >45-60</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox5" type="checkbox" value="6" >45-60</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(6)==session.webApp.test.charAt(0)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox6" type="checkbox" value="7" checked="">60</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox6" type="checkbox" value="7" checked="">60</label></div>
 								</span>
 								<span th:if="${session.webApp.age.charAt(6)==session.webApp.test.charAt(1)}">
-									<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox6" type="checkbox" value="7" >60+</label></div>
+									<div class="checkbox-inline col-sm-2"><label><input disabled="" name="age" id="age-checkbox6" type="checkbox" value="7" >60+</label></div>
 								</span>
 								<span style="visibility: hidden;" >
 									<div class="checkbox-inline col-sm-2"><label><input></label></div>
@@ -346,7 +346,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<div class="form-group">
 							<label for="selector1" class="col-sm-2 control-label">Rows</label>
-							<span class="col-sm-3"><select  id="row_selector" class="form-control1" name="grid_row" th:value="${session.webApp.grid_row}">
+							<span class="col-sm-3"><select disabled="" id="row_selector" class="form-control1" name="grid_row" th:value="${session.webApp.grid_row}">
 									<option value ="1">1</option>
 									<option value ="2">2</option>
 									<option value ="3">3</option>
@@ -357,7 +357,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="8">8</option>
 								</select></span>
 							<label for="selector1" class="col-sm-2 control-label">Columns</label>
-							<span class="col-sm-3"><select  id="column_selector" class="form-control1" name="grid_column" th:value="${session.webApp.grid_column}">
+							<span class="col-sm-3"><select disabled="" id="column_selector" class="form-control1" name="grid_column" th:value="${session.webApp.grid_column}">
 									<option value ="1">1</option>
 									<option value ="2">2</option>
 									<option value ="3">3</option>
@@ -370,34 +370,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label">URL</label>
-
-							<span class="col-sm-3">
-									<input type="text" class="form-control1" id="URL;_Input" name="URL" th:value="${session.webApp.URL}">
-							</span>
-
-							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
-
-							<span class="col-sm-3">
-									<input type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" th:value="${session.webApp.numbers_of_targets}">
-							</span>
-						</div>
-
-
-						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label" >Near Percentage</label>
-							<span class="col-sm-3">
-								<input type="text" class="form-control1" id="near_percentage_Input" name="near_percentage" th:value="${session.webApp.near_percentage}">
-							</span>
-							<label for="selector1" class="col-sm-2 control-label">Far Percentage</label>
-							<span class="col-sm-3">
-								<input type="text" class="form-control1" id="far_percentage_Input" name="far_percentage" th:value="${session.webApp.far_percentage}">
-							</span>
-						</div>
-
-						<div class="form-group">
 							<label for="selector1" class="col-sm-2 control-label">Target</label>
-							<span class="col-sm-3"><select  id="Target_selector" name="target_shape" class="form-control1">
+							<span class="col-sm-3"><select disabled="" id="Target_selector" name="target_shape" class="form-control1">
 									<option value ="1">1-Node Square Shapes</option>
 									<option value ="2">2-Node Square Shapes</option>
 									<option value ="3">3-Node Square Shapes</option>
@@ -406,9 +380,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="6">2-Node Curve Shapes</option>
 									<option value ="7">3-Node Curve Shapes</option>
 									<option value ="8">4-Node Curve Shapes</option>
-								</select></span>
+								</select>
+							</span>
+
+							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
+
+							<span class="col-sm-3">
+									<input disabled="" type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" th:value="${session.webApp.numbers_of_targets}">
+							</span>
+						</div>
+
+
+						<div class="form-group">
+							<label for="selector1" disabled="" class="col-sm-2 control-label" >Near Percentage</label>
+							<span class="col-sm-3">
+								<input type="text" disabled="" class="form-control1" id="near_percentage_Input" name="near_percentage" th:value="${session.webApp.near_percentage}">
+							</span>
+							<label for="selector1" disabled="" class="col-sm-2 control-label">Far Percentage</label>
+							<span class="col-sm-3">
+								<input type="text" disabled="" class="form-control1" id="far_percentage_Input" name="far_percentage" th:value="${session.webApp.far_percentage}">
+							</span>
+						</div>
+
+						<div class="form-group">
+
 							<label for="selector1" class="col-sm-2 control-label">Numbers of Trials</label>
-							<span class="col-sm-3"><select  id="numberOfTrials_selector" name="round" class="form-control1" th:value="${session.webApp.numbers_of_trials}">
+							<span class="col-sm-3"><select disabled="" id="numberOfTrials_selector" name="round" class="form-control1" th:value="${session.webApp.numbers_of_trials}">
 									<option value ="1">1</option>
 									<option value ="2">2</option>
 									<option value ="3">3</option>
@@ -421,6 +418,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="10">10</option>
 								</select></span>
 						</div>
+
+
+						<div class='form-group'>
+							<label for="selector1" class="col-sm-2 control-label">URL</label>
+							<span class="col-sm-8">
+								<a target="_blank" th:href="@{${session.webApp.URL}}">
+<!--									<input disabled="" type="text" class="form-control1" id="URL" name="URL" th:value="${session.webApp.URL}">-->
+									<p style="padding-top: 6px;" th:text="${session.webApp.URL}">
+								</a>
+							</span>
+						</div>
+
 
 						<div class='form-group' th:each="practitioner,practitionerStat : ${session.webApp.practitioners}" th:if="${practitioner.user}!=null">
 							<label for="focusedinput" class="col-sm-2 control-label" th:if="${practitioner.user}!=null">
@@ -435,6 +444,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</label>
 						</div>
+
+
+
+
+
+
+
 
 						<div class='form-group' name="addEmail">
 							<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>

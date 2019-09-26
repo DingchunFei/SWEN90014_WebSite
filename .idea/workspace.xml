@@ -2,235 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5337fc6c-e521-4cf1-aeea-a60905b151f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fei/utils/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fei/utils/WebApp2Json.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new_web_app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new_web_app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fei/mapper/WebAppMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fei/mapper/WebAppMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_female.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_male.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/2328bfb8-f9eb-490d-9482-66978cdb5e5b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/24c3476b-bde5-4ada-909f-d97f72be1978.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/44eb9d61-ca8d-45ee-9fd1-b45a03dd38f2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/5a332f92-757f-4598-906c-79e276741558.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/5be3f95c-eaa3-403b-9a83-4a5d278061cd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/74ff6e96-84e7-4db6-820a-df449b7362c9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/7e0c0342-a3d9-407a-8f86-fdaa2f252828.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/890c794a-18d3-46ac-a8a8-5a5367330796.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/8b8967f8-a28b-43cb-9b62-b29597b467ec.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/a506e0d6-8e57-4378-ba36-49662e2d3d20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/c5d53c4e-f040-47aa-b50d-676926d6ef8f.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/d1735482-dd01-44ca-bf3e-0bdc76c0a847.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/d6f74ae3-ac4f-40c0-93a8-8d49f4442681.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/d7adf358-29a1-4405-b34a-e3e37b3e7929.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/e1a76452-76a3-4ee6-acbc-b47cee9f7d65.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/f83ff0bb-eed7-41aa-ab15-0f22ef2695ac.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/images/fb662e8e-82a7-400b-8365-0fb3f03e5361.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/web_app_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list_adult.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/web_app_list_adult.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list_favourite.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/web_app_list_favourite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list_female.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list_male.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list_old.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/web_app_list_old.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/web_app_list_young.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/web_app_list_young.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot.war.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/StimuliApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/FavouriteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/PageController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/PageController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/PageController$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/PageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/ResultListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/controller/WebAppController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/Favourite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/JsonData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/ResultList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/Target.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/WebApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/domain/WebAppTarget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/filter/LoginFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/mapper/FavouriteMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/mapper/ResultListMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/mapper/TargetMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/mapper/WebAppMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/mapper/WebAppTargetMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/FavouriteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/ResultListService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/WebAppService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/impl/FavouriteServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/impl/ResultListServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/service/impl/WebAppServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/utils/JsonUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/utils/User_favourite_sort$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/utils/User_favourite_sort$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/com/fei/utils/User_favourite_sort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/calendar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/clndr.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/custom_1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/examples.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/graph.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/css/swipebox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/Montserrat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/Muli-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/404.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/arr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/ga8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/in9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/link.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/lo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/na.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/na1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/na2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/pic3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/pr.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/tick1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/images/wo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/Chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/clndr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/gmaps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.calendario.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.flot.pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.flot.selection.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.flot.stack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.metisMenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.nicescroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.slimscroll.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/jquery.swipebox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/moment-2.2.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/pie-chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/screenfull.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/site.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/skycons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/static/js/underscore-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/Footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/Nav.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/Web_App_Nav.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/new_web_app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/result_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list_adult.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list_favourite.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list_female.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list_male.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list_old.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/templates/web_app_list_young.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/classes/trigger.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/HikariCP-2.7.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/attoparser-2.0.4.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/classmate-1.3.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/druid-1.1.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/hibernate-validator-6.0.9.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jackson-core-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jackson-databind-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jackson-datatype-jdk8-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jackson-datatype-jsr310-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jackson-module-parameter-names-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/javax.annotation-api-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jboss-logging-3.3.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/jul-to-slf4j-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/log4j-api-2.10.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/log4j-to-slf4j-2.10.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/logback-classic-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/logback-core-1.2.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/mybatis-3.4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/mybatis-spring-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/mybatis-spring-boot-autoconfigure-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/mybatis-spring-boot-starter-1.3.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/mysql-connector-java-5.1.46.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/slf4j-api-1.7.25.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/snakeyaml-1.19.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-aop-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-beans-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-autoconfigure-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-starter-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-starter-jdbc-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-starter-json-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-starter-logging-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-starter-thymeleaf-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-boot-starter-web-2.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-context-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-core-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-expression-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-jcl-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-jdbc-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-tx-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-web-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/spring-webmvc-5.0.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/thymeleaf-3.0.9.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/thymeleaf-extras-java8time-3.0.1.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/thymeleaf-spring5-3.0.9.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/unbescape-1.1.5.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/stimuli_springboot/WEB-INF/lib/validation-api-2.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.fei.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.fei.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.fei.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.fei.AppTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fei/controller/PageController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -249,38 +43,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="197" column="154" selection-start-line="197" selection-start-column="154" selection-end-line="197" selection-end-column="154" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#6;n#span#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="334" column="142" selection-start-line="334" selection-start-column="142" selection-end-line="334" selection-end-column="142" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#label#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#6;n#span#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="140" column="154" selection-start-line="140" selection-start-column="148" selection-end-line="140" selection-end-column="154" />
+            <state relative-caret-position="280">
+              <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -291,85 +57,65 @@
                 <element signature="n#style#0;n#span#3;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#4;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#5;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#6;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/new_web_app.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="259" column="48" selection-start-line="259" selection-start-column="48" selection-end-line="259" selection-end-column="48" />
+            <state relative-caret-position="-320">
+              <caret line="215" column="23" lean-forward="true" selection-start-line="215" selection-start-column="23" selection-end-line="215" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#span#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#1;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#1;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#em#0;n#label#1;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#label#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#6;n#span#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#a#0;n#span#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-240">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="273">
+              <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#10573#10574#0" expanded="true" />
+                <element signature="e#10617#10618#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/404.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="141" selection-start-line="141" selection-end-line="141" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="448">
+              <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Nav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="138" column="170" selection-start-line="138" selection-start-column="170" selection-end-line="138" selection-end-column="170" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="138" column="170" selection-start-line="138" selection-start-column="170" selection-end-line="138" selection-end-column="170" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="2064">
+              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -377,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="314">
+              <caret line="75" column="49" lean-forward="true" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -389,39 +135,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="1790" column="32" selection-start-line="1790" selection-start-column="32" selection-end-line="1790" selection-end-column="32" />
+            <state relative-caret-position="298">
+              <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>young</find>
-      <find>new template</find>
-      <find>favourite.webApp.age.charAt(1)</find>
-      <find>${favourite.webApp.age.charAt(2)</find>
-      <find>{favourite.webApp.age.charAt(2)</find>
-      <find>age</find>
-      <find>old only</find>
-      <find>signin</find>
-      <find>thL</find>
-      <find>th:src</find>
-      <find>&lt;form</find>
-      <find>addNewW</find>
-      <find>session</find>
-      <find>editProfile</find>
-      <find>color</find>
-      <find>login</find>
-      <find>style</find>
-      <find>refreshUserInfo</find>
-      <find>updateUserById</find>
-      <find>href</find>
-      <find>/stimuli/home</find>
       <find>stimuli/home</find>
       <find>form</find>
       <find>img</find>
@@ -431,6 +177,27 @@
       <find>Email</find>
       <find>Age group</find>
       <find>pencil</find>
+      <find>webAppTargets</find>
+      <find>testRespone</find>
+      <find>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</find>
+      <find>URL</find>
+      <find>&lt;a th</find>
+      <find>&lt;a</find>
+      <find>exampleInputEmail1</find>
+      <find>url</find>
+      <find>edit</find>
+      <find>blank</find>
+      <find>near</find>
+      <find>Stimuli</find>
+      <find>index</find>
+      <find>Home</find>
+      <find>index.html</find>
+      <find>Sort By</find>
+      <find>web_app_list_S_stimuli</find>
+      <find>web_app_list_S_date</find>
+      <find>refresh</find>
+      <find>redi</find>
+      <find>Edit</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -445,33 +212,44 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/Footer.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_male.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_female.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/signup.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/fei/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fei/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fei/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fei/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/Nav.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_detail.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/new_web_app.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/utils/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/domain/WebApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/domain/WebApp2Json.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/utils/WebApp2Json.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/utils/Url2Json.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_detail.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/mapper/WebAppMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/signin.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/signup.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/404.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/Nav.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="611" />
-    <option name="y" value="146" />
+    <option name="x" value="443" />
+    <option name="y" value="145" />
     <option name="width" value="1539" />
-    <option name="height" value="907" />
+    <option name="height" value="905" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -526,6 +304,33 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fei" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="base_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEN90014_WebSite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fei" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="base_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEN90014_WebSite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fei" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="base_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SWEN90014_WebSite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -571,6 +376,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -579,9 +385,17 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.fei.domain" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Java_Black\Stimuli\SWEN90014_WebSite\src\main\resources\templates" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="10" />
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -595,7 +409,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.StimuliApplication">
+    <configuration name="HttpUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fei.utils.HttpUtils" />
+      <module name="base_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fei.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StimuliApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="base_project" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fei.StimuliApplication" />
@@ -603,6 +430,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HttpUtils" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -620,15 +452,16 @@
       <workItem from="1567951521908" duration="2784000" />
       <workItem from="1567996596697" duration="231000" />
       <workItem from="1569224619415" duration="1857000" />
-      <workItem from="1569317604784" duration="7809000" />
+      <workItem from="1569317604784" duration="23546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38504000" />
+    <option name="totallyTimeSpent" value="54241000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="611" y="146" width="1539" height="907" extended-state="0" />
+    <frame x="399" y="187" width="1539" height="905" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4987593" visible="true" weight="0.25625423" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -640,19 +473,19 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.19534282" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16731517" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32985657" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34023285" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.28460544" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32988358" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32985657" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32729626" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -701,13 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -760,38 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Nav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#a#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -830,58 +624,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/utils/JsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="64">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="138" column="170" selection-start-line="138" selection-start-column="170" selection-end-line="138" selection-end-column="170" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="157">
+          <caret line="1957" column="18" selection-start-line="1957" selection-start-column="18" selection-end-line="1957" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/utils/Url2Json.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="138" column="170" selection-start-line="138" selection-start-column="170" selection-end-line="138" selection-end-column="170" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="112">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/domain/WebApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1114">
-          <caret line="118" column="18" selection-start-line="118" selection-start-column="18" selection-end-line="118" selection-end-column="18" />
+        <state relative-caret-position="448">
+          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
           <folding>
             <element signature="e#3004#3005#0" expanded="true" />
             <element signature="e#3031#3032#0" expanded="true" />
@@ -889,10 +656,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/utils/WebApp2Json.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        <state relative-caret-position="144">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1169#1170#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
+            <element signature="e#1366#1367#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1472#1473#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1545#1546#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/new_web_app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="247" column="24" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#em#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#label#1;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#em#0;n#label#1;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#label#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/utils/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -901,23 +722,139 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="197" column="154" selection-start-line="197" selection-start-column="154" selection-end-line="197" selection-end-column="154" />
+        <state relative-caret-position="2741">
+          <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#6;n#span#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#a#0;n#span#0;n#div#8;n#form#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/mapper/WebAppMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="84" column="41" lean-forward="true" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_young.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#0;n#a#0;n#div#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_adult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="51" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_old.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2064">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list_favourite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="75" column="49" lean-forward="true" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#td#3;n#span#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-328">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Web_App_Nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="334" column="142" selection-start-line="334" selection-start-column="142" selection-end-line="334" selection-end-column="142" />
+        <state relative-caret-position="-320">
+          <caret line="215" column="23" lean-forward="true" selection-start-line="215" selection-start-column="23" selection-end-line="215" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#div#0;n#label#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#6;n#span#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#a#0;n#span#0;n#div#8;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -925,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/web_app_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="140" column="154" selection-start-line="140" selection-start-column="148" selection-end-line="140" selection-end-column="154" />
+        <state relative-caret-position="280">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -937,28 +874,20 @@
             <element signature="n#style#0;n#span#3;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#4;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#5;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#6;n#div#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/new_web_app.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fei/controller/PageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="259" column="48" selection-start-line="259" selection-start-column="48" selection-end-line="259" selection-end-column="48" />
+        <state relative-caret-position="273">
+          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#span#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#1;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#0;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#1;n#div#6;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#label#1;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#label#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#10573#10574#0" expanded="true" />
+            <element signature="e#10617#10618#0" expanded="true" />
           </folding>
         </state>
       </provider>

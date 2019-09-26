@@ -231,18 +231,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label">URL</label>
-
-							<span class="col-sm-3">
-									<input disabled="" type="text" class="form-control1" id="URL" name="URL" th:value="${session.webApp.URL}">
+							<label for="selector1" class="col-sm-2 control-label">Target</label>
+							<span class="col-sm-3"><select disabled=""  id="Target_selector" name="target_shape" class="form-control1">
+									<option value ="1">1-Node Square Shapes</option>
+									<option value ="2">2-Node Square Shapes</option>
+									<option value ="3">3-Node Square Shapes</option>
+									<option value ="4">4-Node Square Shapes</option>
+									<option value ="5">1-Node Curve Shapes</option>
+									<option value ="6">2-Node Curve Shapes</option>
+									<option value ="7">3-Node Curve Shapes</option>
+									<option value ="8">4-Node Curve Shapes</option>
+								</select>
 							</span>
 
-							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
 
+							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
 							<span class="col-sm-3">
 									<input disabled="" type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" th:value="${session.webApp.numbers_of_targets}">
 							</span>
 						</div>
+
 
 
 						<div class="form-group">
@@ -257,17 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label">Target</label>
-							<span class="col-sm-3"><select disabled=""  id="Target_selector" name="target_shape" class="form-control1">
-									<option value ="1">1-Node Square Shapes</option>
-									<option value ="2">2-Node Square Shapes</option>
-									<option value ="3">3-Node Square Shapes</option>
-									<option value ="4">4-Node Square Shapes</option>
-									<option value ="5">1-Node Curve Shapes</option>
-									<option value ="6">2-Node Curve Shapes</option>
-									<option value ="7">3-Node Curve Shapes</option>
-									<option value ="8">4-Node Curve Shapes</option>
-								</select></span>
+
 							<label for="selector1" class="col-sm-2 control-label">Numbers of Trials</label>
 							<span class="col-sm-3"><select disabled="" id="numberOfTrials_selector" name="numbers_of_trials" class="form-control1" th:value="${session.webApp.numbers_of_trials}">
 									<option value ="1">1</option>
@@ -280,8 +278,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="8">8</option>
 									<option value ="9">9</option>
 									<option value ="10">10</option>
-								</select></span>
+								</select>
+							</span>
 						</div>
+
+
+
+						<div class='form-group'>
+							<label for="selector1" class="col-sm-2 control-label">URL</label>
+							<span class="col-sm-8">
+								<a target="_blank" th:href="@{${session.webApp.URL}}">
+<!--									<input disabled="" type="text" class="form-control1" id="URL" name="URL" th:value="${session.webApp.URL}">-->
+									<p style="padding-top: 6px;" th:text="${session.webApp.URL}">
+								</a>
+							</span>
+						</div>
+
+
 
 
 						<!--${session.userInfo.status!=0} && -->

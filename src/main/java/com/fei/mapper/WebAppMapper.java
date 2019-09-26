@@ -77,8 +77,11 @@ public interface WebAppMapper {
 	Integer insertWebApp (WebApp webApp);
 
 
-	@Update("UPDATE t_web_app SET URL=#{URL},gender_preferrence=#{gender_preferrence},grid_row=#{grid_row},grid_column=#{grid_column},near_percentage=#{near_percentage},far_percentage=#{far_percentage}," +
+/*	@Update("UPDATE t_web_app SET URL=#{URL},gender_preferrence=#{gender_preferrence},grid_row=#{grid_row},grid_column=#{grid_column},near_percentage=#{near_percentage},far_percentage=#{far_percentage}," +
 			"timed=#{timed},app_name=#{app_name},age=#{age},numbers_of_targets=#{numbers_of_targets},notes=#{notes},numbers_of_trials=#{numbers_of_trials} WHERE id=#{id}")
+	Integer updateWebApp (WebApp webApp);*/
+
+	@Update("UPDATE t_web_app SET app_name=#{app_name},notes=#{notes},numbers_of_trials=#{numbers_of_trials} WHERE id=#{id}")
 	Integer updateWebApp (WebApp webApp);
 
 	@Delete("DELETE FROM t_web_app WHERE id =#{webApp_id}")

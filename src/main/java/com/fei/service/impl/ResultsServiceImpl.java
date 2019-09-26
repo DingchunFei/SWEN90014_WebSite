@@ -1,4 +1,3 @@
-/*
 package com.fei.service.impl;
 
 import com.fei.domain.AppResult;
@@ -15,10 +14,15 @@ public class ResultsServiceImpl implements ResultsService {
     @Autowired
     private ResultsMapper resultsMapper;
 
-    @Override
+/*    @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public AppResult findResultListByWebAppId(String web_app_id) {
         return resultsMapper.findResultListByWebAppId(web_app_id);
+    }*/
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public AppResult findResultDetailByResultId(String result_id) {
+        return resultsMapper.findResultDetailByResultId(result_id);
     }
 }
-*/

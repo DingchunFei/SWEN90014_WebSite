@@ -1,8 +1,10 @@
 package com.fei.controller;
 
+import com.fei.domain.AppResult;
 import com.fei.domain.Favourite;
 import com.fei.domain.User;
 import com.fei.domain.WebApp;
+import com.fei.service.ResultsService;
 import com.fei.service.UserService;
 import com.fei.service.WebAppService;
 import com.fei.utils.HttpUtils;
@@ -35,6 +37,9 @@ public class PageController {
 
     @Autowired
     private WebAppService  webAppService;
+
+    @Autowired
+    private ResultsService resultsService;
 
     //登录页面
     @RequestMapping("home")
@@ -267,6 +272,22 @@ public class PageController {
         session.setAttribute("webApp",webApp);
 
         return "web_app_detail";
+    }
+
+
+    /**
+     * 查看result的详细信息
+     * @param
+     * @return
+     */
+    @GetMapping("result_detail")
+    public Object viewResultDetail(String result_id, HttpServletRequest req){
+        AppResult appResult = resultsService.findResultDetailByResultId(result_id);
+        System.out.println(result_id);
+        HttpSession session = req.getSession();
+        session.setAttribute("appResult",appResult);
+
+        return "result_detail";
     }
 
     /**

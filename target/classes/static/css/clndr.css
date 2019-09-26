@@ -24,7 +24,7 @@
 	text-transform: uppercase;
 	padding:18px 20px;
 	text-align: center;
-	background-color:#1ABC9C;
+	background-color:#7b8b71;
 	border-top-left-radius: 4px;
 	-webkit-border-top-left-radius: 4px;
 	-o-border-top-left-radius: 4px;
@@ -89,7 +89,7 @@
 .cal1 .clndr .clndr-table .header-days .header-day {
   vertical-align: middle;
   text-align: center;
-  color:#1ABC9C;
+  color:#7b8b71;
 }
 .cal1 .clndr .clndr-table tr {
     height:45px;

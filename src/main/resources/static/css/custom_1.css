@@ -80,7 +80,7 @@
 	position: relative;
 	color: transparent;
 	cursor: pointer;
-	background: #1ABC9C;
+	background: #7b8b71;
 	margin: 0 1px;
 	font-size: 20px;
 	border-radius: 0 3px 3px 0;
@@ -92,7 +92,7 @@
 }
 
 .custom-header nav span:hover {
-	background:#1ABC9C;
+	background:#7b8b71;
 }
 
 .custom-header span:before {
@@ -206,7 +206,7 @@
 }
 
 .fc-calendar .fc-row > div.fc-today,.fc-calendar .fc-row > div:hover {
-	background: #D95459;
+	background: #8897a6;
 	
 }
 .fc-calendar .fc-row > div.fc-today,.fc-calendar .fc-row > div:hover.fc-calendar .fc-row > div > span.fc-date{

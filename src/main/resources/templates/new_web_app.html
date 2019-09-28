@@ -1,27 +1,27 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Forms :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Forms :: w3layouts</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
-<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
-<script th:src="@{/js/jquery.min.js}"> </script>
-<script th:src="@{/js/bootstrap.min.js}"> </script>
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+	<!-- Custom Theme files -->
+	<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+	<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+	<script th:src="@{/js/jquery.min.js}"> </script>
+	<script th:src="@{/js/bootstrap.min.js}"> </script>
 
-<!-- Mainly scripts -->
-<script th:src="@{/js/jquery.metisMenu.js}"></script>
-<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
-<!-- Custom and plugin javascript -->
-<link th:href="@{/css/custom.css}" rel="stylesheet">
-<script th:src="@{/js/custom.js}"></script>
-<script th:src="@{/js/screenfull.js}"></script>
-		<script>
+	<!-- Mainly scripts -->
+	<script th:src="@{/js/jquery.metisMenu.js}"></script>
+	<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+	<!-- Custom and plugin javascript -->
+	<link th:href="@{/css/custom.css}" rel="stylesheet">
+	<script th:src="@{/js/custom.js}"></script>
+	<script th:src="@{/js/screenfull.js}"></script>
+	<script>
 		$(function () {
 			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
 			if (!screenfull.enabled) {
@@ -31,16 +31,510 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				screenfull.toggle($('#container')[0]);
 			});
 		});
-		</script>
+	</script>
 
-<!----->
+	<!----->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#numberOfTrials_selector').change(function() {
+				//根据不同的值弹出不同数量的下拉菜单
+				var num = $(this).find("option:selected").text()
+				if(num == 1){
+					$('#numberOfTrials_div').empty();
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 1</h3></label>\n" +
+							"\t\t\t\t\t\t\t</div>");
 
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector1\" class=\"form-control1\" name=\"grid_row\">\n" +
+							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
+							"\t\t\t\t\t\t\t</select></span>\n" +
+							"\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Columns<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"column_selector1\" class=\"form-control1\" name=\"grid_column\">\n" +
+							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
+							"\t\t\t\t\t\t\t</select></span>\n" +
+							"\t\t\t\t\t</div>");
+					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div><hr>");
+
+
+				}else if(num==2){
+					$('#numberOfTrials_div').empty();
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 1</h3></label>\n" +
+							"\t\t\t\t\t\t\t</div>");
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector1\" class=\"form-control1\" name=\"grid_row\">\n" +
+							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
+							"\t\t\t\t\t\t\t</select></span>\n" +
+							"\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Columns<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"column_selector1\" class=\"form-control1\" name=\"grid_column\">\n" +
+							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
+							"\t\t\t\t\t\t\t</select></span>\n" +
+							"\t\t\t\t\t</div>");
+					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div><hr>");
+
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 2</h3></label>\n" +
+							"\t\t\t\t\t\t\t</div>");
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector2\" class=\"form-control1\" name=\"grid_row\">\n" +
+							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
+							"\t\t\t\t\t\t\t</select></span>\n" +
+							"\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Columns<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"column_selector2\" class=\"form-control1\" name=\"grid_column\">\n" +
+							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
+							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
+							"\t\t\t\t\t\t\t</select></span>\n" +
+							"\t\t\t\t\t</div>");
+					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp2_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp2_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp2_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp2_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp2_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp2_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp2_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp2_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp2_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp2_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp2_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp2_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp2_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_round\" class=\"round\" id=\"round2_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round2_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round2_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round2_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round2_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round2_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round2_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round2_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round2_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round2_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round2_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round2_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round2_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div2_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div2_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div>\n" +
+							"\n" +
+							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
+							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div2_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t</div><hr>");
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		function checkbox(){
+			var isChecked = document.getElementById("timed-checkbox").checked;
+			if(isChecked){
+				$('#timed-checkbox-span').empty();
+				$('#timed-checkbox-span').append('<input type="text"  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+				$("#timed-checkbox-input").focus();
+			}else{
+				$('#timed-checkbox-span').empty();
+				$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+			}
+		}
+
+		function reset(){
+			$("#NewStimuli_Input").val("");
+			$('#timed-checkbox').prop("checked",false);
+			$('#timed-checkbox-span').empty();
+			$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+
+			$('#row_selector').val(1);
+			$('#column_selector').val(1);
+			$('#numbersOfTarget_Input').val("");
+			$('#Target_selector').val(1);
+			$('#numberOfTrials_selector').val(1);
+			$('#percentage_Input').val("");
+			$('#notes_Input').val("");
+		}
+
+
+
+		function checkAndSubmit(){
+			var NewStimuli_Input=$("#NewStimuli_Input").val();
+
+			var timed = document.getElementById("timed-checkbox").checked;
+			if(timed){
+				timed = $('#timed-checkbox-input').val();
+			}else{
+				timed = 0;
+			}
+
+			var age = false
+			var age0 = document.getElementById("age-checkbox0").checked;
+			var age1 = document.getElementById("age-checkbox1").checked;
+			var age2 = document.getElementById("age-checkbox2").checked;
+			var age3 = document.getElementById("age-checkbox3").checked;
+			var age4 = document.getElementById("age-checkbox4").checked;
+			var age5 = document.getElementById("age-checkbox5").checked;
+			var age6 = document.getElementById("age-checkbox6").checked;
+			if(age0 || age1 || age2 || age3 || age4 || age5 || age6){
+				age = true
+			}
+
+			var row_selector=$("#row_selector").val();
+			var column_selector= $("#column_selector").val();
+			var numbersOfTarget_Input= $('#numbersOfTarget_Input').val();
+			var far_percentage_Input= $('#far_percentage_Input').val();
+			var near_percentage_Input= $('#near_percentage_Input').val();
+			var Target_selector= $('#Target_selector').val();
+			var numberOfTrials_selector= $('#numberOfTrials_selector').val();
+
+			if(NewStimuli_Input==null||NewStimuli_Input==""){
+				alert("Please name your Stimuli!");
+				$("#NewStimuli_Input").focus();
+				return false;
+			}else{
+				shape_analyser();
+				$("#newStimuli_form").submit();
+			}
+		}
+
+		function shape_analyser(){
+			var trial_num = $('#numberOfTrials_selector').find("option:selected").text();
+
+			var target_array = new Array();
+			var near_percentage_array = new Array();
+			var far_percentage_array = new Array();
+
+
+			if(trial_num>=1){		//说明至少选择了1轮
+				target_array[0] = new Array();					//第一轮，生成第一个二维数组
+				near_percentage_array[0] = new Array();
+				far_percentage_array[0] = new Array();
+
+				var target_num = $('#div1_1').children("img").length;
+				for(var i=0;i<target_num;i++){
+					target_array[0][i]=$('#div1_1').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var near_percentage_num = $('#div1_2').children("img").length;
+				for(var i=0;i<near_percentage_num;i++){
+					near_percentage_array[0][i]=$('#div1_2').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var far_percentage_num = $('#div1_3').children("img").length;
+				for(var i=0;i<far_percentage_num;i++){
+					far_percentage_array[0][i]=$('#div1_3').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+			}
+			if(trial_num>=2){		//说明至少选择了2轮
+				target_array[1] = new Array();					//第二轮，生成第二个二维数组
+				near_percentage_array[1] = new Array();
+				far_percentage_array[1] = new Array();
+
+				var target_num = $('#div2_1').children("img").length;
+				for(var i=0;i<target_num;i++){
+					target_array[1][i]=$('#div2_1').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var near_percentage_num = $('#div2_2').children("img").length;
+				for(var i=0;i<near_percentage_num;i++){
+					near_percentage_array[1][i]=$('#div2_2').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var far_percentage_num = $('#div2_3').children("img").length;
+				for(var i=0;i<far_percentage_num;i++){
+					far_percentage_array[1][i]=$('#div2_3').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+			}
+
+			$('#targetArray').val(JSON.stringify(target_array));
+			$('#nearDistractorArray').val(JSON.stringify(near_percentage_array));
+			$('#farDistractorArray').val(JSON.stringify(far_percentage_array));
+			$('#round').val(trial_num);
+		}
+
+		function backToNewApp(){
+			window.location.href="/stimuli/home";
+		}
+
+	</script>
+	<script type="text/javascript">
+	function allowDrop(ev)
+	{
+		ev.preventDefault();
+	}
+
+	function drag(ev)
+	{
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+
+	function drop(ev)
+	{
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+	</script>
+
+	<script>
+		function addLabelPractitioner() {
+			var $practitionerLabel = $(document.getElementsByName("practitonerLabel")).first();		//获取最后一个email，以便再加一个
+			if($practitionerLabel.html()=="" || $practitionerLabel.html()==null){		//发现为空需要贴Label Practitioner
+				$practitionerLabel.html("Practitioners");
+			}
+		}
+
+		function delEmail(id){
+			var $id = $(id);
+			$div = $id.parent().parent().parent();		//获取当前删除框的容器div
+			$div.remove();
+			addLabelPractitioner();		//看看是否第一个贴了标签
+		}
+
+		function addNewEmail(){
+			var $addButton = $(document.getElementById("addButton"));
+			$addButton.remove();			//把上一个+去除
+
+			var $addEmail = $(document.getElementsByName("addEmail")).last();		//获取最后一个email，以便再加一个
+			var $secondToLastContainer = $(".add_delete_container").last();				//获取倒数第二个container，用来给上一个加 times 标签
+			if($secondToLastContainer!=null && $secondToLastContainer.children("i.fa-times-circle").length==0){		//判断是否已经有叉叉了
+				$secondToLastContainer.append("<i onclick=\"delEmail(this)\" name=\"delButton\" class=\"fa fa-times-circle\"></i>");
+			}
+
+			$addEmail.after("\t\t\t\t\t\t<div class='form-group' name=\"addEmail\">\n" +
+					"\t\t\t\t\t\t\t<label for=\"focusedinput\" class=\"col-sm-2 control-label\"><span name=\"practitonerLabel\"></span></label>\n" +
+					"\t\t\t\t\t\t\t<span class=\"col-sm-8\">\n" +
+					"\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control1\"  name=\"Email\" placeholder=\"Add a new practitioner's Email here ...\">\n" +
+					"\t\t\t\t\t\t\t</span>\n" +
+					"\t\t\t\t\t\t\t<label for=\"focusedinput\" class=\"col-sm-1 control-label\">\n" +
+					"\t\t\t\t\t\t\t\t<div style=\"text-align: left\" class=\"add_delete_container\">\n" +
+					"\t\t\t\t\t\t\t\t\t<i onclick=\"addNewEmail()\" id=\"addButton\" class=\"fa fa-plus-circle\"></i>\n" +
+
+					"\t\t\t\t\t\t\t\t</div>\n" +
+					"\t\t\t\t\t\t\t</label>\n" +
+					"\t\t\t\t\t\t</div>")
+			addLabelPractitioner();		//看看是否第一个贴了标签
+		}
+
+		$(document).ready(function(){
+			addLabelPractitioner();		//看看是否第一个贴了标签
+		});
+
+	</script>
 	<style>
 		i.fa-plus-circle{
 			color: #66F364;
 		}
 		i.fa-times-circle{
 			color: #F36464;
+		}
+
+		img.sharp, img.round{				/*改变图形缩放尺寸*/
+			min-width: 45px;
+			min-height: 45px;
+			width: 5.6%;
+			height: 5.6%;
 		}
 	</style>
 </head>
@@ -49,158 +543,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
 
 	<div id="page-wrapper" class="gray-bg dashbard-1">
-       <div class="content-main">
- 
- 	<!--banner-->	
-		     <div class="banner">
-		    	<h2>
-				<a href="/stimuli/home">Home</a>
-				<i class="fa fa-angle-right"></i>
-				<a href="/stimuli/home">Web App Templates</a>
-				<i class="fa fa-angle-right"></i>
-				<span>New WebApp Template</span>
+		<div class="content-main">
+
+			<!--banner-->
+			<div class="banner">
+				<h2>
+					<a href="/stimuli/home">Home</a>
+					<i class="fa fa-angle-right"></i>
+					<a href="/stimuli/home">Web App Templates</a>
+					<i class="fa fa-angle-right"></i>
+					<span>New WebApp Template</span>
 				</h2>
-		    </div>
-		<!--//banner-->
- 	<!--grid-->
- 	<div class="grid-form">
-		<script type="text/javascript">
-			function checkbox(){
-				var isChecked = document.getElementById("timed-checkbox").checked;
-				if(isChecked){
-					$('#timed-checkbox-span').empty();
-					$('#timed-checkbox-span').append('<input type="text"  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
-					$("#timed-checkbox-input").focus();
-				}else{
-					$('#timed-checkbox-span').empty();
-					$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
-				}
-			}
+			</div>
+			<!--//banner-->
+			<!--grid-->
+			<div class="grid-form">
 
-			function reset(){
-				$("#NewStimuli_Input").val("");
-				$('#timed-checkbox').prop("checked",false);
-				$('#timed-checkbox-span').empty();
-				$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+				<!---->
+				<div class="grid-form1">
+					<h3>New Stimuli</h3>
+					<div class="tab-content">
+						<div class="tab-pane active" id="horizontal-form">
+							<form id="newStimuli_form" class="form-horizontal" action="addNewWebApp">
+								<div class="form-group required">
+									<label for="focusedinput" class="col-sm-2 control-label" >New Stimuli Name <em style="color:red;">*</em></label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control1" id="NewStimuli_Input" placeholder="New Stimuli Name" name="app_name">
+									</div>
 
-				$('#row_selector').val(1);
-				$('#column_selector').val(1);
-				$('#numbersOfTarget_Input').val("");
-				$('#Target_selector').val(1);
-				$('#numberOfTrials_selector').val(1);
-				$('#percentage_Input').val("");
-				$('#notes_Input').val("");
-			}
+								</div>
 
-			function checkAndSubmit(){
-				var NewStimuli_Input=$("#NewStimuli_Input").val();
+								<input style="visibility: hidden" id="targetArray" name="targetArray"  type="text">
+								<input style="visibility: hidden" id="farDistractorArray" name="farDistractorArray"  type="text">
+								<input style="visibility: hidden" id="nearDistractorArray" name="nearDistractorArray"  type="text">
+								<input style="visibility: hidden" id="round" name="round"  type="text">
 
-				var timed = document.getElementById("timed-checkbox").checked;
-				if(timed){
-					timed = $('#timed-checkbox-input').val();
-				}else{
-					timed = 0;
-				}
 
-				var age = false
-				var age0 = document.getElementById("age-checkbox0").checked;
-				var age1 = document.getElementById("age-checkbox1").checked;
-				var age2 = document.getElementById("age-checkbox2").checked;
-				var age3 = document.getElementById("age-checkbox3").checked;
-				var age4 = document.getElementById("age-checkbox4").checked;
-				var age5 = document.getElementById("age-checkbox5").checked;
-				var age6 = document.getElementById("age-checkbox6").checked;
-				if(age0 || age1 || age2 || age3 || age4 || age5 || age6){
-					age = true
-				}
-
-				var row_selector=$("#row_selector").val();
-				var column_selector= $("#column_selector").val();
-				var numbersOfTarget_Input= $('#numbersOfTarget_Input').val();
-				var far_percentage_Input= $('#far_percentage_Input').val();
-				var near_percentage_Input= $('#near_percentage_Input').val();
-				var Target_selector= $('#Target_selector').val();
-				var numberOfTrials_selector= $('#numberOfTrials_selector').val();
-
-				if(NewStimuli_Input==null||NewStimuli_Input==""){
-					alert("Please name your Stimuli!");
-					$("#NewStimuli_Input").focus();
-					return false;
-				}/*else if(!gender){
-					alert("Gender can not be blank!");
-					return false;
-				}*/else if(!age){
-					alert("Age Group has not been choosen!");
-					return false;
-				}else if(near_percentage_Input==null||near_percentage_Input==""){
-					alert("Far_percentage can not be blank!");
-					$("#near_percentage_Input").focus();
-					return false;
-				}else if(far_percentage_Input==null||far_percentage_Input==""){
-					alert("Far_percentagecan not be blank!");
-					$("#far_percentage_Input").focus();
-					return false;
-				}else{
-					$("#newStimuli_form").submit();
-				}
-			}
-
-			function backToNewApp(){
-				window.location.href="/stimuli/home";
-			}
-
-		</script>
-
-		<!---->
-		<div class="grid-form1">
-			<h3>New Stimuli</h3>
-			<div class="tab-content">
-				<div class="tab-pane active" id="horizontal-form">
-					<form id="newStimuli_form" class="form-horizontal" action="addNewWebApp">
-						<div class="form-group required">
-							<label for="focusedinput" class="col-sm-2 control-label" >New Stimuli Name <em style="color:red;">*</em></label>
-							<div class="col-sm-8">
-								<input type="text" class="form-control1" id="NewStimuli_Input" placeholder="New Stimuli Name" name="app_name">
-							</div>
-							<!-- 							<div class="col-sm-2">
-                                                            <p class="help-block">Your help text!</p>
-                                                        </div> -->
-						</div>
-
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-2 control-label">Timed<em style="color:red;">*</em></label>
-							<span class="col-sm-3">
+								<div class="form-group">
+									<label for="checkbox" class="col-sm-2 control-label">Timed<em style="color:red;">*</em></label>
+									<span class="col-sm-3">
 								<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox" type="checkbox" onclick="checkbox(this)">Select</label></div>
 							</span>
-							<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
-							<span class="col-sm-3" id="timed-checkbox-span">
+									<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
+									<span class="col-sm-3" id="timed-checkbox-span">
 								<input disabled="" type="text" class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">
 							</span>
-						</div>
+								</div>
 
-<!--						<div class="form-group">
-							<label for="checkbox" class="col-sm-2 control-label">Gender Preferrence</label>
-							<span class="col-sm-6">
-								<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox1" type="checkbox" value="1">Male</label></div>
-								<div class="checkbox-inline col-sm-2"><label><input name="gender_preferrence" id="gender-checkbox0" type="checkbox" value="2">Female</label></div>
-							</span>
 
-						</div>-->
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-2 control-label">Age Group<em style="color:red;">*</em></label>
-							<span class="col-sm-8">
+								<div class="form-group">
+									<label for="checkbox" class="col-sm-2 control-label">Age Group<em style="color:red;">*</em></label>
+									<span class="col-sm-8">
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox0" type="checkbox" value="1">0-5</label></div>
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2">5-10</label></div>
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox2" type="checkbox" value="3">10-15</label></div>
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox3" type="checkbox" value="4">15-18</label></div>
 							</span>
 
-						</div>
+								</div>
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-2 control-label"></label>
-							<span class="col-sm-8">
+								<div class="form-group">
+									<label for="checkbox" class="col-sm-2 control-label"></label>
+									<span class="col-sm-8">
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox4" type="checkbox" value="5">18-45</label></div>
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox5" type="checkbox" value="6">45-60</label></div>
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox6" type="checkbox" value="7">60+</label></div>
@@ -208,60 +613,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 							</span>
 
-						</div>
+								</div>
 
+								<div class="form-group">
 
-						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label">Rows<em style="color:red;">*</em></label>
-							<span class="col-sm-3"><select  id="row_selector" class="form-control1" name="grid_row">
-									<option value ="1">1</option>
-									<option value ="2">2</option>
-									<option value ="3">3</option>
-									<option value ="4">4</option>
-									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-								</select></span>
-							<label for="selector1" class="col-sm-2 control-label">Columns<em style="color:red;">*</em></label>
-							<span class="col-sm-3"><select  id="column_selector" class="form-control1" name="grid_column">
-									<option value ="1">1</option>
-									<option value ="2">2</option>
-									<option value ="3">3</option>
-									<option value ="4">4</option>
-									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-								</select></span>
-						</div>
-
-						<div class="form-group">
-<!--							<label for="selector1" class="col-sm-2 control-label">URL</label>
-
-							<span class="col-sm-3">
-									<input type="text" class="form-control1" id="URL;_Input" name="URL" placeholder="http://">
-							</span>-->
-
-							<label for="selector1" class="col-sm-2 control-label">Target<em style="color:red;">*</em></label>
-							<span class="col-sm-3"><select  id="Target_selector" name="target_shape" class="form-control1">
-									<option value ="1">1-Node Square Shapes</option>
-									<option value ="2">2-Node Square Shapes</option>
-									<option value ="3">3-Node Square Shapes</option>
-									<option value ="4">4-Node Square Shapes</option>
-									<option value ="5">1-Node Curve Shapes</option>
-									<option value ="6">2-Node Curve Shapes</option>
-									<option value ="7">3-Node Curve Shapes</option>
-									<option value ="8">4-Node Curve Shapes</option>
-								</select></span>
-
-<!--							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets<em style="color:red;">*</em></label>
-
-							<span class="col-sm-3">
-									<input type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" placeholder="1">
-							</span>-->
-							<label for="selector1" class="col-sm-2 control-label">Number of Trials<em style="color:red;">*</em></label>
-							<span class="col-sm-3"><select  id="numberOfTrials_selector" name="round" class="form-control1">
+									<label for="selector1" class="col-sm-2 control-label">Number of Trials<em style="color:red;">*</em></label>
+									<span class="col-sm-3"><select  id="numberOfTrials_selector" name="round" class="form-control1">
 									<option value ="1">1</option>
 									<option value ="2">2</option>
 									<option value ="3">3</option>
@@ -273,117 +630,157 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<option value ="9">9</option>
 									<option value ="10">10</option>
 								</select></span>
-						</div>
+								</div>
+
+								<hr>
+								<span id="numberOfTrials_div">
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" ><h3>Trial 1</h3></label>
+									</div>
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label">Rows<em style="color:red;">*</em></label>
+										<span class="col-sm-3"><select  id="row_selector1" class="form-control1" name="grid_row">
+										<option value ="1">1</option>
+										<option value ="2">2</option>
+										<option value ="3">3</option>
+										<option value ="4">4</option>
+										<option value ="5">5</option>
+										<option value ="6">6</option>
+										<option value ="7">7</option>
+										<option value ="8">8</option>
+										<option value ="9">9</option>
+										<option value ="10">10</option>
+										<option value ="11">11</option>
+										<option value ="12">12</option>
+									</select></span>
+										<label for="selector1" class="col-sm-2 control-label">Columns<em style="color:red;">*</em></label>
+										<span class="col-sm-3"><select  id="column_selector1" class="form-control1" name="grid_column">
+										<option value ="1">1</option>
+										<option value ="2">2</option>
+										<option value ="3">3</option>
+										<option value ="4">4</option>
+										<option value ="5">5</option>
+										<option value ="6">6</option>
+										<option value ="7">7</option>
+										<option value ="8">8</option>
+										<option value ="9">9</option>
+										<option value ="10">10</option>
+										<option value ="11">11</option>
+										<option value ="12">12</option>
+									</select></span>
+									</div>
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Shapes</label>
+										<span class="col-sm-10">
+											<img name="O_90_sharp" id="sharp1" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_90_sharp.png">
+											<img name="O_180_sharp" id="sharp2" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_180_sharp.png">
+											<img name="I_0_sharp" id="sharp3" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_0_sharp.png">
+											<img name="I_90_sharp" id="sharp4" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
+											<img name="I_90_sharp" id="sharp5" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
+											<img name="L_90_sharp" id="sharp6" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_90_sharp.png">
+											<img name="L_180_sharp" id="sharp7" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_180_sharp.png">
+											<img name="L_270_sharp" id="sharp8" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_270_sharp.png">
+											<img name="T_0_sharp" id="sharp9" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_0_sharp.png">
+											<img name="T_90_sharp" id="sharp10" class="sharp"  draggable="true" ondragstart="drag(event)" src="/images/T_90_sharp.png">
+											<img name="T_180_sharp" id="sharp11" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_180_sharp.png">
+											<img name="T_270_sharp" id="sharp12" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_270_sharp.png">
+											<img name="X_0_sharp" id="sharp13" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/X_0_sharp.png">
+										</span>
+									</div>
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" ></label>
+										<span class="col-sm-10">
+											<img name="O_90_round" id="round1" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_90_round.png">
+											<img name="O_180_round" id="round2" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_180_round.png">
+											<img name="I_0_round" id="round3" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_0_round.png">
+											<img name="I_90_round" id="round4" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_90_round.png">
+											<img name="L_0_round" id="round5" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_0_round.png">
+											<img name="L_90_round" id="round6" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_90_round.png">
+											<img name="L_180_round" id="round7" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_180_round.png">
+											<img name="L_270_round" id="round8" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_270_round.png">
+											<img name="T_0_round" id="round9" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_0_round.png">
+											<img name="T_90_round" id="round10" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_90_round.png">
+											<img name="T_180_round" id="round11" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_180_round.png">
+											<img name="T_270_round" id="round12" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_270_round.png">
+											<img name="X_0_round" id="round13" class="round" draggable="true" ondragstart="drag(event)" src="/images/X_0_round.png">
+										</span>
+									</div>
 
 
-						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label" >Near Percentage<em style="color:red;">*</em></label>
-							<span class="col-sm-3">
-								<input type="text" class="form-control1" id="near_percentage_Input" name="near_percentage" placeholder="50%">
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Target</label>
+										<span class="col-sm-10" >
+										<div style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" id="div1_1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										</span>
+									</div>
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
+										<span class="col-sm-10" >
+										<div style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" id="div1_2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										</span>
+									</div>
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
+										<span class="col-sm-10" >
+										<div style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" id="div1_3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										</span>
+									</div>
+									<hr>
 								</span>
-							<label for="selector1" class="col-sm-2 control-label">Far Percentage<em style="color:red;">*</em></label>
-							<span class="col-sm-3">
-								<input type="text" class="form-control1" id="far_percentage_Input" name="far_percentage" placeholder="50%">
-								</span>
-						</div>
 
 
-						<script>
-							function addLabelPractitioner() {
-								var $practitionerLabel = $(document.getElementsByName("practitonerLabel")).first();		//获取最后一个email，以便再加一个
-								if($practitionerLabel.html()=="" || $practitionerLabel.html()==null){		//发现为空需要贴Label Practitioner
-									$practitionerLabel.html("Practitioners");
-								}
-							}
-
-							function delEmail(id){
-								var $id = $(id);
-								$div = $id.parent().parent().parent();		//获取当前删除框的容器div
-								$div.remove();
-								addLabelPractitioner();		//看看是否第一个贴了标签
-							}
-
-							function addNewEmail(){
-								var $addButton = $(document.getElementById("addButton"));
-								$addButton.remove();			//把上一个+去除
-
-								var $addEmail = $(document.getElementsByName("addEmail")).last();		//获取最后一个email，以便再加一个
-								var $secondToLastContainer = $(".add_delete_container").last();				//获取倒数第二个container，用来给上一个加 times 标签
-								if($secondToLastContainer!=null && $secondToLastContainer.children("i.fa-times-circle").length==0){		//判断是否已经有叉叉了
-									$secondToLastContainer.append("<i onclick=\"delEmail(this)\" name=\"delButton\" class=\"fa fa-times-circle\"></i>");
-								}
-
-								$addEmail.after("\t\t\t\t\t\t<div class='form-group' name=\"addEmail\">\n" +
-										"\t\t\t\t\t\t\t<label for=\"focusedinput\" class=\"col-sm-2 control-label\"><span name=\"practitonerLabel\"></span></label>\n" +
-										"\t\t\t\t\t\t\t<span class=\"col-sm-8\">\n" +
-										"\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control1\"  name=\"Email\" placeholder=\"Add a new practitioner's Email here ...\">\n" +
-										"\t\t\t\t\t\t\t</span>\n" +
-										"\t\t\t\t\t\t\t<label for=\"focusedinput\" class=\"col-sm-1 control-label\">\n" +
-										"\t\t\t\t\t\t\t\t<div style=\"text-align: left\" class=\"add_delete_container\">\n" +
-										"\t\t\t\t\t\t\t\t\t<i onclick=\"addNewEmail()\" id=\"addButton\" class=\"fa fa-plus-circle\"></i>\n" +
-
-										"\t\t\t\t\t\t\t\t</div>\n" +
-										"\t\t\t\t\t\t\t</label>\n" +
-										"\t\t\t\t\t\t</div>")
-								addLabelPractitioner();		//看看是否第一个贴了标签
-							}
-
-							$(document).ready(function(){
-								addLabelPractitioner();		//看看是否第一个贴了标签
-							});
-
-						</script>
-
-						<div class='form-group' name="addEmail">
-							<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>
-							<span class="col-sm-8">
+								<div class='form-group' name="addEmail">
+									<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>
+									<span class="col-sm-8">
 								<input type="text" class="form-control1"  name="Email" placeholder="Add a new practitioner's Email here ...">
 							</span>
-							<label for="focusedinput" class="col-sm-1 control-label">
-								<div style="text-align: left" class="add_delete_container">
-									<i onclick="addNewEmail()" id="addButton" class="fa fa-plus-circle"></i>
+									<label for="focusedinput" class="col-sm-1 control-label">
+										<div style="text-align: left" class="add_delete_container">
+											<i onclick="addNewEmail()" id="addButton" class="fa fa-plus-circle"></i>
+										</div>
+									</label>
 								</div>
-							</label>
+
+								<div class="form-group">
+									<label for="txtarea1" class="col-sm-2 control-label">Notes</label>
+									<div class="col-sm-8"><textarea name="notes" id="notes_Input" cols="50" rows="4" class="form-control1" placeholder="Add some notes here..."></textarea></div>
+								</div>
+							</form>
+
 						</div>
 
-						<div class="form-group">
-							<label for="txtarea1" class="col-sm-2 control-label">Notes</label>
-							<div class="col-sm-8"><textarea name="notes" id="notes_Input" cols="50" rows="4" class="form-control1" placeholder="Add some notes here..."></textarea></div>
-						</div>
-					</form>
-
-				</div>
-
-			</div>
-
-
-
-			<div class="panel-footer">
-				<div class="row">
-					<div class="col-sm-8 col-sm-offset-2">
-						<button class="btn-primary btn" onclick = "checkAndSubmit()">Submit</button>
-						<button id="backToNewApp" class="btn-default btn" onclick = "backToNewApp()">Cancel</button>
-						<button id="reset_button" class="btn-inverse btn" onclick="reset()">Reset</button>
 					</div>
+
+
+					<div class="panel-footer">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2">
+								<button class="btn-primary btn" onclick = "checkAndSubmit()">Submit</button>
+								<button id="backToNewApp" class="btn-default btn" onclick = "backToNewApp()">Cancel</button>
+								<button id="reset_button" class="btn-inverse btn" onclick="reset()">Reset</button>
+							</div>
+						</div>
+					</div>
+					</form>
 				</div>
 			</div>
-			</form>
-  </div>
- 	</div>
- 	<!--//grid-->
-		<!---->
-<div class="copy">
-	<div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
-		</div>
+			<!--//grid-->
+			<!---->
+			<div class="copy">
+				<div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
+			</div>
 		</div>
 		<div class="clearfix"> </div>
-       </div>
-     <!--scrolling js-->
+	</div>
+	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/scripts.js"></script>
 	<!--//scrolling js-->
-<!---->
+	<!---->
 </div>
 </body>
 </html>
-

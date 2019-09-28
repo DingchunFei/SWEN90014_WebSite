@@ -206,65 +206,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 
 						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label">Rows</label>
-							<span class="col-sm-3"><select disabled="" id="row_selector" class="form-control1" name="grid_row" th:value="${session.webApp.grid_row}">
-									<option value ="1">1</option>
-									<option value ="2">2</option>
-									<option value ="3">3</option>
-									<option value ="4">4</option>
-									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-								</select></span>
-							<label for="selector1" class="col-sm-2 control-label">Columns</label>
-							<span class="col-sm-3"><select disabled="" id="column_selector" class="form-control1" name="grid_column" th:value="${session.webApp.grid_column}">
-									<option value ="1">1</option>
-									<option value ="2">2</option>
-									<option value ="3">3</option>
-									<option value ="4">4</option>
-									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-								</select></span>
-						</div>
-
-						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label">Target</label>
-							<span class="col-sm-3"><select disabled=""  id="Target_selector" name="target_shape" class="form-control1">
-									<option value ="1">1-Node Square Shapes</option>
-									<option value ="2">2-Node Square Shapes</option>
-									<option value ="3">3-Node Square Shapes</option>
-									<option value ="4">4-Node Square Shapes</option>
-									<option value ="5">1-Node Curve Shapes</option>
-									<option value ="6">2-Node Curve Shapes</option>
-									<option value ="7">3-Node Curve Shapes</option>
-									<option value ="8">4-Node Curve Shapes</option>
-								</select>
-							</span>
-
-
-							<label for="selector1" class="col-sm-2 control-label">Numbers of Targets</label>
-							<span class="col-sm-3">
-									<input disabled="" type="text" class="form-control1" id="numbersOfTarget_Input" name="numbers_of_targets" th:value="${session.webApp.numbers_of_targets}">
-							</span>
-						</div>
-
-
-
-						<div class="form-group">
-							<label for="selector1" class="col-sm-2 control-label" >Near Percentage</label>
-							<span class="col-sm-3">
-								<input disabled="" type="text" class="form-control1" id="near_percentage_Input" name="near_percentage" th:value="${session.webApp.near_percentage}">
-								</span>
-							<label for="selector1" class="col-sm-2 control-label">Far Percentage</label>
-							<span class="col-sm-3">
-								<input disabled="" type="text" class="form-control1" id="far_percentage_Input" name="far_percentage" th:value="${session.webApp.far_percentage}">
-								</span>
-						</div>
-
-						<div class="form-group">
 
 							<label for="selector1" class="col-sm-2 control-label">Numbers of Trials</label>
 							<span class="col-sm-3"><select disabled="" id="numberOfTrials_selector" name="numbers_of_trials" class="form-control1" th:value="${session.webApp.numbers_of_trials}">
@@ -282,8 +223,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</span>
 						</div>
 
-
-
 						<div class='form-group'>
 							<label for="selector1" class="col-sm-2 control-label">URL</label>
 							<span class="col-sm-8">
@@ -293,6 +232,98 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</a>
 							</span>
 						</div>
+
+						<style>
+							img.shape{				/*改变图形缩放尺寸*/
+								min-width: 45px;
+								min-height: 45px;
+								width: 5.6%;
+								height: 5.6%;
+							}
+						</style>
+
+
+						<hr>
+						<span th:each="trial : ${session.webApp.trials}">
+
+							<div class="form-group">
+								<label for="selector1" class="col-sm-2 control-label" ><h3 th:text="'Trial '+${trial.round}"></h3></label>
+							</div>
+
+							<div class="form-group">
+								<label for="selector1" class="col-sm-2 control-label">Rows</label>
+									<span class="col-sm-3"><select  id="row_selector1" class="form-control1" name="grid_row" th:value="${trial.grid_row}">
+									<option value ="1">1</option>
+									<option value ="2">2</option>
+									<option value ="3">3</option>
+									<option value ="4">4</option>
+									<option value ="5">5</option>
+									<option value ="6">6</option>
+									<option value ="7">7</option>
+									<option value ="8">8</option>
+									<option value ="9">9</option>
+									<option value ="10">10</option>
+									<option value ="11">11</option>
+									<option value ="12">12</option>
+								</select></span>
+									<label for="selector1" class="col-sm-2 control-label">Columns</label>
+									<span class="col-sm-3"><select  id="column_selector1" class="form-control1" name="grid_column" th:value="${trial.grid_column}">
+									<option value ="1">1</option>
+									<option value ="2">2</option>
+									<option value ="3">3</option>
+									<option value ="4">4</option>
+									<option value ="5">5</option>
+									<option value ="6">6</option>
+									<option value ="7">7</option>
+									<option value ="8">8</option>
+									<option value ="9">9</option>
+									<option value ="10">10</option>
+									<option value ="11">11</option>
+									<option value ="12">12</option>
+								</select></span>
+							</div>
+
+							<div class="form-group">
+								<label for="selector1" class="col-sm-2 control-label" >Target</label>
+								<span class="col-sm-10" >
+									<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
+											<span th:if="${trialshape.type}==1">
+												<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
+											</span>
+										</span>
+									</div>
+								</span>
+							</div>
+
+							<div class="form-group">
+								<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
+								<span class="col-sm-10" >
+									<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
+											<span th:if="${trialshape.type}==2">
+												<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
+											</span>
+										</span>
+									</div>
+								</span>
+							</div>
+
+							<div class="form-group">
+								<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
+								<span class="col-sm-10" >
+									<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
+										<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
+											<span th:if="${trialshape.type}==3">
+												<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
+											</span>
+										</span>
+									</div>
+								</span>
+							</div>
+							<hr>
+						</span>
+
 
 
 

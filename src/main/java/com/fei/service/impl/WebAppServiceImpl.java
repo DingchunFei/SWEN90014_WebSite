@@ -1,11 +1,7 @@
 package com.fei.service.impl;
 
-import com.fei.domain.Favourite;
-import com.fei.domain.User;
-import com.fei.domain.WebApp;
-import com.fei.mapper.FavouriteMapper;
-import com.fei.mapper.UserMapper;
-import com.fei.mapper.WebAppMapper;
+import com.fei.domain.*;
+import com.fei.mapper.*;
 import com.fei.service.UserService;
 import com.fei.service.WebAppService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +24,15 @@ public class WebAppServiceImpl implements WebAppService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private TrialMapper trialMapper;
+
+    @Autowired
+    private TrialShapeMapper trialShapeMapper;
+
+    @Autowired
+    private ShapeMapper shapeMapper;
+
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public WebApp findWebAppByWebAppId(String web_app_id) {
@@ -41,14 +46,15 @@ public class WebAppServiceImpl implements WebAppService {
         return webAppMapper.deleteWebAppByWebAppId(webApp_id);
     }
 
-
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public User insertWebApp(WebApp webApp, String[] emails) {
-        Integer v1 = webAppMapper.insertWebApp(webApp);
+    public User insertWebApp(WebApp webApp, String[] emails, Integer round, String[][] targets, String[][] nearDistractors, String[][] farDistractors, Integer[] grid_row, Integer[] grid_column) {
+
+        //插入webApp
+        webAppMapper.insertWebApp(webApp);
         Favourite favourite = new Favourite(webApp.getUser_id(),webApp.getId());
         //插入新的WebApp同时要把favourite表里的内容也插入进去
-        Integer v2 = favouriteMapper.insertWebFavouriteByNewWebApp(favourite);
+        favouriteMapper.insertWebFavouriteByNewWebApp(favourite);
 
         //完成用户id和邮箱映射的转换,并检查是否favourite表中已存在
         for (String email:emails){
@@ -61,6 +67,39 @@ public class WebAppServiceImpl implements WebAppService {
                 favouriteMapper.insertWebFavouriteByNewWebApp(new Favourite(user_id, webApp.getId()));
             }
         }
+
+        for (int i=0;i<round;i++){
+            //一个个插入trial i正好是对应的round
+            Trial trial = new Trial(webApp.getId(),i+1,grid_row[i],grid_column[i]);
+            trialMapper.insertTrial(trial);
+
+            for(int j=0;j<targets[i].length;j++){
+
+                System.out.println(trial+"???");
+
+                Shape shape = shapeMapper.findShapeByShapeName(targets[i][j]+".png");
+
+                System.out.println(shape+"!!!");
+                //type=1 表示 target
+                TrialShape trialShape = new TrialShape(shape.getId(),trial.getId(),1);
+                trialShapeMapper.insertTrialShape(trialShape);
+            }
+
+            for(int j=0;j<nearDistractors[i].length;j++){
+                Shape shape = shapeMapper.findShapeByShapeName(nearDistractors[i][j]+".png");
+                //type=2 表示 nearDistractors
+                TrialShape trialShape = new TrialShape(shape.getId(),trial.getId(),2);
+                trialShapeMapper.insertTrialShape(trialShape);
+            }
+
+            for(int j=0;j<farDistractors[i].length;j++){
+                Shape shape = shapeMapper.findShapeByShapeName(farDistractors[i][j]+".png");
+                //type=3 表示 farDistractors
+                TrialShape trialShape = new TrialShape(shape.getId(),trial.getId(),3);
+                trialShapeMapper.insertTrialShape(trialShape);
+            }
+        }
+
         return userMapper.refreshUserInfo(webApp.getUser_id());     //返回一个User，因为要更新Session中的内容
     }
 

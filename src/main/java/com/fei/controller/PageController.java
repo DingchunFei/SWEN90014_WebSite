@@ -110,7 +110,7 @@ public class PageController {
 
     //插入一个新的webapp
     @RequestMapping("addNewWebApp")
-    public Object addNewWebApp(String [] age , WebApp webApp, @RequestParam(name = "Email") String [] email , HttpServletRequest req, HttpServletResponse resp){
+    public Object addNewWebApp(String [] age , WebApp webApp, @RequestParam(name = "Email") String [] emails ,Integer round, String targetArray  ,String farDistractorArray ,String nearDistractorArray, Integer[] grid_row, Integer[] grid_column, HttpServletRequest req, HttpServletResponse resp){
 
 
 
@@ -127,31 +127,37 @@ public class PageController {
 
         if(webApp.getId()!=null){                                  //通过webappId是否存在来判断 更新
 
-            user = webAppService.updateWebApp(webApp,email,userInfo.getId());      //更新WebApp成功，重置session
+            user = webAppService.updateWebApp(webApp,emails,userInfo.getId());      //更新WebApp成功，重置session
         }else{
 
             String str="0000000";           //String不可变，需要变成StringBuilder
             StringBuilder strBuilder = new StringBuilder(str);
 
-            for(int i=0;i<age.length; i++){
-                System.out.println("age =======================>" + age[i]);
-                if(age[i].equals("1")){
-                    strBuilder.setCharAt(0, '1');
-                }else if(age[i].equals("2")){
-                    strBuilder.setCharAt(1, '1');
-                }else if(age[i].equals("3")){
-                    strBuilder.setCharAt(2, '1');
-                }else if(age[i].equals("4")){
-                    strBuilder.setCharAt(3, '1');
-                }else if(age[i].equals("5")){
-                    strBuilder.setCharAt(4, '1');
-                }else if(age[i].equals("6")){
-                    strBuilder.setCharAt(5, '1');
-                }else if(age[i].equals("7")){
-                    strBuilder.setCharAt(6, '1');
+            if(age!=null){
+                for(int i=0;i<age.length; i++){
+                    System.out.println("age =======================>" + age[i]);
+                    if(age[i].equals("1")){
+                        strBuilder.setCharAt(0, '1');
+                    }else if(age[i].equals("2")){
+                        strBuilder.setCharAt(1, '1');
+                    }else if(age[i].equals("3")){
+                        strBuilder.setCharAt(2, '1');
+                    }else if(age[i].equals("4")){
+                        strBuilder.setCharAt(3, '1');
+                    }else if(age[i].equals("5")){
+                        strBuilder.setCharAt(4, '1');
+                    }else if(age[i].equals("6")){
+                        strBuilder.setCharAt(5, '1');
+                    }else if(age[i].equals("7")){
+                        strBuilder.setCharAt(6, '1');
+                    }
                 }
+                webApp.setAge(strBuilder.toString());
+            }else{
+                //不填就代表全选
+                webApp.setAge("1111111");
             }
-            webApp.setAge(strBuilder.toString());
+
 
 
             if(webApp.getTimed()==null){
@@ -161,20 +167,24 @@ public class PageController {
             webApp.setDate(new Date());
 
 
-            WebApp2Json webApp2Json = new WebApp2Json();
-            webApp2Json.setColumn(webApp.getGrid_column());
-            webApp2Json.setRow(webApp.getGrid_row());
-            webApp2Json.setFarPercentage(webApp.getFar_percentage());
-            webApp2Json.setNearPercentage(webApp.getNear_percentage());
+/*            WebApp2Json webApp2Json = new WebApp2Json();
+
             webApp2Json.setTarget("T_270_round.png");
             if(webApp.getTimed()!=0){
                 webApp2Json.setTimed(true);
                 webApp2Json.setTime(webApp.getTimed());
             }else{
                 webApp2Json.setTimed(false);
-            }
+            }*/
 
-            //新的WebApp
+            /**
+             * 一下三个数组与具体选择target有关
+             */
+            String[][] targets = JsonUtils.string2Obj(targetArray, String[][].class);       //重建从JS传来的二维字符串数组
+            String[][] farDistractors = JsonUtils.string2Obj(farDistractorArray, String[][].class);       //重建从JS传来的二维字符串数组
+            String[][] nearDistractors = JsonUtils.string2Obj(nearDistractorArray, String[][].class);       //重建从JS传来的二维字符串数组
+
+/*            //新的WebApp
             //设置URL
             String jsonStrReq = JsonUtils.obj2String(webApp2Json);
             jsonStrReq="jsonData="+jsonStrReq;
@@ -188,9 +198,9 @@ public class PageController {
 
             System.out.println(url);
 
-            webApp.setURL(url);
+            webApp.setURL(url);*/
 
-            user = webAppService.insertWebApp(webApp,email);      //新WebApp插入成功，重置session
+            user = webAppService.insertWebApp(webApp,emails,round,targets,nearDistractors,farDistractors,grid_row,grid_column);      //新WebApp插入成功，重置session
         }
 
         User refreshUser = userService.refreshUserInfo(user.getId());       //插入后更新用户信息
@@ -205,12 +215,12 @@ public class PageController {
 
         System.out.println("-------------------------------------------------------");
 
-
+/*
         try {
             resp.sendRedirect("web_app_detail?webApp_id="+webApp.getId());
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
 
         return null;

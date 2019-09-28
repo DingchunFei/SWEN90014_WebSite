@@ -18,23 +18,12 @@ public class WebApp {
 
     private String Date_string;
 
-    private Integer gender_preferrence;
-
-    private Integer grid_row;
-
-    private Integer grid_column;
-
-    private double near_percentage;
-
-    private double far_percentage;
     //倒计时时间
     private Integer timed;
     //是否是模板
     private Boolean template;
 
     private String age;
-
-    private Integer numbers_of_targets;
 
     private Integer numbers_of_trials;
 
@@ -50,6 +39,10 @@ public class WebApp {
 
     private String test="10";           //作为一个检测工具
 
+    private List<Trial> trials;
+
+
+
     @Override
     public String toString() {
         return "WebApp{" +
@@ -58,23 +51,26 @@ public class WebApp {
                 ", app_name='" + app_name + '\'' +
                 ", URL='" + URL + '\'' +
                 ", date=" + date +
-                ", gender_preferrence=" + gender_preferrence +
-                ", grid_row=" + grid_row +
-                ", grid_column=" + grid_column +
-                ", near_percentage='" + near_percentage + '\'' +
-                ", far_percentage='" + far_percentage + '\'' +
+                ", Date_string='" + Date_string + '\'' +
                 ", timed=" + timed +
                 ", template=" + template +
-                ", age=" + age +
-                ", notes=" + notes +
-                ", numbers_of_targets=" + numbers_of_targets +
+                ", age='" + age + '\'' +
                 ", numbers_of_trials=" + numbers_of_trials +
+                ", resultLists=" + resultLists +
+                ", notes='" + notes + '\'' +
                 ", practitioners=" + practitioners +
                 ", practitioners_Num=" + practitioners_Num +
-                ", resultLists=" + resultLists +
+                ", trials=" + trials +
                 '}';
     }
 
+    public List<Trial> getTrials() {
+        return trials;
+    }
+
+    public void setTrials(List<Trial> trials) {
+        this.trials = trials;
+    }
 
     public Integer getNumbers_of_trials() {
         return numbers_of_trials;
@@ -106,14 +102,6 @@ public class WebApp {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public Integer getNumbers_of_targets() {
-        return numbers_of_targets;
-    }
-
-    public void setNumbers_of_targets(Integer numbers_of_targets) {
-        this.numbers_of_targets = numbers_of_targets;
     }
 
     public String getTest() {
@@ -172,46 +160,6 @@ public class WebApp {
 
     public void setDate_string(String date_string) {
         Date_string = date_string;
-    }
-
-    public Integer getGender_preferrence() {
-        return gender_preferrence;
-    }
-
-    public void setGender_preferrence(Integer gender_preferrence) {
-        this.gender_preferrence = gender_preferrence;
-    }
-
-    public Integer getGrid_row() {
-        return grid_row;
-    }
-
-    public void setGrid_row(Integer grid_row) {
-        this.grid_row = grid_row;
-    }
-
-    public Integer getGrid_column() {
-        return grid_column;
-    }
-
-    public void setGrid_column(Integer grid_column) {
-        this.grid_column = grid_column;
-    }
-
-    public double getNear_percentage() {
-        return near_percentage;
-    }
-
-    public void setNear_percentage(double near_percentage) {
-        this.near_percentage = near_percentage;
-    }
-
-    public double getFar_percentage() {
-        return far_percentage;
-    }
-
-    public void setFar_percentage(double far_percentage) {
-        this.far_percentage = far_percentage;
     }
 
     public Integer getTimed() {

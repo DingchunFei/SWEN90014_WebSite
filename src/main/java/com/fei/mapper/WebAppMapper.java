@@ -23,15 +23,9 @@ public interface WebAppMapper {
 			@Result(column = "id",property = "id"),
 			@Result(column = "app_name",property = "app_name"),
 			@Result(column = "URL",property = "URL"),
-			@Result(column = "gender_preferrence",property = "gender_preferrence"),
-			@Result(column = "grid_row",property = "grid_row"),
-			@Result(column = "grid_column",property = "grid_column"),
-			@Result(column = "near_percentage",property = "near_percentage"),
-			@Result(column = "far_percentage",property = "far_percentage"),
 			@Result(column = "timed",property = "timed"),
 			@Result(column = "age",property = "age"),
 			@Result(column = "date",property = "date"),
-			@Result(column = "numbers_of_targets",property = "numbers_of_targets"),
 			@Result(column = "numbers_of_trials",property = "numbers_of_trials"),
 			@Result(column = "notes",property = "notes"),
 			@Result(property = "practitioners_Num", column = "id",			//查看一共有几个Practitoner有权限使用这个模板
@@ -45,6 +39,8 @@ public interface WebAppMapper {
 					many = @Many(select ="com.fei.mapper.ResultsMapper.findResultsByWebAppIdWithoutWebApp")),
 			@Result(property = "practitioners" , column="id",
 					many = @Many(select ="com.fei.mapper.FavouriteMapper.findPractitionersByWebAppId")),
+			@Result(property = "trials" , column="id",
+					many = @Many(select ="com.fei.mapper.TrialMapper.findTrialByWebAppId")),
 	})
 	WebApp findWebAppByWebAppId(String web_app_id);
 
@@ -58,15 +54,9 @@ public interface WebAppMapper {
 			@Result(column = "user_id",property = "user_id"),
 			@Result(column = "app_name",property = "app_name"),
 			@Result(column = "URL",property = "URL"),
-			@Result(column = "gender_preferrence",property = "gender_preferrence"),
-			@Result(column = "grid_row",property = "grid_row"),
-			@Result(column = "grid_column",property = "grid_column"),
-			@Result(column = "near_percentage",property = "near_percentage"),
-			@Result(column = "far_percentage",property = "far_percentage"),
 			@Result(column = "timed",property = "timed"),
 			@Result(column = "age",property = "age"),
 			@Result(column = "date",property = "date"),
-			@Result(column = "numbers_of_targets",property = "numbers_of_targets"),
 			@Result(column = "numbers_of_trials",property = "numbers_of_trials"),
 			@Result(column = "notes",property = "notes"),
 	})
@@ -75,8 +65,8 @@ public interface WebAppMapper {
 	@SelectKey(keyProperty = "id",resultType = String.class, before = true,
 			statement = "select uuid()")
 	@Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
-	@Insert("INSERT INTO t_web_app(id,URL,gender_preferrence,grid_row,grid_column,near_percentage,far_percentage,timed,app_name,age,date,numbers_of_targets,notes,numbers_of_trials) " +
-			"VALUES(#{id},#{URL},#{gender_preferrence},#{grid_row},#{grid_column},#{near_percentage},#{far_percentage},#{timed},#{app_name},#{age},#{date},#{numbers_of_targets},#{notes},#{numbers_of_trials})")
+	@Insert("INSERT INTO t_web_app(id,URL,timed,app_name,age,date,notes,numbers_of_trials) " +
+			"VALUES(#{id},#{URL},#{timed},#{app_name},#{age},#{date},#{notes},#{numbers_of_trials})")
 	Integer insertWebApp (WebApp webApp);
 
 

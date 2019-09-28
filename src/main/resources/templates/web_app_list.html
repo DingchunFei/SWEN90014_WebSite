@@ -125,12 +125,12 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 								<p>Create Date: <t6 th:text="${favourite.webApp.date_string}">2019-08-16</t6></p>
 							</a>
 						</td>
-						<td style="width:12%">
+						<td style="width:8%">
 							<div>
 								Age group:
 							</div>
 						</td>
-						<td style="width:28%">
+						<td style="width:26%">
 							<div>
 								<span  th:if="${favourite.webApp.age.charAt(0) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #8897a6;">0-5</span>
 								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #9da9b8;">5-10</span>
@@ -147,13 +147,13 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 							</div>-->
 						</td>
 
-						<td style="width:10%">
+						<td style="width:16%">
 							<div>
-								Row:&nbsp;&nbsp; <h5 style="display: inline-block" th:text="${favourite.webApp.grid_row}"></h5>
+								Number of Trials:&nbsp;&nbsp; <h5 style="display: inline-block" th:text="${favourite.webApp.numbers_of_trials}"></h5>
 							</div>
-							<div style="margin-top:10px">
+<!--							<div style="margin-top:10px">
 								Column: <h5 style="display: inline-block" th:text="${favourite.webApp.grid_column}"></h5>
-							</div>
+							</div>-->
 						</td>
 
 <!--						<td style="width:15%">

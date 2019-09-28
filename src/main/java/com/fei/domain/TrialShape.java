@@ -1,17 +1,27 @@
 package com.fei.domain;
 
-public class TrialShape {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+public class TrialShape {
+    @JsonIgnore
     private String id;
+    @JsonIgnore
     private String shape_id;
+    @JsonIgnore
     private String trial_id;
     private Integer type;
 
     private Shape shape;
+    @JsonIgnore
     private Trial trial;
 
 
     public TrialShape() {
+    }
+
+    public TrialShape(Integer type, Shape shape) {
+        this.type = type;
+        this.shape = shape;
     }
 
     public TrialShape(String shape_id, String trial_id, Integer type) {
@@ -27,6 +37,8 @@ public class TrialShape {
                 ", shape_id='" + shape_id + '\'' +
                 ", trial_id='" + trial_id + '\'' +
                 ", type=" + type +
+                ", shape=" + shape +
+                ", trial=" + trial +
                 '}';
     }
 

@@ -24,6 +24,9 @@ public interface TrialMapper {
 			@Result(column = "grid_row",property = "grid_row"),
 			@Result(column = "grid_column",property = "grid_column"),
 			@Result(column = "round",property = "round"),
+			@Result(column = "timed",property = "timed"),
+			@Result(column = "target_percentage",property = "target_percentage"),
+			@Result(column = "near_distractor_percentage",property = "near_distractor_percentage"),
 
 			@Result(property = "webApp", column = "web_app_id",
 					one = @One(select = "com.fei.mapper.WebAppMapper.findWebAppByWebAppIdWithoutList")),
@@ -44,6 +47,9 @@ public interface TrialMapper {
 			@Result(column = "grid_row",property = "grid_row"),
 			@Result(column = "grid_column",property = "grid_column"),
 			@Result(column = "round",property = "round"),
+			@Result(column = "timed",property = "timed"),
+			@Result(column = "target_percentage",property = "target_percentage"),
+			@Result(column = "near_distractor_percentage",property = "near_distractor_percentage"),
 
 			@Result(property = "webApp", column = "web_app_id",
 					one = @One(select = "com.fei.mapper.WebAppMapper.findWebAppByWebAppIdWithoutList")),
@@ -58,7 +64,7 @@ public interface TrialMapper {
 	@SelectKey(keyProperty = "id",resultType = String.class, before = true,
 			statement = "select uuid()")
 	@Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
-	@Insert("INSERT INTO t_trial(id,web_app_id,round,grid_row,grid_column)" +
-			"VALUES(#{id},#{web_app_id}, #{round},#{grid_row},#{grid_column})")
+	@Insert("INSERT INTO t_trial(id,web_app_id,round,grid_row,grid_column,timed,target_percentage,near_distractor_percentage)" +
+			"VALUES(#{id},#{web_app_id}, #{round},#{grid_row},#{grid_column},#{timed},#{target_percentage},#{near_distractor_percentage})")
 	Integer insertTrial(Trial trial);
 }

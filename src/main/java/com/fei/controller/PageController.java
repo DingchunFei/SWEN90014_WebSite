@@ -1,10 +1,8 @@
 package com.fei.controller;
 
-import com.fei.domain.AppResult;
-import com.fei.domain.Favourite;
-import com.fei.domain.User;
-import com.fei.domain.WebApp;
+import com.fei.domain.*;
 import com.fei.service.ResultsService;
+import com.fei.service.ShapeService;
 import com.fei.service.UserService;
 import com.fei.service.WebAppService;
 import com.fei.utils.HttpUtils;
@@ -40,6 +38,9 @@ public class PageController {
 
     @Autowired
     private ResultsService resultsService;
+
+    @Autowired
+    private ShapeService shapeService;
 
     //登录页面
     @RequestMapping("home")
@@ -110,7 +111,7 @@ public class PageController {
 
     //插入一个新的webapp
     @RequestMapping("addNewWebApp")
-    public Object addNewWebApp(String [] age , WebApp webApp, @RequestParam(name = "Email") String [] emails ,Integer round, String targetArray  ,String farDistractorArray ,String nearDistractorArray, Integer[] grid_row, Integer[] grid_column, HttpServletRequest req, HttpServletResponse resp){
+    public Object addNewWebApp(WebApp webApp, String [] age, @RequestParam(name = "Email") String [] emails, Integer[] near_distractor_percentage, Integer[] target_percentage ,Integer [] timed ,Integer round, String targetArray  ,String farDistractorArray ,String nearDistractorArray, Integer[] grid_row, Integer[] grid_column, HttpServletRequest req, HttpServletResponse resp){
 
 
 
@@ -118,12 +119,8 @@ public class PageController {
         User userInfo = (User) session.getAttribute("userInfo");
         webApp.setUser_id(userInfo.getId());
 
-
+        webApp.setNumbers_of_trials(round);
         User user = null;
-
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println(webApp);
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
         if(webApp.getId()!=null){                                  //通过webappId是否存在来判断 更新
 
@@ -159,11 +156,6 @@ public class PageController {
             }
 
 
-
-            if(webApp.getTimed()==null){
-                webApp.setTimed(0);
-            }
-
             webApp.setDate(new Date());
 
 
@@ -180,9 +172,45 @@ public class PageController {
             /**
              * 一下三个数组与具体选择target有关
              */
-            String[][] targets = JsonUtils.string2Obj(targetArray, String[][].class);       //重建从JS传来的二维字符串数组
+            String[][] targets = JsonUtils.string2Obj(targetArray, String[][].class);                     //重建从JS传来的二维字符串数组
             String[][] farDistractors = JsonUtils.string2Obj(farDistractorArray, String[][].class);       //重建从JS传来的二维字符串数组
-            String[][] nearDistractors = JsonUtils.string2Obj(nearDistractorArray, String[][].class);       //重建从JS传来的二维字符串数组
+            String[][] nearDistractors = JsonUtils.string2Obj(nearDistractorArray, String[][].class);     //重建从JS传来的二维字符串数组
+
+            List<Trial> trialList = new LinkedList<>();
+            for (int i=0;i<round;i++) {
+                Trial trial = new Trial(i+1, grid_row[i], grid_column[i], timed[i], target_percentage[i], near_distractor_percentage[i]);
+                List<TrialShape> trialShapeList = new LinkedList<>();
+
+                for(int j=0;j<targets[i].length;j++){
+                    Shape shape = shapeService.findShapeByShapeName(targets[i][j] + ".png");
+                    TrialShape trialShape = new TrialShape(1, shape);
+                    trialShapeList.add(trialShape);
+                }
+
+                for(int j=0;j<farDistractors[i].length;j++){
+                    Shape shape = shapeService.findShapeByShapeName(farDistractors[i][j] + ".png");
+                    TrialShape trialShape = new TrialShape(2, shape);
+                    trialShapeList.add(trialShape);
+                }
+
+                for(int j=0;j<nearDistractors[i].length;j++){
+                    Shape shape = shapeService.findShapeByShapeName(nearDistractors[i][j] + ".png");
+                    TrialShape trialShape = new TrialShape(3, shape);
+                    trialShapeList.add(trialShape);
+                }
+                trial.setTrialShapeList(trialShapeList);
+                trialList.add(trial);
+            }
+            webApp.setTrials(trialList);
+
+
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            System.out.println(webApp);
+
+            String jsonStr = JsonUtils.obj2String(webApp);
+            System.out.println(jsonStr);
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
 
 /*            //新的WebApp
             //设置URL
@@ -200,7 +228,7 @@ public class PageController {
 
             webApp.setURL(url);*/
 
-            user = webAppService.insertWebApp(webApp,emails,round,targets,nearDistractors,farDistractors,grid_row,grid_column);      //新WebApp插入成功，重置session
+            user = webAppService.insertWebApp(webApp,emails,round,targets,nearDistractors,farDistractors,grid_row,grid_column,timed,target_percentage,near_distractor_percentage);      //新WebApp插入成功，重置session
         }
 
         User refreshUser = userService.refreshUserInfo(user.getId());       //插入后更新用户信息
@@ -215,12 +243,12 @@ public class PageController {
 
         System.out.println("-------------------------------------------------------");
 
-/*
         try {
-            resp.sendRedirect("web_app_detail?webApp_id="+webApp.getId());
+            //resp.sendRedirect("web_app_detail?webApp_id="+webApp.getId());
+            resp.sendRedirect("home");
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
 
         return null;

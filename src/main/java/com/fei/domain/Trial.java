@@ -1,26 +1,54 @@
 package com.fei.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Trial {
-
+    @JsonIgnore
     private String id;
+
+    @JsonIgnore
     private String web_app_id;
+
+    @JsonProperty("numberOfTrials")
     private Integer round;
+    @JsonProperty("row")
     private Integer grid_row;
+    @JsonProperty("column")
     private Integer grid_column;
+    @JsonProperty("time")
+    private Integer timed;
+
+    private Integer target_percentage;
+
+    private Integer near_distractor_percentage;
 
     private List<TrialShape> trialShapeList;
+    @JsonIgnore
     private WebApp webApp;
 
     public Trial() {
     }
 
-    public Trial(String web_app_id, Integer round, Integer grid_row, Integer grid_column) {
+    public Trial(Integer round, Integer grid_row, Integer grid_column, Integer timed, Integer target_percentage, Integer near_distractor_percentage) {
+        this.round = round;
+        this.grid_row = grid_row;
+        this.grid_column = grid_column;
+        this.timed = timed;
+        this.target_percentage = target_percentage;
+        this.near_distractor_percentage = near_distractor_percentage;
+    }
+
+    public Trial(String web_app_id, Integer round, Integer grid_row, Integer grid_column, Integer timed, Integer target_percentage, Integer near_distractor_percentage) {
         this.web_app_id = web_app_id;
         this.round = round;
-        this.grid_column = grid_column;
         this.grid_row = grid_row;
+        this.grid_column = grid_column;
+        this.timed = timed;
+        this.target_percentage = target_percentage;
+        this.near_distractor_percentage = near_distractor_percentage;
     }
 
     @Override
@@ -29,6 +57,12 @@ public class Trial {
                 "id='" + id + '\'' +
                 ", web_app_id='" + web_app_id + '\'' +
                 ", round=" + round +
+                ", grid_row=" + grid_row +
+                ", grid_column=" + grid_column +
+                ", timed=" + timed +
+                ", target_percentage=" + target_percentage +
+                ", near_distractor_percentage=" + near_distractor_percentage +
+                ", trialShapeList=" + trialShapeList +
                 '}';
     }
 
@@ -86,5 +120,29 @@ public class Trial {
 
     public void setGrid_column(Integer grid_column) {
         this.grid_column = grid_column;
+    }
+
+    public Integer getTimed() {
+        return timed;
+    }
+
+    public void setTimed(Integer timed) {
+        this.timed = timed;
+    }
+
+    public Integer getTarget_percentage() {
+        return target_percentage;
+    }
+
+    public void setTarget_percentage(Integer target_percentage) {
+        this.target_percentage = target_percentage;
+    }
+
+    public Integer getNear_distractor_percentage() {
+        return near_distractor_percentage;
+    }
+
+    public void setNear_distractor_percentage(Integer near_distractor_percentage) {
+        this.near_distractor_percentage = near_distractor_percentage;
     }
 }

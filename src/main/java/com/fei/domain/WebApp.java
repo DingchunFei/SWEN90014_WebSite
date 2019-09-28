@@ -1,46 +1,45 @@
 package com.fei.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 public class WebApp {
-
+    @JsonIgnore
     private String id;
-
+    @JsonIgnore
     private String user_id;
-
+    @JsonIgnore
     private String app_name;
-
+    @JsonIgnore
     private String URL;
-
+    @JsonIgnore
     private Date date;
-
+    @JsonIgnore
     private String Date_string;
-
-    //倒计时时间
-    private Integer timed;
+    @JsonIgnore
     //是否是模板
     private Boolean template;
-
+    @JsonIgnore
     private String age;
 
-    private Integer numbers_of_trials;
-
-    private List<AppResult> resultLists;
-
-    //private List <WebAppTarget> webAppTargets;
-
+    @JsonIgnore
     private String notes;
-
+    @JsonIgnore
     private List <Favourite> practitioners;
-
+    @JsonIgnore
     private Integer practitioners_Num;
-
-    private String test="10";           //作为一个检测工具
 
     private List<Trial> trials;
 
+    private Integer numbers_of_trials;
+    @JsonIgnore
+    private List<AppResult> resultLists;
+
+    @JsonIgnore
+    private String test="10";           //作为一个检测工具
 
 
     @Override
@@ -52,7 +51,6 @@ public class WebApp {
                 ", URL='" + URL + '\'' +
                 ", date=" + date +
                 ", Date_string='" + Date_string + '\'' +
-                ", timed=" + timed +
                 ", template=" + template +
                 ", age='" + age + '\'' +
                 ", numbers_of_trials=" + numbers_of_trials +
@@ -160,14 +158,6 @@ public class WebApp {
 
     public void setDate_string(String date_string) {
         Date_string = date_string;
-    }
-
-    public Integer getTimed() {
-        return timed;
-    }
-
-    public void setTimed(Integer timed) {
-        this.timed = timed;
     }
 
     public Boolean getTemplate() {

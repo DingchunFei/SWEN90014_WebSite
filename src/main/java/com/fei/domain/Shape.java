@@ -1,7 +1,9 @@
 package com.fei.domain;
 
-public class Shape {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+public class Shape {
+    @JsonIgnore
     private String id;
     private String s_name;
 

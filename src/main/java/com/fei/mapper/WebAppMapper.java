@@ -23,7 +23,6 @@ public interface WebAppMapper {
 			@Result(column = "id",property = "id"),
 			@Result(column = "app_name",property = "app_name"),
 			@Result(column = "URL",property = "URL"),
-			@Result(column = "timed",property = "timed"),
 			@Result(column = "age",property = "age"),
 			@Result(column = "date",property = "date"),
 			@Result(column = "numbers_of_trials",property = "numbers_of_trials"),
@@ -54,7 +53,6 @@ public interface WebAppMapper {
 			@Result(column = "user_id",property = "user_id"),
 			@Result(column = "app_name",property = "app_name"),
 			@Result(column = "URL",property = "URL"),
-			@Result(column = "timed",property = "timed"),
 			@Result(column = "age",property = "age"),
 			@Result(column = "date",property = "date"),
 			@Result(column = "numbers_of_trials",property = "numbers_of_trials"),
@@ -65,8 +63,8 @@ public interface WebAppMapper {
 	@SelectKey(keyProperty = "id",resultType = String.class, before = true,
 			statement = "select uuid()")
 	@Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
-	@Insert("INSERT INTO t_web_app(id,URL,timed,app_name,age,date,notes,numbers_of_trials) " +
-			"VALUES(#{id},#{URL},#{timed},#{app_name},#{age},#{date},#{notes},#{numbers_of_trials})")
+	@Insert("INSERT INTO t_web_app(id,URL,app_name,age,date,notes,numbers_of_trials) " +
+			"VALUES(#{id},#{URL},#{app_name},#{age},#{date},#{notes},#{numbers_of_trials})")
 	Integer insertWebApp (WebApp webApp);
 
 

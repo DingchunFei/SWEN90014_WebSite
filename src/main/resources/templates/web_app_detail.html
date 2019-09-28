@@ -82,6 +82,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		background:#4a4a4a;
 	}
 </style>
+<style>
+	img.shape{				/*改变图形缩放尺寸*/
+		min-width: 45px;
+		min-height: 45px;
+		width: 5.6%;
+		height: 5.6%;
+	}
+</style>
 <body>
 <div id="wrapper">
 	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
@@ -223,6 +231,102 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</span>
 						</div>
 
+
+						<hr>
+						<span th:each="trial : ${session.webApp.trials}">
+
+
+
+							<div class="form-group">
+								<label for="selector1" class="col-sm-2 control-label" ><h3 th:text="'Trial '+${trial.round}"></h3></label>
+								<span style="margin-top: 13px;" class="col-sm-1">
+									<a data-toggle="collapse" th:href="'#collapseExample'+${trial.round}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+										<i style="color: #7b8b71" class="fa fa-caret-down"></i>
+									</a>
+								</span>
+							</div>
+
+
+							<div class="collapse" th:id="'collapseExample'+${trial.round}">
+  							<div class="card card-body">
+								<div class="form-group" >
+									<label for="selector1" class="col-sm-2 control-label">Rows</label>
+										<span class="col-sm-3"><select  id="row_selector1" class="form-control1" name="grid_row" th:value="${trial.grid_row}">
+										<option value ="1">1</option>
+										<option value ="2">2</option>
+										<option value ="3">3</option>
+										<option value ="4">4</option>
+										<option value ="5">5</option>
+										<option value ="6">6</option>
+										<option value ="7">7</option>
+										<option value ="8">8</option>
+										<option value ="9">9</option>
+										<option value ="10">10</option>
+										<option value ="11">11</option>
+										<option value ="12">12</option>
+									</select></span>
+										<label for="selector1" class="col-sm-2 control-label">Columns</label>
+										<span class="col-sm-3"><select  id="column_selector1" class="form-control1" name="grid_column" th:value="${trial.grid_column}">
+										<option value ="1">1</option>
+										<option value ="2">2</option>
+										<option value ="3">3</option>
+										<option value ="4">4</option>
+										<option value ="5">5</option>
+										<option value ="6">6</option>
+										<option value ="7">7</option>
+										<option value ="8">8</option>
+										<option value ="9">9</option>
+										<option value ="10">10</option>
+										<option value ="11">11</option>
+										<option value ="12">12</option>
+									</select></span>
+								</div>
+
+								<div class="form-group">
+									<label for="selector1" class="col-sm-2 control-label" >Target</label>
+									<span class="col-sm-10" >
+										<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
+											<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
+												<span th:if="${trialshape.type}==1">
+													<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
+												</span>
+											</span>
+										</div>
+									</span>
+								</div>
+
+								<div class="form-group">
+									<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
+									<span class="col-sm-10" >
+										<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
+											<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
+												<span th:if="${trialshape.type}==2">
+													<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
+												</span>
+											</span>
+										</div>
+									</span>
+								</div>
+
+								<div class="form-group">
+									<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
+									<span class="col-sm-10" >
+										<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
+											<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
+												<span th:if="${trialshape.type}==3">
+													<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
+												</span>
+											</span>
+										</div>
+									</span>
+								</div>
+
+							</div>
+							</div>
+							<hr>
+						</span>
+
+
 						<div class='form-group'>
 							<label for="selector1" class="col-sm-2 control-label">URL</label>
 							<span class="col-sm-8">
@@ -232,100 +336,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</a>
 							</span>
 						</div>
-
-						<style>
-							img.shape{				/*改变图形缩放尺寸*/
-								min-width: 45px;
-								min-height: 45px;
-								width: 5.6%;
-								height: 5.6%;
-							}
-						</style>
-
-
-						<hr>
-						<span th:each="trial : ${session.webApp.trials}">
-
-							<div class="form-group">
-								<label for="selector1" class="col-sm-2 control-label" ><h3 th:text="'Trial '+${trial.round}"></h3></label>
-							</div>
-
-							<div class="form-group">
-								<label for="selector1" class="col-sm-2 control-label">Rows</label>
-									<span class="col-sm-3"><select  id="row_selector1" class="form-control1" name="grid_row" th:value="${trial.grid_row}">
-									<option value ="1">1</option>
-									<option value ="2">2</option>
-									<option value ="3">3</option>
-									<option value ="4">4</option>
-									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-									<option value ="9">9</option>
-									<option value ="10">10</option>
-									<option value ="11">11</option>
-									<option value ="12">12</option>
-								</select></span>
-									<label for="selector1" class="col-sm-2 control-label">Columns</label>
-									<span class="col-sm-3"><select  id="column_selector1" class="form-control1" name="grid_column" th:value="${trial.grid_column}">
-									<option value ="1">1</option>
-									<option value ="2">2</option>
-									<option value ="3">3</option>
-									<option value ="4">4</option>
-									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-									<option value ="9">9</option>
-									<option value ="10">10</option>
-									<option value ="11">11</option>
-									<option value ="12">12</option>
-								</select></span>
-							</div>
-
-							<div class="form-group">
-								<label for="selector1" class="col-sm-2 control-label" >Target</label>
-								<span class="col-sm-10" >
-									<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
-										<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
-											<span th:if="${trialshape.type}==1">
-												<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
-											</span>
-										</span>
-									</div>
-								</span>
-							</div>
-
-							<div class="form-group">
-								<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
-								<span class="col-sm-10" >
-									<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
-										<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
-											<span th:if="${trialshape.type}==2">
-												<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
-											</span>
-										</span>
-									</div>
-								</span>
-							</div>
-
-							<div class="form-group">
-								<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
-								<span class="col-sm-10" >
-									<div  style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" ondrop="drop(event)" ondragover="allowDrop(event)">
-										<span th:each="trialshape : ${trial.trialShapeList}">		<!--发现是target-->
-											<span th:if="${trialshape.type}==3">
-												<img class="shape" th:src="'/images/'+${trialshape.shape.s_name}">
-											</span>
-										</span>
-									</div>
-								</span>
-							</div>
-							<hr>
-						</span>
-
-
-
 
 
 						<!--${session.userInfo.status!=0} && -->

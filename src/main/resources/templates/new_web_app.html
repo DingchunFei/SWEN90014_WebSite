@@ -32,10 +32,78 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		});
 	</script>
+	<style>
+		.slidecontainer {
+			width: 100%;
+			padding-top: 15px;
+		}
+
+		.slider {
+			-webkit-appearance: none;
+			width: 100%;
+			height: 10px;
+			border-radius: 5px;
+			background: #d3d3d3;
+			outline: none;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			transition: opacity .2s;
+		}
+
+		.slider:hover {
+			opacity: 1;
+		}
+
+		.slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #7b8b71;
+			cursor: pointer;
+		}
+
+		.slider::-moz-range-thumb {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #7b8b71;
+			cursor: pointer;
+		}
+	</style>
+
 
 	<!----->
 	<script type="text/javascript">
 		$(document).ready(function(){
+			//对原生的第一个trial绑定
+			$("#myRange1_1").bind("input propertychange",function(event){
+				$("#demo1_1").html($("#myRange1_1").val()+ '%');
+
+				$("#myRange1_2").attr('max',100-$("#myRange1_1").val())
+				$("#myRange1_2").val(100-$("#myRange1_1").val());
+				$("#demo1_2").html(100-$("#myRange1_1").val() + '%');
+
+				$("#myRange1_3").attr('max',100-$("#myRange1_1").val());
+				$("#demo1_3").html(0 + '%');
+				$("#myRange1_3").val(0);
+			});
+
+			$("#myRange1_2").bind("input propertychange",function(event){
+				$("#demo1_2").html($("#myRange1_2").val() + '%');
+
+				$("#myRange1_3").val($("#myRange1_2").attr('max')-$("#myRange1_2").val());
+				$("#demo1_3").html($("#myRange1_2").attr('max')-$("#myRange1_2").val() + '%');
+			});
+
+			$("#myRange1_3").bind("input propertychange",function(event){
+
+				$("#demo1_3").html($("#myRange1_3").val() + '%');
+
+				$("#myRange1_2").val($("#myRange1_3").attr('max')-$("#myRange1_3").val());
+				$("#demo1_2").html($("#myRange1_3").attr('max')-$("#myRange1_3").val() + '%');
+			});
 			$('#numberOfTrials_selector').change(function() {
 				//根据不同的值弹出不同数量的下拉菜单
 				var num = $(this).find("option:selected").text()
@@ -45,6 +113,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 1</h3></label>\n" +
 							"\t\t\t\t\t\t\t</div>");
 
+					$('#numberOfTrials_div').append("\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t<label for=\"checkbox\" class=\"col-sm-2 control-label\">Timed<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox1\" type=\"checkbox\" onclick=\"checkbox1()\">Select</label></div>\n" +
+							"\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t<label for=\"disabledinput\" class=\"col-sm-2 control-label\">Count Down Time</label>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span1\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input1\" placeholder=\"0\" name=\"timed\" value=0>\n" +
+							"\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t</div>");
+
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
 							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector1\" class=\"form-control1\" name=\"grid_row\">\n" +
@@ -77,9 +156,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
 							"\t\t\t\t\t\t\t</select></span>\n" +
 							"\t\t\t\t\t</div>");
+
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange1_1\" name=\"target_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_1\">50%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_2\" name=\"near_distractor_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_2\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_3\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>");
+
 					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
@@ -93,11 +205,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
@@ -111,27 +225,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #7b8b71; border-radius: 3px;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #7b8b71; border-radius: 3px;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #7b8b71; border-radius: 3px;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div><hr>");
 
@@ -141,6 +256,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 1</h3></label>\n" +
 							"\t\t\t\t\t\t\t</div>");
+
+					$('#numberOfTrials_div').append("\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t<label for=\"checkbox\" class=\"col-sm-2 control-label\">Timed<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox1\" type=\"checkbox\" onclick=\"checkbox1()\">Select</label></div>\n" +
+							"\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t<label for=\"disabledinput\" class=\"col-sm-2 control-label\">Count Down Time</label>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span1\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input1\" placeholder=\"0\" name=\"timed\" value=\"0\">\n" +
+							"\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t</div>");
+
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
 							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector1\" class=\"form-control1\" name=\"grid_row\">\n" +
@@ -173,9 +300,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
 							"\t\t\t\t\t\t\t</select></span>\n" +
 							"\t\t\t\t\t</div>");
+
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange1_1\" name=\"target_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_1\">50%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_2\" name=\"near_distractor_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_2\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_3\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>");
 					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
@@ -189,11 +348,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t</div>" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
@@ -207,33 +368,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div><hr>");
 
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 2</h3></label>\n" +
 							"\t\t\t\t\t\t\t</div>");
+
+					$('#numberOfTrials_div').append("\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t<label for=\"checkbox\" class=\"col-sm-2 control-label\">Timed<em style=\"color:red;\">*</em></label>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox2\" type=\"checkbox\" onclick=\"checkbox2()\">Select</label></div>\n" +
+							"\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t<label for=\"disabledinput\" class=\"col-sm-2 control-label\">Count Down Time</label>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input2\" placeholder=\"0\" name=\"timed\" value=\"0\">\n" +
+							"\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t</div>");
+
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
 							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector2\" class=\"form-control1\" name=\"grid_row\">\n" +
@@ -266,9 +440,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
 							"\t\t\t\t\t\t\t</select></span>\n" +
 							"\t\t\t\t\t</div>");
+					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange2_1\" name=\"target_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo2_1\">50%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange2_2\" name=\"near_distractor_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo2_2\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t\n" +
+							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange2_3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo2_3\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t</div>");
 					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp2_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp2_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp2_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
@@ -282,11 +487,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp2_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp2_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp2_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
+							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_90_round\" class=\"round\" id=\"round2_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round2_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round2_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
@@ -300,44 +507,152 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round2_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round2_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
 							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round2_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div2_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div2_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div2_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div2_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;\" id=\"div2_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div2_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div><hr>");
 				}
+
+				$("#myRange1_1").bind("input propertychange",function(event){
+					$("#demo1_1").html($("#myRange1_1").val()+ '%');
+
+					$("#myRange1_2").attr('max',100-$("#myRange1_1").val())
+					$("#myRange1_2").val(100-$("#myRange1_1").val());
+					$("#demo1_2").html(100-$("#myRange1_1").val() + '%');
+
+					$("#myRange1_3").attr('max',100-$("#myRange1_1").val());
+					$("#demo1_3").html(0 + '%');
+					$("#myRange1_3").val(0);
+				});
+
+				$("#myRange1_2").bind("input propertychange",function(event){
+					$("#demo1_2").html($("#myRange1_2").val() + '%');
+
+					$("#myRange1_3").val($("#myRange1_2").attr('max')-$("#myRange1_2").val());
+					$("#demo1_3").html($("#myRange1_2").attr('max')-$("#myRange1_2").val() + '%');
+				});
+
+				$("#myRange1_3").bind("input propertychange",function(event){
+
+					$("#demo1_3").html($("#myRange1_3").val() + '%');
+
+					$("#myRange1_2").val($("#myRange1_3").attr('max')-$("#myRange1_3").val());
+					$("#demo1_2").html($("#myRange1_3").attr('max')-$("#myRange1_3").val() + '%');
+				});
+
+				$("#myRange2_1").bind("input propertychange",function(event){
+					$("#demo2_1").html($("#myRange2_1").val()+ '%');
+
+					$("#myRange2_2").attr('max',100-$("#myRange2_1").val())
+					$("#myRange2_2").val(100-$("#myRange2_1").val());
+					$("#demo2_2").html(100-$("#myRange2_1").val() + '%');
+
+					$("#myRange2_3").attr('max',100-$("#myRange2_1").val());
+					$("#demo2_3").html(0 + '%');
+					$("#myRange2_3").val(0);
+				});
+
+				$("#myRange2_2").bind("input propertychange",function(event){
+					$("#demo2_2").html($("#myRange2_2").val() + '%');
+
+					$("#myRange2_3").val($("#myRange2_2").attr('max')-$("#myRange2_2").val());
+					$("#demo2_3").html($("#myRange2_2").attr('max')-$("#myRange2_2").val() + '%');
+				});
+
+				$("#myRange2_3").bind("input propertychange",function(event){
+
+					$("#demo2_3").html($("#myRange2_3").val() + '%');
+
+					$("#myRange2_2").val($("#myRange2_3").attr('max')-$("#myRange2_3").val());
+					$("#demo2_2").html($("#myRange2_3").attr('max')-$("#myRange2_3").val() + '%');
+				});
+
+
 			});
 		});
+
 	</script>
 
+
+
 	<script type="text/javascript">
-		function checkbox(){
-			var isChecked = document.getElementById("timed-checkbox").checked;
+		function checkbox1(){
+			var isChecked = document.getElementById("timed-checkbox1").checked;
+			$('#timed-checkbox-span1').empty();
+
 			if(isChecked){
-				$('#timed-checkbox-span').empty();
-				$('#timed-checkbox-span').append('<input type="text"  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
-				$("#timed-checkbox-input").focus();
+				$('#timed-checkbox-span1').append('<input type="text"  class="form-control" id="timed-checkbox-input1" placeholder="0" name="timed" value="0">');
+				$("#timed-checkbox-input1").focus();
 			}else{
-				$('#timed-checkbox-span').empty();
-				$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+				$('#timed-checkbox-span1').append('<input type="text" readonly="readonly" class="form-control" id="timed-checkbox-input1" placeholder="0" name="timed" value="0">');
+			}
+		}
+
+		function checkbox2(){
+			var isChecked = document.getElementById("timed-checkbox2").checked;
+			$('#timed-checkbox-span2').empty();
+
+			if(isChecked){
+				$('#timed-checkbox-span2').append('<input type="text"  class="form-control" id="timed-checkbox-input2" placeholder="0" name="timed" value="0">');
+				$("#timed-checkbox-input2").focus();
+			}else{
+				$('#timed-checkbox-span2').append('<input type="text" readonly="readonly"  class="form-control" id="timed-checkbox-input2" placeholder="0" name="timed" value="0">');
+			}
+		}
+
+		function checkbox3(){
+			var isChecked = document.getElementById("timed-checkbox3").checked;
+			$('#timed-checkbox-span3').empty();
+
+			if(isChecked){
+				$('#timed-checkbox-span3').append('<input type="text"  class="form-control" id="timed-checkbox-input3" placeholder="0" name="timed" value="0">');
+				$("#timed-checkbox-input3").focus();
+			}else{
+				$('#timed-checkbox-span3').append('<input type="text" readonly="readonly"  class="form-control" id="timed-checkbox-input3" placeholder="0" name="timed" value="0">');
+			}
+		}
+
+		function checkbox4(){
+			var isChecked = document.getElementById("timed-checkbox4").checked;
+			$('#timed-checkbox-span4').empty();
+
+			if(isChecked){
+				$('#timed-checkbox-span4').append('<input type="text"  class="form-control" id="timed-checkbox-input4" placeholder="0" name="timed" value="0">');
+				$("#timed-checkbox-input4").focus();
+			}else{
+				$('#timed-checkbox-span4').append('<input type="text" readonly="readonly"  class="form-control" id="timed-checkbox-input4" placeholder="0" name="timed" value="0">');
+			}
+		}
+
+		function checkbox5(){
+			var isChecked = document.getElementById("timed-checkbox5").checked;
+			$('#timed-checkbox-span5').empty();
+
+			if(isChecked){
+				$('#timed-checkbox-span5').append('<input type="text"  class="form-control" id="timed-checkbox-input5" placeholder="0" name="timed">');
+				$("#timed-checkbox-input5").focus();
+			}else{
+				$('#timed-checkbox-span5').append('<input type="text" readonly="readonly"  class="form-control" id="timed-checkbox-input5" placeholder="0" name="timed" value="0">');
 			}
 		}
 
@@ -345,7 +660,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$("#NewStimuli_Input").val("");
 			$('#timed-checkbox').prop("checked",false);
 			$('#timed-checkbox-span').empty();
-			$('#timed-checkbox-span').append('<input type="text" disabled=""  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">');
+			$('#timed-checkbox-span').append('<input type="text" readonly="readonly"  class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed" >');
 
 			$('#row_selector').val(1);
 			$('#column_selector').val(1);
@@ -360,33 +675,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		function checkAndSubmit(){
 			var NewStimuli_Input=$("#NewStimuli_Input").val();
-
-			var timed = document.getElementById("timed-checkbox").checked;
-			if(timed){
-				timed = $('#timed-checkbox-input').val();
-			}else{
-				timed = 0;
-			}
-
-			var age = false
-			var age0 = document.getElementById("age-checkbox0").checked;
-			var age1 = document.getElementById("age-checkbox1").checked;
-			var age2 = document.getElementById("age-checkbox2").checked;
-			var age3 = document.getElementById("age-checkbox3").checked;
-			var age4 = document.getElementById("age-checkbox4").checked;
-			var age5 = document.getElementById("age-checkbox5").checked;
-			var age6 = document.getElementById("age-checkbox6").checked;
-			if(age0 || age1 || age2 || age3 || age4 || age5 || age6){
-				age = true
-			}
-
-			var row_selector=$("#row_selector").val();
-			var column_selector= $("#column_selector").val();
-			var numbersOfTarget_Input= $('#numbersOfTarget_Input').val();
-			var far_percentage_Input= $('#far_percentage_Input').val();
-			var near_percentage_Input= $('#near_percentage_Input').val();
-			var Target_selector= $('#Target_selector').val();
-			var numberOfTrials_selector= $('#numberOfTrials_selector').val();
 
 			if(NewStimuli_Input==null||NewStimuli_Input==""){
 				alert("Please name your Stimuli!");
@@ -524,10 +812,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<style>
 		i.fa-plus-circle{
-			color: #66F364;
+			color: #7b8b71;
 		}
 		i.fa-times-circle{
-			color: #F36464;
+			color: #9a545b;
 		}
 
 		img.sharp, img.round{				/*改变图形缩放尺寸*/
@@ -572,24 +860,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 
 								</div>
-
-								<input style="visibility: hidden" id="targetArray" name="targetArray"  type="text">
-								<input style="visibility: hidden" id="farDistractorArray" name="farDistractorArray"  type="text">
-								<input style="visibility: hidden" id="nearDistractorArray" name="nearDistractorArray"  type="text">
-								<input style="visibility: hidden" id="round" name="round"  type="text">
-
-
-								<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Timed<em style="color:red;">*</em></label>
-									<span class="col-sm-3">
-								<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox" type="checkbox" onclick="checkbox(this)">Select</label></div>
-							</span>
-									<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
-									<span class="col-sm-3" id="timed-checkbox-span">
-								<input disabled="" type="text" class="form-control1" id="timed-checkbox-input" placeholder="0" name="timed">
-							</span>
-								</div>
-
 
 
 								<div class="form-group">
@@ -639,6 +909,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 
 									<div class="form-group">
+									<label for="checkbox" class="col-sm-2 control-label">Timed<em style="color:red;">*</em></label>
+									<span class="col-sm-3">
+										<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox1" type="checkbox" onclick="checkbox1()">Select</label></div>
+									</span>
+									<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
+									<span class="col-sm-3" id="timed-checkbox-span1">
+										<input readonly="readonly" type="text" class="form-control" id="timed-checkbox-input1" placeholder="0" name="timed" value="0">
+									</span>
+								</div>
+
+
+									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label">Rows<em style="color:red;">*</em></label>
 										<span class="col-sm-3"><select  id="row_selector1" class="form-control1" name="grid_row">
 										<option value ="1">1</option>
@@ -671,40 +953,77 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</select></span>
 									</div>
 
+
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Target</label>
+										<span class="col-sm-2">
+											<div class="slidecontainer">
+											  <input type="range" min="1" max="100" value="50" class="slider" id="myRange1_1" name="target_percentage">
+											</div>
+										</span>
+										<span class="col-sm-1" id="demo1_1">50%</span>
+									</div>
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
+										<span class="col-sm-2">
+											<div class="slidecontainer">
+												<input type="range" min="0" max="99" value="0" class="slider" id="myRange1_2" name="near_distractor_percentage">
+											</div>
+										</span>
+										<span class="col-sm-1" id="demo1_2">0%</span>
+									</div>
+
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
+										<span class="col-sm-2">
+											<div class="slidecontainer">
+												<input type="range" min="0" max="99" value="0" class="slider" id="myRange1_3">
+											</div>
+										</span>
+										<span class="col-sm-1" id="demo1_3">0%</span>
+									</div>
+
 									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label" >Shapes</label>
 										<span class="col-sm-10">
-											<img name="O_90_sharp" id="sharp1" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_90_sharp.png">
-											<img name="O_180_sharp" id="sharp2" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_180_sharp.png">
-											<img name="I_0_sharp" id="sharp3" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_0_sharp.png">
-											<img name="I_90_sharp" id="sharp4" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
-											<img name="I_90_sharp" id="sharp5" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
-											<img name="L_90_sharp" id="sharp6" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_90_sharp.png">
-											<img name="L_180_sharp" id="sharp7" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_180_sharp.png">
-											<img name="L_270_sharp" id="sharp8" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_270_sharp.png">
-											<img name="T_0_sharp" id="sharp9" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_0_sharp.png">
-											<img name="T_90_sharp" id="sharp10" class="sharp"  draggable="true" ondragstart="drag(event)" src="/images/T_90_sharp.png">
-											<img name="T_180_sharp" id="sharp11" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_180_sharp.png">
-											<img name="T_270_sharp" id="sharp12" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_270_sharp.png">
-											<img name="X_0_sharp" id="sharp13" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/X_0_sharp.png">
+											<div style="width:79.3%;min-height:40px;padding:10px;border:0px" ondrop="drop(event)" ondragover="allowDrop(event)">
+												<img name="O_90_sharp" id="sharp1" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_90_sharp.png">
+												<img name="O_180_sharp" id="sharp2" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_180_sharp.png">
+												<img name="I_0_sharp" id="sharp3" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_0_sharp.png">
+												<img name="I_90_sharp" id="sharp4" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
+												<img name="I_90_sharp" id="sharp5" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
+												<img name="L_90_sharp" id="sharp6" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_90_sharp.png">
+												<img name="L_180_sharp" id="sharp7" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_180_sharp.png">
+												<img name="L_270_sharp" id="sharp8" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_270_sharp.png">
+												<img name="T_0_sharp" id="sharp9" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_0_sharp.png">
+												<img name="T_90_sharp" id="sharp10" class="sharp"  draggable="true" ondragstart="drag(event)" src="/images/T_90_sharp.png">
+												<img name="T_180_sharp" id="sharp11" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_180_sharp.png">
+												<img name="T_270_sharp" id="sharp12" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_270_sharp.png">
+												<img name="X_0_sharp" id="sharp13" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/X_0_sharp.png">
+											</div>
 										</span>
 									</div>
 									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label" ></label>
 										<span class="col-sm-10">
-											<img name="O_90_round" id="round1" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_90_round.png">
-											<img name="O_180_round" id="round2" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_180_round.png">
-											<img name="I_0_round" id="round3" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_0_round.png">
-											<img name="I_90_round" id="round4" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_90_round.png">
-											<img name="L_0_round" id="round5" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_0_round.png">
-											<img name="L_90_round" id="round6" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_90_round.png">
-											<img name="L_180_round" id="round7" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_180_round.png">
-											<img name="L_270_round" id="round8" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_270_round.png">
-											<img name="T_0_round" id="round9" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_0_round.png">
-											<img name="T_90_round" id="round10" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_90_round.png">
-											<img name="T_180_round" id="round11" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_180_round.png">
-											<img name="T_270_round" id="round12" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_270_round.png">
-											<img name="X_0_round" id="round13" class="round" draggable="true" ondragstart="drag(event)" src="/images/X_0_round.png">
+											<div style="width:79.3%;min-height:40px;padding:10px;border:0px" ondrop="drop(event)" ondragover="allowDrop(event)">
+												<img name="O_90_round" id="round1" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_90_round.png">
+												<img name="O_180_round" id="round2" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_180_round.png">
+												<img name="I_0_round" id="round3" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_0_round.png">
+												<img name="I_90_round" id="round4" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_90_round.png">
+												<img name="L_0_round" id="round5" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_0_round.png">
+												<img name="L_90_round" id="round6" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_90_round.png">
+												<img name="L_180_round" id="round7" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_180_round.png">
+												<img name="L_270_round" id="round8" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_270_round.png">
+												<img name="T_0_round" id="round9" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_0_round.png">
+												<img name="T_90_round" id="round10" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_90_round.png">
+												<img name="T_180_round" id="round11" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_180_round.png">
+												<img name="T_270_round" id="round12" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_270_round.png">
+												<img name="X_0_round" id="round13" class="round" draggable="true" ondragstart="drag(event)" src="/images/X_0_round.png">
+											</div>
 										</span>
 									</div>
 
@@ -712,26 +1031,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label" >Target</label>
 										<span class="col-sm-10" >
-										<div style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" id="div1_1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										<div style="width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;" id="div1_1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 										</span>
 									</div>
 
 									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
 										<span class="col-sm-10" >
-										<div style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" id="div1_2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										<div style="width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;" id="div1_2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 										</span>
 									</div>
 
 									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
 										<span class="col-sm-10" >
-										<div style="width:79.3%;min-height:40px;padding:10px;border:1px solid #dddddd;" id="div1_3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										<div style="width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;" id="div1_3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 										</span>
 									</div>
 									<hr>
 								</span>
 
+
+								<input style="display: none" id="targetArray" name="targetArray"  type="text">
+								<input style="display: none" id="farDistractorArray" name="farDistractorArray"  type="text">
+								<input style="display: none" id="nearDistractorArray" name="nearDistractorArray"  type="text">
+								<input style="display: none;" id="round" name="round"  type="text">
 
 								<div class='form-group' name="addEmail">
 									<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>
@@ -747,7 +1071,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 								<div class="form-group">
 									<label for="txtarea1" class="col-sm-2 control-label">Notes</label>
-									<div class="col-sm-8"><textarea name="notes" id="notes_Input" cols="50" rows="4" class="form-control1" placeholder="Add some notes here..."></textarea></div>
+									<div class="col-sm-8"><textarea name="notes" id="notes_Input" cols="50" rows="4" class="form-control1" placeholder="Add some notes here ..."></textarea></div>
 								</div>
 							</form>
 
@@ -759,8 +1083,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel-footer">
 						<div class="row">
 							<div class="col-sm-8 col-sm-offset-2">
-								<button class="btn-primary btn" onclick = "checkAndSubmit()">Submit</button>
-								<button id="backToNewApp" class="btn-default btn" onclick = "backToNewApp()">Cancel</button>
+								<button class="btn-primary btn" style="background-color: #7b8b71; border-color: #7b8b71;"  onclick = "checkAndSubmit()">Submit</button>
+								<button id="backToNewApp" class="btn-primary btn" style="background-color: #8897a6; border-color: #8897a6;"  onclick = "backToNewApp()">Cancel</button>
 								<button id="reset_button" class="btn-inverse btn" onclick="reset()">Reset</button>
 							</div>
 						</div>

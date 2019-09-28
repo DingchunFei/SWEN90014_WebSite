@@ -48,7 +48,7 @@ public class WebAppServiceImpl implements WebAppService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public User insertWebApp(WebApp webApp, String[] emails, Integer round, String[][] targets, String[][] nearDistractors, String[][] farDistractors, Integer[] grid_row, Integer[] grid_column) {
+    public User insertWebApp(WebApp webApp, String[] emails, Integer round, String[][] targets, String[][] nearDistractors, String[][] farDistractors, Integer[] grid_row, Integer[] grid_column, Integer[] timed,Integer[] target_percentage,Integer[] near_distractor_percentage) {
 
         //插入webApp
         webAppMapper.insertWebApp(webApp);
@@ -70,7 +70,7 @@ public class WebAppServiceImpl implements WebAppService {
 
         for (int i=0;i<round;i++){
             //一个个插入trial i正好是对应的round
-            Trial trial = new Trial(webApp.getId(),i+1,grid_row[i],grid_column[i]);
+            Trial trial = new Trial(webApp.getId(),i+1,grid_row[i],grid_column[i],timed[i],target_percentage[i],near_distractor_percentage[i]);
             trialMapper.insertTrial(trial);
 
             for(int j=0;j<targets[i].length;j++){

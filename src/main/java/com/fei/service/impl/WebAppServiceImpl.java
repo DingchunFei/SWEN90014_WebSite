@@ -43,7 +43,9 @@ public class WebAppServiceImpl implements WebAppService {
     @Transactional(propagation = Propagation.REQUIRED)
     public Integer deleteWebAppByWebAppId(String webApp_id) {
         favouriteMapper.deleteFavouriteByWebAppId(webApp_id);
-        return webAppMapper.deleteWebAppByWebAppId(webApp_id);
+        //设置了trialShape的级联删除，不需要关心删除trial和trialMapper了
+        webAppMapper.deleteWebAppByWebAppId(webApp_id);
+        return 1;
     }
 
     @Override

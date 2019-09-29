@@ -744,7 +744,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('#round').val(trial_num);
 		}
 
-		function backToNewApp(){
+		function backToAppList(){
 			window.location.href="/stimuli/home";
 		}
 
@@ -857,7 +857,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="tab-pane active" id="horizontal-form">
 							<form id="newStimuli_form" class="form-horizontal" action="addNewWebApp">
 								<div class="form-group required">
-									<label for="focusedinput" class="col-sm-2 control-label" >New Stimuli Name <em style="color:red;">*</em></label>
+									<label for="focusedinput" class="col-sm-2 control-label" >Stimuli Name <em style="color:red;">*</em></label>
 									<div class="col-sm-8">
 										<input type="text" class="form-control1" id="NewStimuli_Input" placeholder="New Stimuli Name" name="app_name">
 									</div>
@@ -866,7 +866,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 								<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Age Group<em style="color:red;">*</em></label>
+									<label for="checkbox" class="col-sm-2 control-label">Age Group</label>
 									<span class="col-sm-8">
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox0" type="checkbox" value="1">0-5</label></div>
 								<div class="checkbox-inline col-sm-2"><label><input name="age" id="age-checkbox1" type="checkbox" value="2">5-10</label></div>
@@ -1063,8 +1063,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class='form-group' name="addEmail">
 									<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>
 									<span class="col-sm-8">
-								<input type="text" class="form-control1"  name="Email" placeholder="Add a new practitioner's Email here ...">
-							</span>
+										<input type="text" class="form-control1"  name="Email" placeholder="Add a new practitioner's Email here ...">
+									</span>
 									<label for="focusedinput" class="col-sm-1 control-label">
 										<div style="text-align: left" class="add_delete_container">
 											<i onclick="addNewEmail()" id="addButton" class="fa fa-plus-circle"></i>
@@ -1087,7 +1087,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="row">
 							<div class="col-sm-8 col-sm-offset-2">
 								<button class="btn-primary btn" style="background-color: #7b8b71; border-color: #7b8b71;"  onclick = "checkAndSubmit()">Submit</button>
-								<button id="backToNewApp" class="btn-primary btn" style="background-color: #8897a6; border-color: #8897a6;"  onclick = "backToNewApp()">Cancel</button>
+								<button id="backToAppList" class="btn-primary btn" style="background-color: #8897a6; border-color: #8897a6;"  onclick = "backToAppList()">Cancel</button>
 								<button id="reset_button" class="btn-inverse btn" onclick="reset()">Reset</button>
 							</div>
 						</div>

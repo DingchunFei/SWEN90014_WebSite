@@ -72,7 +72,7 @@ public interface WebAppMapper {
 			"timed=#{timed},app_name=#{app_name},age=#{age},numbers_of_targets=#{numbers_of_targets},notes=#{notes},numbers_of_trials=#{numbers_of_trials} WHERE id=#{id}")
 	Integer updateWebApp (WebApp webApp);*/
 
-	@Update("UPDATE t_web_app SET app_name=#{app_name},notes=#{notes},numbers_of_trials=#{numbers_of_trials} WHERE id=#{id}")
+	@Update("UPDATE t_web_app SET app_name=#{app_name},age=#{age},notes=#{notes} WHERE id=#{id}")
 	Integer updateWebApp (WebApp webApp);
 
 	@Delete("DELETE FROM t_web_app WHERE id =#{webApp_id}")

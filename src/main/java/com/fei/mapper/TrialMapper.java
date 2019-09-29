@@ -4,6 +4,7 @@ package com.fei.mapper;
 import com.fei.domain.Shape;
 import com.fei.domain.Trial;
 import com.fei.domain.TrialShape;
+import com.fei.domain.WebApp;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -40,7 +41,6 @@ public interface TrialMapper {
 	/**
 	 * 查看该webapp下的所有trial
 	 */
-
 	@Select("SELECT * FROM t_trial WHERE web_app_id = #{web_app_id}")
 	@Results({
 			@Result(column = "id",property = "id"),
@@ -69,4 +69,6 @@ public interface TrialMapper {
 	@Insert("INSERT INTO t_trial(id,web_app_id,round,grid_row,grid_column,timed,target_percentage,near_distractor_percentage,far_distractor_percentage)" +
 			"VALUES(#{id},#{web_app_id}, #{round},#{grid_row},#{grid_column},#{timed},#{target_percentage},#{near_distractor_percentage},#{far_distractor_percentage})")
 	Integer insertTrial(Trial trial);
+
+
 }

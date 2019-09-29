@@ -24,6 +24,8 @@ public class Trial {
     private Integer target_percentage;
 
     private Integer near_distractor_percentage;
+    @JsonIgnore
+    private Integer far_distractor_percentage;
 
     private List<TrialShape> trialShapeList;
     @JsonIgnore
@@ -41,7 +43,8 @@ public class Trial {
         this.near_distractor_percentage = near_distractor_percentage;
     }
 
-    public Trial(String web_app_id, Integer round, Integer grid_row, Integer grid_column, Integer timed, Integer target_percentage, Integer near_distractor_percentage) {
+
+    public Trial(String web_app_id, Integer round, Integer grid_row, Integer grid_column, Integer timed, Integer target_percentage, Integer near_distractor_percentage, Integer far_distractor_percentage) {
         this.web_app_id = web_app_id;
         this.round = round;
         this.grid_row = grid_row;
@@ -49,6 +52,7 @@ public class Trial {
         this.timed = timed;
         this.target_percentage = target_percentage;
         this.near_distractor_percentage = near_distractor_percentage;
+        this.far_distractor_percentage = far_distractor_percentage;
     }
 
     @Override
@@ -62,6 +66,7 @@ public class Trial {
                 ", timed=" + timed +
                 ", target_percentage=" + target_percentage +
                 ", near_distractor_percentage=" + near_distractor_percentage +
+                ", far_distractor_percentage=" + far_distractor_percentage +
                 ", trialShapeList=" + trialShapeList +
                 '}';
     }
@@ -144,5 +149,13 @@ public class Trial {
 
     public void setNear_distractor_percentage(Integer near_distractor_percentage) {
         this.near_distractor_percentage = near_distractor_percentage;
+    }
+
+    public Integer getFar_distractor_percentage() {
+        return far_distractor_percentage;
+    }
+
+    public void setFar_distractor_percentage(Integer far_distractor_percentage) {
+        this.far_distractor_percentage = far_distractor_percentage;
     }
 }

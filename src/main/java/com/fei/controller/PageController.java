@@ -176,6 +176,9 @@ public class PageController {
             String[][] farDistractors = JsonUtils.string2Obj(farDistractorArray, String[][].class);       //重建从JS传来的二维字符串数组
             String[][] nearDistractors = JsonUtils.string2Obj(nearDistractorArray, String[][].class);     //重建从JS传来的二维字符串数组
 
+            /**
+             * translate into Json format
+             */
             List<Trial> trialList = new LinkedList<>();
             for (int i=0;i<round;i++) {
                 Trial trial = new Trial(i+1, grid_row[i], grid_column[i], timed[i], target_percentage[i], near_distractor_percentage[i]);

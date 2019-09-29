@@ -70,16 +70,11 @@ public class WebAppServiceImpl implements WebAppService {
 
         for (int i=0;i<round;i++){
             //一个个插入trial i正好是对应的round
-            Trial trial = new Trial(webApp.getId(),i+1,grid_row[i],grid_column[i],timed[i],target_percentage[i],near_distractor_percentage[i]);
+            Trial trial = new Trial(webApp.getId(),i+1,grid_row[i],grid_column[i],timed[i],target_percentage[i],near_distractor_percentage[i],100-target_percentage[i]-near_distractor_percentage[i]);
             trialMapper.insertTrial(trial);
 
             for(int j=0;j<targets[i].length;j++){
-
-                System.out.println(trial+"???");
-
                 Shape shape = shapeMapper.findShapeByShapeName(targets[i][j]+".png");
-
-                System.out.println(shape+"!!!");
                 //type=1 表示 target
                 TrialShape trialShape = new TrialShape(shape.getId(),trial.getId(),1);
                 trialShapeMapper.insertTrialShape(trialShape);

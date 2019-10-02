@@ -113,8 +113,6 @@ public class PageController {
     @RequestMapping("addNewWebApp")
     public Object addNewWebApp(WebApp webApp, String [] age, @RequestParam(name = "Email") String [] emails, Integer[] near_distractor_percentage, Integer[] target_percentage ,Integer [] timed ,Integer round, String targetArray  ,String farDistractorArray ,String nearDistractorArray, Integer[] grid_row, Integer[] grid_column, HttpServletRequest req, HttpServletResponse resp){
 
-
-
         HttpSession session = req.getSession();             //取出session中的用户id，提供后续webapp的时候使用
         User userInfo = (User) session.getAttribute("userInfo");
         webApp.setUser_id(userInfo.getId());
@@ -157,16 +155,6 @@ public class PageController {
 
             webApp.setDate(new Date());
 
-/*            WebApp2Json webApp2Json = new WebApp2Json();
-
-            webApp2Json.setTarget("T_270_round.png");
-            if(webApp.getTimed()!=0){
-                webApp2Json.setTimed(true);
-                webApp2Json.setTime(webApp.getTimed());
-            }else{
-                webApp2Json.setTimed(false);
-            }*/
-
             /**
              * 一下三个数组与具体选择target有关
              */
@@ -187,17 +175,16 @@ public class PageController {
                     TrialShape trialShape = new TrialShape(1, shape);
                     trialShapeList.add(trialShape);
                 }
-
                 for(int j=0;j<farDistractors[i].length;j++){
                     Shape shape = shapeService.findShapeByShapeName(farDistractors[i][j] + ".png");
-                    TrialShape trialShape = new TrialShape(2, shape);
-                    trialShapeList.add(trialShape);
-                }
-
-                for(int j=0;j<nearDistractors[i].length;j++){
-                    Shape shape = shapeService.findShapeByShapeName(nearDistractors[i][j] + ".png");
                     TrialShape trialShape = new TrialShape(3, shape);
                     trialShapeList.add(trialShape);
+                }
+                for(int j=0;j<nearDistractors[i].length;j++){
+                    Shape shape = shapeService.findShapeByShapeName(nearDistractors[i][j] + ".png");
+                    TrialShape trialShape = new TrialShape(2, shape);
+                    trialShapeList.add(trialShape);
+
                 }
                 trial.setTrialShapeList(trialShapeList);
                 trialList.add(trial);
@@ -209,25 +196,25 @@ public class PageController {
             System.out.println(webApp);
 
             String jsonStr = JsonUtils.obj2String(webApp);
-            System.out.println(jsonStr);
+            jsonStr = "jsonData="+jsonStr;
+            try{
+                System.out.println(jsonStr);
+                String URL = HttpUtils.sendPost("http://101.116.96.228:10000/stimuli/data", jsonStr);
+                Integer jsonStrRespLength = URL.length();
+                //截取URL
+                String url = URL.substring(9,jsonStrRespLength-2);
+
+                System.out.println(url);
+
+                webApp.setURL(url);
+
+                System.out.println(jsonStr);
+            }catch(Exception e){
+                System.out.println("Fetching URL failed!");
+                e.printStackTrace();
+            }
+
             System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-
-
-/*            //新的WebApp
-            //设置URL
-            String jsonStrReq = JsonUtils.obj2String(webApp2Json);
-            jsonStrReq="jsonData="+jsonStrReq;
-            System.out.println(jsonStrReq);
-
-            String jsonStrResp = HttpUtils.sendPost("http://101.116.96.228:10000/stimuli/data", jsonStrReq);
-
-            Integer jsonStrRespLength = jsonStrResp.length();
-            //截取URL
-            String url = jsonStrResp.substring(9,jsonStrRespLength-2);
-
-            System.out.println(url);
-
-            webApp.setURL(url);*/
 
             user = webAppService.insertWebApp(webApp,emails,round,targets,nearDistractors,farDistractors,grid_row,grid_column,timed,target_percentage,near_distractor_percentage);      //新WebApp插入成功，重置session
         }

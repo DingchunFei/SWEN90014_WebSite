@@ -244,13 +244,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span class="col-sm-8" style="margin-top: 8px;">
 										<div class="progress">
 
-											<div class="progress-bar" role="progressbar" th:text="'Target '+${trial.target_percentage}+'%'" th:style="'width:' +${trial.target_percentage}+'%; background-color:#7b8b71'" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">35%</div>
-											<div class="progress-bar" role="progressbar" th:text="'Near Distractor '+${trial.near_distractor_percentage}+'%'" th:style="'width:' +${trial.near_distractor_percentage}+'%; background-color:#c0c0c0'" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-											<div class="progress-bar" role="progressbar" th:text="'Far Distractor '+${trial.far_distractor_percentage}+'%'" th:style="'width:' +${trial.far_distractor_percentage}+'%; background-color:#788490'" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">30%</div>
-
-											<!--		    <div class="progress-bar" role="progressbar" style="width: 35%; background-color:#7b8b71" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">35%</div>
-                                                        <div class="progress-bar" role="progressbar" style="width: 30%; background-color:#c0c0c0" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-                                                        <div class="progress-bar" role="progressbar" style="width: 35%; background-color:#788490" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">35%</div>-->
+											<div class="progress-bar" role="progressbar" th:text="${trial.target_percentage}+'%'+' Target'" th:style="'width:' +${trial.target_percentage}+'%; background-color:#7b8b71'" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">35%</div>
+											<div class="progress-bar" role="progressbar" th:text="${trial.near_distractor_percentage}+'%'+' Near Distractor'" th:style="'width:' +${trial.near_distractor_percentage}+'%; background-color:#c0c0c0'" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+											<div class="progress-bar" role="progressbar" th:text="${trial.far_distractor_percentage}+'%'+' Far Distractor'" th:style="'width:' +${trial.far_distractor_percentage}+'%; background-color:#788490'" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">30%</div>
 
 										</div>
 									</span>

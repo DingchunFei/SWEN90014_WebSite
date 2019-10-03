@@ -80,8 +80,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!----->
 	<script type="text/javascript">
 		$(document).ready(function(){
-			//对原生的第一个trial绑定
-			$("#myRange1_1").bind("input propertychange",function(event){
+
+/*			$("#myRange1_1").bind("input propertychange",function(event){
 				$("#demo1_1").html($("#myRange1_1").val()+ '%');
 
 				$("#myRange1_2").attr('max',100-$("#myRange1_1").val())
@@ -107,29 +107,151 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				$("#myRange1_2").val($("#myRange1_3").attr('max')-$("#myRange1_3").val());
 				$("#demo1_2").html($("#myRange1_3").attr('max')-$("#myRange1_3").val() + '%');
 			});
+
+
+
+			$("#myRange2_1").bind("input propertychange",function(event){
+				$("#demo2_1").html($("#myRange2_1").val()+ '%');
+
+				$("#myRange2_2").attr('max',100-$("#myRange2_1").val())
+				$("#myRange2_2").val(100-$("#myRange2_1").val());
+				$("#demo2_2").html(100-$("#myRange2_1").val() + '%');
+
+				$("#myRange2_3").attr('max',100-$("#myRange2_1").val());
+				$("#demo2_3").html(0 + '%');
+				$("#myRange2_3").val(0);
+			});
+
+			$("#myRange2_2").bind("input propertychange",function(event){
+				$("#demo2_2").html($("#myRange2_2").val() + '%');
+
+				$("#myRange2_3").val($("#myRange2_2").attr('max')-$("#myRange2_2").val());
+				$("#demo2_3").html($("#myRange2_2").attr('max')-$("#myRange2_2").val() + '%');
+			});
+
+			$("#myRange2_3").bind("input propertychange",function(event){
+
+				$("#demo2_3").html($("#myRange2_3").val() + '%');
+
+				$("#myRange2_2").val($("#myRange2_3").attr('max')-$("#myRange2_3").val());
+				$("#demo2_2").html($("#myRange2_3").attr('max')-$("#myRange2_3").val() + '%');
+			});
+
+
+
+			$("#myRange3_1").bind("input propertychange",function(event){
+				$("#demo3_1").html($("#myRange3_1").val()+ '%');
+
+				$("#myRange3_2").attr('max',100-$("#myRange3_1").val())
+				$("#myRange3_2").val(100-$("#myRange3_1").val());
+				$("#demo3_2").html(100-$("#myRange3_1").val() + '%');
+
+				$("#myRange3_3").attr('max',100-$("#myRange3_1").val());
+				$("#demo3_3").html(0 + '%');
+				$("#myRange3_3").val(0);
+			});
+
+			$("#myRange3_2").bind("input propertychange",function(event){
+				$("#demo3_2").html($("#myRange3_2").val() + '%');
+
+				$("#myRange3_3").val($("#myRange3_2").attr('max')-$("#myRange3_2").val());
+				$("#demo3_3").html($("#myRange3_2").attr('max')-$("#myRange3_2").val() + '%');
+			});
+
+			$("#myRange3_3").bind("input propertychange",function(event){
+
+				$("#demo3_3").html($("#myRange3_3").val() + '%');
+
+				$("#myRange3_2").val($("#myRange3_3").attr('max')-$("#myRange3_3").val());
+				$("#demo3_2").html($("#myRange3_3").attr('max')-$("#myRange3_3").val() + '%');
+			});
+
+			$("#myRange4_1").bind("input propertychange",function(event){
+				$("#demo4_1").html($("#myRange4_1").val()+ '%');
+
+				$("#myRange4_2").attr('max',100-$("#myRange4_1").val())
+				$("#myRange4_2").val(100-$("#myRange4_1").val());
+				$("#demo4_2").html(100-$("#myRange4_1").val() + '%');
+
+				$("#myRange4_3").attr('max',100-$("#myRange4_1").val());
+				$("#demo4_3").html(0 + '%');
+				$("#myRange4_3").val(0);
+			});
+
+			$("#myRange4_2").bind("input propertychange",function(event){
+				$("#demo4_2").html($("#myRange4_2").val() + '%');
+
+				$("#myRange4_3").val($("#myRange4_2").attr('max')-$("#myRange4_2").val());
+				$("#demo4_3").html($("#myRange4_2").attr('max')-$("#myRange4_2").val() + '%');
+			});
+
+			$("#myRange4_3").bind("input propertychange",function(event){
+
+				$("#demo4_3").html($("#myRange4_3").val() + '%');
+
+				$("#myRange4_2").val($("#myRange4_3").attr('max')-$("#myRange4_3").val());
+				$("#demo4_2").html($("#myRange4_3").attr('max')-$("#myRange4_3").val() + '%');
+			});
+
+			$("#myRange5_1").bind("input propertychange",function(event){
+				$("#demo5_1").html($("#myRange5_1").val()+ '%');
+
+				$("#myRange5_2").attr('max',100-$("#myRange5_1").val())
+				$("#myRange5_2").val(100-$("#myRange5_1").val());
+				$("#demo5_2").html(100-$("#myRange5_1").val() + '%');
+
+				$("#myRange5_3").attr('max',100-$("#myRange5_1").val());
+				$("#demo5_3").html(0 + '%');
+				$("#myRange5_3").val(0);
+			});
+
+			$("#myRange5_2").bind("input propertychange",function(event){
+				$("#demo5_2").html($("#myRange5_2").val() + '%');
+
+				$("#myRange5_3").val($("#myRange5_2").attr('max')-$("#myRange5_2").val());
+				$("#demo5_3").html($("#myRange5_2").attr('max')-$("#myRange5_2").val() + '%');
+			});
+
+			$("#myRange5_3").bind("input propertychange",function(event){
+
+				$("#demo5_3").html($("#myRange5_3").val() + '%');
+
+				$("#myRange5_2").val($("#myRange5_3").attr('max')-$("#myRange5_3").val());
+				$("#demo5_2").html($("#myRange5_3").attr('max')-$("#myRange5_3").val() + '%');
+			});*/
+
+
+
+
+
 			$('#numberOfTrials_selector').change(function() {
 				//根据不同的值弹出不同数量的下拉菜单
-				var num = $(this).find("option:selected").text()
-				if(num == 1){
-					$('#numberOfTrials_div').empty();
+
+				var $num = $(this).find("option:selected").text();
+
+				for(var i=1;i<=$num;i++) {
+
+					if (i == 1) {
+						$('#numberOfTrials_div').empty();
+					}
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 1</h3></label>\n" +
+							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial " + i + " </h3></label>\n" +
 							"\t\t\t\t\t\t\t</div>");
 
 					$('#numberOfTrials_div').append("\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t\t\t<label for=\"checkbox\" class=\"col-sm-2 control-label\">Timed<em style=\"color:red;\">*</em></label>\n" +
 							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox1\" type=\"checkbox\" onclick=\"checkbox1()\">Select</label></div>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox" + i + "\" type=\"checkbox\" onclick=\"checkbox" + i + "()\">Select</label></div>\n" +
 							"\t\t\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t\t\t\t<label for=\"disabledinput\" class=\"col-sm-2 control-label\">Count Down Time</label>\n" +
-							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span1\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input1\" placeholder=\"0\" name=\"timed\" value=0>\n" +
+							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span" + i + "\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input" + i + "\" placeholder=\"0\" name=\"timed\" value=0>\n" +
 							"\t\t\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t\t\t</div>");
 
 					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector1\" class=\"form-control1\" name=\"grid_row\">\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select class=\"form-control1\" name=\"grid_row\">\n" +
 							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
 							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
 							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
@@ -144,7 +266,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
 							"\t\t\t\t\t\t\t</select></span>\n" +
 							"\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Columns<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"column_selector1\" class=\"form-control1\" name=\"grid_column\">\n" +
+							"\t\t\t\t\t<span class=\"col-sm-3\"><select  class=\"form-control1\" name=\"grid_column\">\n" +
 							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
 							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
 							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
@@ -164,20 +286,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
 							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
 							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange1_1\" name=\"target_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id='myRange" + i + "_1' name=\"target_percentage\" oninput=\"change" + i + "_1()\" onchange=\"change" + i + "_1()\">\n"+
 							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_1\">50%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo" + i + "_1\">50%</span>\n" +
 							"\t\t\t\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t\t\t\n" +
 							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
 							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
 							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_2\" name=\"near_distractor_percentage\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"25\" class=\"slider\" id='myRange" + i + "_2' name=\"near_distractor_percentage\" oninput=\"change" + i + "_2()\" onchange=\"change" + i + "_2(){}\">\n" +
 							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_2\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo" + i + "_2\">25%</span>\n" +
 							"\t\t\t\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t\t\t\n" +
 							"\t\t\t\t\t\t\t\t\t\n" +
@@ -185,29 +307,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
 							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
 							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_3\">\n" +
+							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"25\" class=\"slider\" id='myRange"+i+"_3' name=\"far_distractor_percentage\" oninput=\"change" + i + "_3()\" onchange=\"change" + i + "_3()\">\n" +
 							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_3\">0%</span>\n" +
+							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo" + i + "_3\">25%</span>\n" +
 							"\t\t\t\t\t\t\t\t\t</div>");
 
 					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
 							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp"+i+"_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp"+i+"_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp"+i+"_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp"+i+"_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp"+i+"_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp"+i+"_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp"+i+"_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp"+i+"_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp"+i+"_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp"+i+"_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp"+i+"_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp"+i+"_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp"+i+"_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
@@ -215,19 +337,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
 							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round"+i+"_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round"+i+"_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round"+i+"_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round"+i+"_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round"+i+"_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round"+i+"_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round"+i+"_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round"+i+"_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round"+i+"_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round"+i+"_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round"+i+"_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round"+i+"_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
+							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round"+i+"_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
@@ -235,370 +357,106 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #7b8b71; border-radius: 3px;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div" + i + "_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #7b8b71; border-radius: 3px;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div" + i + "_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div>\n" +
 							"\n" +
 							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
 							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
 							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #7b8b71; border-radius: 3px;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
+							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div" + i + "_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
 							"\t\t\t\t\t\t\t</span>\n" +
 							"\t\t\t\t\t\t</div><hr>");
 
-
-				}else if(num==2){
-					$('#numberOfTrials_div').empty();
-					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 1</h3></label>\n" +
-							"\t\t\t\t\t\t\t</div>");
-
-					$('#numberOfTrials_div').append("\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t<label for=\"checkbox\" class=\"col-sm-2 control-label\">Timed<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox1\" type=\"checkbox\" onclick=\"checkbox1()\">Select</label></div>\n" +
-							"\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t<label for=\"disabledinput\" class=\"col-sm-2 control-label\">Count Down Time</label>\n" +
-							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span1\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input1\" placeholder=\"0\" name=\"timed\" value=\"0\">\n" +
-							"\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t</div>");
-
-					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector1\" class=\"form-control1\" name=\"grid_row\">\n" +
-							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
-							"\t\t\t\t\t\t\t</select></span>\n" +
-							"\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Columns<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"column_selector1\" class=\"form-control1\" name=\"grid_column\">\n" +
-							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
-							"\t\t\t\t\t\t\t</select></span>\n" +
-							"\t\t\t\t\t</div>");
-
-					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange1_1\" name=\"target_percentage\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_1\">50%</span>\n" +
-							"\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\n" +
-							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_2\" name=\"near_distractor_percentage\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_2\">0%</span>\n" +
-							"\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\n" +
-							"\t\t\t\t\t\t\t\t\t\n" +
-							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange1_3\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo1_3\">0%</span>\n" +
-							"\t\t\t\t\t\t\t\t\t</div>");
-					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
-							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t</div>" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
-							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"round\" id=\"round1_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round1_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round1_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round1_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round1_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round1_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round1_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round1_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round1_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round1_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round1_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round1_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round1_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div1_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div1_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div1_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div><hr>");
-
-					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ><h3>Trial 2</h3></label>\n" +
-							"\t\t\t\t\t\t\t</div>");
-
-					$('#numberOfTrials_div').append("\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t<label for=\"checkbox\" class=\"col-sm-2 control-label\">Timed<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<div class=\"checkbox-inline col-sm-2\"><label><input id=\"timed-checkbox2\" type=\"checkbox\" onclick=\"checkbox2()\">Select</label></div>\n" +
-							"\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t<label for=\"disabledinput\" class=\"col-sm-2 control-label\">Count Down Time</label>\n" +
-							"\t\t\t\t\t\t\t\t\t<span class=\"col-sm-3\" id=\"timed-checkbox-span2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<input readonly=\"readonly\" type=\"text\" class=\"form-control\" id=\"timed-checkbox-input2\" placeholder=\"0\" name=\"timed\" value=\"0\">\n" +
-							"\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t</div>");
-
-					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Rows<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"row_selector2\" class=\"form-control1\" name=\"grid_row\">\n" +
-							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
-							"\t\t\t\t\t\t\t</select></span>\n" +
-							"\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\">Columns<em style=\"color:red;\">*</em></label>\n" +
-							"\t\t\t\t\t<span class=\"col-sm-3\"><select  id=\"column_selector2\" class=\"form-control1\" name=\"grid_column\">\n" +
-							"\t\t\t\t\t\t\t<option value =\"1\">1</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"2\">2</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"3\">3</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"4\">4</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"5\">5</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"6\">6</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"7\">7</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"8\">8</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"9\">9</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"10\">10</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"11\">11</option>\n" +
-							"\t\t\t\t\t\t\t<option value =\"12\">12</option>\n" +
-							"\t\t\t\t\t\t\t</select></span>\n" +
-							"\t\t\t\t\t</div>");
-					$('#numberOfTrials_div').append("<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t  <input type=\"range\" min=\"1\" max=\"100\" value=\"50\" class=\"slider\" id=\"myRange2_1\" name=\"target_percentage\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo2_1\">50%</span>\n" +
-							"\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\n" +
-							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange2_2\" name=\"near_distractor_percentage\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo2_2\">0%</span>\n" +
-							"\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\n" +
-							"\t\t\t\t\t\t\t\t\t\n" +
-							"\t\t\t\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-2\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t<div class=\"slidecontainer\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"range\" min=\"0\" max=\"99\" value=\"0\" class=\"slider\" id=\"myRange2_3\">\n" +
-							"\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t\t\t\t\t<span class=\"col-sm-1\" id=\"demo2_3\">0%</span>\n" +
-							"\t\t\t\t\t\t\t\t\t</div>");
-					$('#numberOfTrials_div').append("\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Shapes</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
-							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_90_sharp\" class=\"sharp\" id=\"sharp2_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_180_sharp\" class=\"sharp\" id=\"sharp2_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_0_sharp\" class=\"sharp\" id=\"sharp2_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_90_sharp\" class=\"sharp\" id=\"sharp2_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_0_sharp\" class=\"sharp\" id=\"sharp2_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_90_sharp\" class=\"sharp\" id=\"sharp2_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_180_sharp\" class=\"sharp\" id=\"sharp2_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_270_sharp\" class=\"sharp\" id=\"sharp2_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_0_sharp\" class=\"sharp\" id=\"sharp2_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_90_sharp\" class=\"sharp\" id=\"sharp2_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_180_sharp\" class=\"sharp\" id=\"sharp2_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_270_sharp\" class=\"sharp\" id=\"sharp2_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_sharp.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"X_0_sharp\" class=\"sharp\" id=\"sharp2_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_sharp.png\">\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" ></em></label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\">\n" +
-							"\t\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:0px\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_90_round\" class=\"round\" id=\"round2_1\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"O_180_round\" class=\"round\" id=\"round2_2\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/O_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_0_round\" class=\"round\" id=\"round2_3\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"I_90_round\" class=\"round\" id=\"round2_4\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/I_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_0_round\" class=\"round\" id=\"round2_5\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_90_round\" class=\"round\" id=\"round2_6\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_180_round\" class=\"round\" id=\"round2_7\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"L_270_round\" class=\"round\" id=\"round2_8\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/L_270_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_0_round\" class=\"round\" id=\"round2_9\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_0_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_90_round\" class=\"round\" id=\"round2_10\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_90_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_180_round\" class=\"round\" id=\"round2_11\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_180_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"T_270_round\" class=\"round\" id=\"round2_12\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/T_270_round.png\">\n" +
-							"\t\t\t\t\t\t\t\t<img name=\"X_0_round\" class=\"round\" id=\"round2_13\" draggable=\"true\" ondragstart=\"drag(event)\" src=\"/images/X_0_round.png\">\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Target</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div2_1\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Near Distractor</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div2_2\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div>\n" +
-							"\n" +
-							"\t\t\t\t\t\t<div class=\"form-group\">\n" +
-							"\t\t\t\t\t\t\t<label for=\"selector1\" class=\"col-sm-2 control-label\" >Far Distractor</label>\n" +
-							"\t\t\t\t\t\t\t<span class=\"col-sm-10\" >\n" +
-							"\t\t\t\t\t\t\t<div style=\"width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;\" id=\"div2_3\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\"></div>\n" +
-							"\t\t\t\t\t\t\t</span>\n" +
-							"\t\t\t\t\t\t</div><hr>");
 				}
-
-				$("#myRange1_1").bind("input propertychange",function(event){
-					$("#demo1_1").html($("#myRange1_1").val()+ '%');
-
-					$("#myRange1_2").attr('max',100-$("#myRange1_1").val())
-					$("#myRange1_2").val(100-$("#myRange1_1").val());
-					$("#demo1_2").html(100-$("#myRange1_1").val() + '%');
-
-					$("#myRange1_3").attr('max',100-$("#myRange1_1").val());
-					$("#demo1_3").html(0 + '%');
-					$("#myRange1_3").val(0);
-				});
-
-				$("#myRange1_2").bind("input propertychange",function(event){
-					$("#demo1_2").html($("#myRange1_2").val() + '%');
-
-					$("#myRange1_3").val($("#myRange1_2").attr('max')-$("#myRange1_2").val());
-					$("#demo1_3").html($("#myRange1_2").attr('max')-$("#myRange1_2").val() + '%');
-				});
-
-				$("#myRange1_3").bind("input propertychange",function(event){
-
-					$("#demo1_3").html($("#myRange1_3").val() + '%');
-
-					$("#myRange1_2").val($("#myRange1_3").attr('max')-$("#myRange1_3").val());
-					$("#demo1_2").html($("#myRange1_3").attr('max')-$("#myRange1_3").val() + '%');
-				});
-
-				$("#myRange2_1").bind("input propertychange",function(event){
-					$("#demo2_1").html($("#myRange2_1").val()+ '%');
-
-					$("#myRange2_2").attr('max',100-$("#myRange2_1").val())
-					$("#myRange2_2").val(100-$("#myRange2_1").val());
-					$("#demo2_2").html(100-$("#myRange2_1").val() + '%');
-
-					$("#myRange2_3").attr('max',100-$("#myRange2_1").val());
-					$("#demo2_3").html(0 + '%');
-					$("#myRange2_3").val(0);
-				});
-
-				$("#myRange2_2").bind("input propertychange",function(event){
-					$("#demo2_2").html($("#myRange2_2").val() + '%');
-
-					$("#myRange2_3").val($("#myRange2_2").attr('max')-$("#myRange2_2").val());
-					$("#demo2_3").html($("#myRange2_2").attr('max')-$("#myRange2_2").val() + '%');
-				});
-
-				$("#myRange2_3").bind("input propertychange",function(event){
-
-					$("#demo2_3").html($("#myRange2_3").val() + '%');
-
-					$("#myRange2_2").val($("#myRange2_3").attr('max')-$("#myRange2_3").val());
-					$("#demo2_2").html($("#myRange2_3").attr('max')-$("#myRange2_3").val() + '%');
-				});
-
-
 			});
 		});
+
+
 
 	</script>
 
 
 
 	<script type="text/javascript">
+		function change1_1(){
+			$("#demo1_1").html($("#myRange1_1").val()+ '%');
+			$("#myRange1_2").attr('max',100-$("#myRange1_1").val())
+			$("#myRange1_2").val(100-$("#myRange1_1").val());
+			$("#demo1_2").html(100-$("#myRange1_1").val() + '%');
+			$("#myRange1_3").attr('max',100-$("#myRange1_1").val());
+			$("#demo1_3").html(0 + '%');
+			$("#myRange1_3").val(0);
+		}
+
+		function change1_2(){
+			$("#demo1_2").html($("#myRange1_2").val() + '%');
+			$("#myRange1_3").val($("#myRange1_2").attr('max')-$("#myRange1_2").val());
+			$("#demo1_3").html($("#myRange1_2").attr('max')-$("#myRange1_2").val() + '%');
+		}
+
+		function change1_3(){
+			$("#demo1_3").html($("#myRange1_3").val() + '%');
+			$("#myRange1_2").val($("#myRange1_3").attr('max')-$("#myRange1_3").val());
+			$("#demo1_2").html($("#myRange1_3").attr('max')-$("#myRange1_3").val() + '%');
+		}
+
+
+
+
+		function change2_1(){
+			$("#demo2_1").html($("#myRange2_1").val()+ '%');
+			$("#myRange2_2").attr('max',100-$("#myRange2_1").val())
+			$("#myRange2_2").val(100-$("#myRange2_1").val());
+			$("#demo2_2").html(100-$("#myRange2_1").val() + '%');
+			$("#myRange2_3").attr('max',100-$("#myRange2_1").val());
+			$("#demo2_3").html(0 + '%');
+			$("#myRange2_3").val(0);
+		}
+
+		function change2_2(){
+			$("#demo2_2").html($("#myRange2_2").val() + '%');
+			$("#myRange2_3").val($("#myRange2_2").attr('max')-$("#myRange2_2").val());
+			$("#demo2_3").html($("#myRange2_2").attr('max')-$("#myRange2_2").val() + '%');
+		}
+
+		function change2_3(){
+			$("#demo2_3").html($("#myRange2_3").val() + '%');
+			$("#myRange2_2").val($("#myRange2_3").attr('max')-$("#myRange2_3").val());
+			$("#demo2_2").html($("#myRange2_3").attr('max')-$("#myRange2_3").val() + '%');
+		}
+
+
+
+		function change3_1(){
+			$("#demo3_1").html($("#myRange3_1").val()+ '%');
+			$("#myRange3_2").attr('max',100-$("#myRange3_1").val())
+			$("#myRange3_2").val(100-$("#myRange3_1").val());
+			$("#demo3_2").html(100-$("#myRange3_1").val() + '%');
+			$("#myRange3_3").attr('max',100-$("#myRange3_1").val());
+			$("#demo3_3").html(0 + '%');
+			$("#myRange3_3").val(0);
+		}
+
+		function change3_2(){
+			$("#demo3_2").html($("#myRange3_2").val() + '%');
+			$("#myRange3_3").val($("#myRange3_2").attr('max')-$("#myRange3_2").val());
+			$("#demo3_3").html($("#myRange3_2").attr('max')-$("#myRange3_2").val() + '%');
+		}
+
+		function change3_3(){
+			$("#demo3_3").html($("#myRange3_3").val() + '%');
+			$("#myRange3_2").val($("#myRange3_3").attr('max')-$("#myRange3_3").val());
+			$("#demo3_2").html($("#myRange3_3").attr('max')-$("#myRange3_3").val() + '%');
+		}
+
 		function checkbox1(){
 			var isChecked = document.getElementById("timed-checkbox1").checked;
 			$('#timed-checkbox-span1').empty();
@@ -696,7 +554,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			var near_percentage_array = new Array();
 			var far_percentage_array = new Array();
 
-
 			if(trial_num>=1){		//说明至少选择了1轮
 				target_array[0] = new Array();					//第一轮，生成第一个二维数组
 				near_percentage_array[0] = new Array();
@@ -737,10 +594,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					far_percentage_array[1][i]=$('#div2_3').children("img").eq(i).attr("name");//输出第i个子img对应的id
 				}
 			}
+			if(trial_num>=3){		//说明至少选择了2轮
+				target_array[2] = new Array();					//第二轮，生成第二个二维数组
+				near_percentage_array[2] = new Array();
+				far_percentage_array[2] = new Array();
+
+				var target_num = $('#div3_1').children("img").length;
+				for(var i=0;i<target_num;i++){
+					target_array[2][i]=$('#div3_1').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var near_percentage_num = $('#div3_2').children("img").length;
+				for(var i=0;i<near_percentage_num;i++){
+					near_percentage_array[2][i]=$('#div3_2').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var far_percentage_num = $('#div3_3').children("img").length;
+				for(var i=0;i<far_percentage_num;i++){
+					far_percentage_array[2][i]=$('#div3_3').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+			}
+			if(trial_num>=4){		//说明至少选择了2轮
+				target_array[3] = new Array();					//第二轮，生成第二个二维数组
+				near_percentage_array[3] = new Array();
+				far_percentage_array[3] = new Array();
+
+				var target_num = $('#div4_1').children("img").length;
+				for(var i=0;i<target_num;i++){
+					target_array[3][i]=$('#div4_1').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var near_percentage_num = $('#div4_2').children("img").length;
+				for(var i=0;i<near_percentage_num;i++){
+					near_percentage_array[3][i]=$('#div4_2').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var far_percentage_num = $('#div4_3').children("img").length;
+				for(var i=0;i<far_percentage_num;i++){
+					far_percentage_array[3][i]=$('#div4_3').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+			}
+			if(trial_num>=5){		//说明至少选择了2轮
+				target_array[4] = new Array();					//第二轮，生成第二个二维数组
+				near_percentage_array[4] = new Array();
+				far_percentage_array[4] = new Array();
+
+				var target_num = $('#div5_1').children("img").length;
+				for(var i=0;i<target_num;i++){
+					target_array[4][i]=$('#div5_1').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var near_percentage_num = $('#div5_2').children("img").length;
+				for(var i=0;i<near_percentage_num;i++){
+					near_percentage_array[4][i]=$('#div5_2').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+
+				var far_percentage_num = $('#div5_3').children("img").length;
+				for(var i=0;i<far_percentage_num;i++){
+					far_percentage_array[4][i]=$('#div5_3').children("img").eq(i).attr("name");//输出第i个子img对应的id
+				}
+			}
 
 			$('#targetArray').val(JSON.stringify(target_array));
 			$('#nearDistractorArray').val(JSON.stringify(near_percentage_array));
 			$('#farDistractorArray').val(JSON.stringify(far_percentage_array));
+
+			alert(JSON.stringify(target_array));
+			alert(JSON.stringify(near_percentage_array));
+			alert(JSON.stringify(far_percentage_array));
+
+
 			$('#round').val(trial_num);
 		}
 
@@ -892,173 +815,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 									<label for="selector1" class="col-sm-2 control-label">Number of Trials<em style="color:red;">*</em></label>
 									<span class="col-sm-3"><select  id="numberOfTrials_selector" name="round" class="form-control1">
+									<option value ="0">Choose the number of trial</option>
 									<option value ="1">1</option>
 									<option value ="2">2</option>
 									<option value ="3">3</option>
 									<option value ="4">4</option>
 									<option value ="5">5</option>
-									<option value ="6">6</option>
-									<option value ="7">7</option>
-									<option value ="8">8</option>
-									<option value ="9">9</option>
-									<option value ="10">10</option>
 								</select></span>
 								</div>
 
 								<hr>
 								<span id="numberOfTrials_div">
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" ><h3>Trial 1</h3></label>
-									</div>
 
-									<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Timed<em style="color:red;">*</em></label>
-									<span class="col-sm-3">
-										<div class="checkbox-inline col-sm-2"><label><input id="timed-checkbox1" type="checkbox" onclick="checkbox1()">Select</label></div>
-									</span>
-									<label for="disabledinput" class="col-sm-2 control-label">Count Down Time</label>
-									<span class="col-sm-3" id="timed-checkbox-span1">
-										<input readonly="readonly" type="text" class="form-control" id="timed-checkbox-input1" placeholder="0" name="timed" value="0">
-									</span>
-								</div>
+									<!--等着让Jquery插入-->
 
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label">Rows<em style="color:red;">*</em></label>
-										<span class="col-sm-3"><select  id="row_selector1" class="form-control1" name="grid_row">
-										<option value ="1">1</option>
-										<option value ="2">2</option>
-										<option value ="3">3</option>
-										<option value ="4">4</option>
-										<option value ="5">5</option>
-										<option value ="6">6</option>
-										<option value ="7">7</option>
-										<option value ="8">8</option>
-										<option value ="9">9</option>
-										<option value ="10">10</option>
-										<option value ="11">11</option>
-										<option value ="12">12</option>
-									</select></span>
-										<label for="selector1" class="col-sm-2 control-label">Columns<em style="color:red;">*</em></label>
-										<span class="col-sm-3"><select  id="column_selector1" class="form-control1" name="grid_column">
-										<option value ="1">1</option>
-										<option value ="2">2</option>
-										<option value ="3">3</option>
-										<option value ="4">4</option>
-										<option value ="5">5</option>
-										<option value ="6">6</option>
-										<option value ="7">7</option>
-										<option value ="8">8</option>
-										<option value ="9">9</option>
-										<option value ="10">10</option>
-										<option value ="11">11</option>
-										<option value ="12">12</option>
-									</select></span>
-									</div>
-
-
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Target</label>
-										<span class="col-sm-2">
-											<div class="slidecontainer">
-											  <input type="range" min="1" max="100" value="50" class="slider" id="myRange1_1" name="target_percentage">
-											</div>
-										</span>
-										<span class="col-sm-1" id="demo1_1">50%</span>
-									</div>
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
-										<span class="col-sm-2">
-											<div class="slidecontainer">
-												<input type="range" min="0" max="99" value="0" class="slider" id="myRange1_2" name="near_distractor_percentage">
-											</div>
-										</span>
-										<span class="col-sm-1" id="demo1_2">0%</span>
-									</div>
-
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
-										<span class="col-sm-2">
-											<div class="slidecontainer">
-												<input type="range" min="0" max="99" value="0" class="slider" id="myRange1_3">
-											</div>
-										</span>
-										<span class="col-sm-1" id="demo1_3">0%</span>
-									</div>
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Shapes</label>
-										<span class="col-sm-10">
-											<div style="width:79.3%;min-height:40px;padding:10px;border:0px" ondrop="drop(event)" ondragover="allowDrop(event)">
-												<img name="O_90_sharp" id="sharp1" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_90_sharp.png">
-												<img name="O_180_sharp" id="sharp2" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/O_180_sharp.png">
-												<img name="I_0_sharp" id="sharp3" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_0_sharp.png">
-												<img name="I_90_sharp" id="sharp4" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
-												<img name="I_90_sharp" id="sharp5" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/I_90_sharp.png">
-												<img name="L_90_sharp" id="sharp6" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_90_sharp.png">
-												<img name="L_180_sharp" id="sharp7" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_180_sharp.png">
-												<img name="L_270_sharp" id="sharp8" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/L_270_sharp.png">
-												<img name="T_0_sharp" id="sharp9" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_0_sharp.png">
-												<img name="T_90_sharp" id="sharp10" class="sharp"  draggable="true" ondragstart="drag(event)" src="/images/T_90_sharp.png">
-												<img name="T_180_sharp" id="sharp11" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_180_sharp.png">
-												<img name="T_270_sharp" id="sharp12" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/T_270_sharp.png">
-												<img name="X_0_sharp" id="sharp13" class="sharp" draggable="true" ondragstart="drag(event)" src="/images/X_0_sharp.png">
-											</div>
-										</span>
-									</div>
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" ></label>
-										<span class="col-sm-10">
-											<div style="width:79.3%;min-height:40px;padding:10px;border:0px" ondrop="drop(event)" ondragover="allowDrop(event)">
-												<img name="O_90_round" id="round1" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_90_round.png">
-												<img name="O_180_round" id="round2" class="round" draggable="true" ondragstart="drag(event)" src="/images/O_180_round.png">
-												<img name="I_0_round" id="round3" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_0_round.png">
-												<img name="I_90_round" id="round4" class="round" draggable="true" ondragstart="drag(event)" src="/images/I_90_round.png">
-												<img name="L_0_round" id="round5" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_0_round.png">
-												<img name="L_90_round" id="round6" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_90_round.png">
-												<img name="L_180_round" id="round7" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_180_round.png">
-												<img name="L_270_round" id="round8" class="round" draggable="true" ondragstart="drag(event)" src="/images/L_270_round.png">
-												<img name="T_0_round" id="round9" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_0_round.png">
-												<img name="T_90_round" id="round10" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_90_round.png">
-												<img name="T_180_round" id="round11" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_180_round.png">
-												<img name="T_270_round" id="round12" class="round" draggable="true" ondragstart="drag(event)" src="/images/T_270_round.png">
-												<img name="X_0_round" id="round13" class="round" draggable="true" ondragstart="drag(event)" src="/images/X_0_round.png">
-											</div>
-										</span>
-									</div>
-
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Target</label>
-										<span class="col-sm-10" >
-										<div style="width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;" id="div1_1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-										</span>
-									</div>
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Near Distractor</label>
-										<span class="col-sm-10" >
-										<div style="width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;" id="div1_2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-										</span>
-									</div>
-
-									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label" >Far Distractor</label>
-										<span class="col-sm-10" >
-										<div style="width:79.3%;min-height:40px;padding:10px;border:3px dashed #c1ccd7; border-radius: 3px;" id="div1_3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-										</span>
-									</div>
-									<hr>
 								</span>
 
 
 								<input style="display: none" id="targetArray" name="targetArray"  type="text">
 								<input style="display: none" id="farDistractorArray" name="farDistractorArray"  type="text">
 								<input style="display: none" id="nearDistractorArray" name="nearDistractorArray"  type="text">
-								<input style="display: none;" id="round" name="round"  type="text">
+								<input style="display: none" id="round" name="round"  type="text">
 
 								<div class='form-group' name="addEmail">
 									<label for="focusedinput" class="col-sm-2 control-label"><span name="practitonerLabel"></span></label>

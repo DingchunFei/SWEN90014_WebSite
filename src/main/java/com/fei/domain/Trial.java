@@ -24,6 +24,7 @@ public class Trial {
     private Integer target_percentage;
 
     private Integer near_distractor_percentage;
+
     @JsonIgnore
     private Integer far_distractor_percentage;
 

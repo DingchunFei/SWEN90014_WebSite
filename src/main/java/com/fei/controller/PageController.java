@@ -7,7 +7,6 @@ import com.fei.service.UserService;
 import com.fei.service.WebAppService;
 import com.fei.utils.HttpUtils;
 import com.fei.utils.JsonUtils;
-import com.fei.utils.WebApp2Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.ResourceUtils;
@@ -125,7 +124,6 @@ public class PageController {
 
         if(age!=null){
             for(int i=0;i<age.length; i++){
-                System.out.println("age =======================>" + age[i]);
                 if(age[i].equals("1")){
                     strBuilder.setCharAt(0, '1');
                 }else if(age[i].equals("2")){
@@ -147,9 +145,7 @@ public class PageController {
             //不填就代表全选
             webApp.setAge("1111111");
         }
-
         if(webApp.getId()!=null){                                  //通过webappId是否存在来判断 更新
-
             user = webAppService.updateWebApp(webApp,emails,userInfo.getId());      //更新WebApp成功，重置session
         }else{
 
@@ -158,6 +154,13 @@ public class PageController {
             /**
              * 一下三个数组与具体选择target有关
              */
+            System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+            System.out.println(round);
+            System.out.println(targetArray);
+            System.out.println(farDistractorArray);
+            System.out.println(nearDistractorArray);
+
+
             String[][] targets = JsonUtils.string2Obj(targetArray, String[][].class);                     //重建从JS传来的二维字符串数组
             String[][] farDistractors = JsonUtils.string2Obj(farDistractorArray, String[][].class);       //重建从JS传来的二维字符串数组
             String[][] nearDistractors = JsonUtils.string2Obj(nearDistractorArray, String[][].class);     //重建从JS传来的二维字符串数组
@@ -175,16 +178,15 @@ public class PageController {
                     TrialShape trialShape = new TrialShape(1, shape);
                     trialShapeList.add(trialShape);
                 }
-                for(int j=0;j<farDistractors[i].length;j++){
-                    Shape shape = shapeService.findShapeByShapeName(farDistractors[i][j] + ".png");
-                    TrialShape trialShape = new TrialShape(3, shape);
-                    trialShapeList.add(trialShape);
-                }
                 for(int j=0;j<nearDistractors[i].length;j++){
                     Shape shape = shapeService.findShapeByShapeName(nearDistractors[i][j] + ".png");
                     TrialShape trialShape = new TrialShape(2, shape);
                     trialShapeList.add(trialShape);
-
+                }
+                for(int j=0;j<farDistractors[i].length;j++){
+                    Shape shape = shapeService.findShapeByShapeName(farDistractors[i][j] + ".png");
+                    TrialShape trialShape = new TrialShape(3, shape);
+                    trialShapeList.add(trialShape);
                 }
                 trial.setTrialShapeList(trialShapeList);
                 trialList.add(trial);

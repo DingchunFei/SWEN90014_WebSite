@@ -36,7 +36,7 @@ public class WebApp {
 
     private Integer numbers_of_trials;
     @JsonIgnore
-    private List<AppResult> resultLists;
+    private List<WebAppResult> webAppResultList;
 
     @JsonIgnore
     private String test="10";           //作为一个检测工具
@@ -54,7 +54,7 @@ public class WebApp {
                 ", template=" + template +
                 ", age='" + age + '\'' +
                 ", numbers_of_trials=" + numbers_of_trials +
-                ", resultLists=" + resultLists +
+                ", webAppResultList=" + webAppResultList +
                 ", notes='" + notes + '\'' +
                 ", practitioners=" + practitioners +
                 ", practitioners_Num=" + practitioners_Num +
@@ -176,11 +176,11 @@ public class WebApp {
         this.age = age;
     }
 
-    public List<AppResult> getResultLists() {
-        return resultLists;
+    public List<WebAppResult> getWebAppResultList() {
+        return webAppResultList;
     }
 
-    public void setResultLists(List<AppResult> resultLists) {
-        this.resultLists = resultLists;
+    public void setWebAppResultList(List<WebAppResult> webAppResultList) {
+        this.webAppResultList = webAppResultList;
     }
 }

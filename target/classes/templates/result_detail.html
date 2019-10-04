@@ -1,213 +1,241 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Forms :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
-<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
-<script th:src="@{/js/jquery.min.js}"> </script>
-<script th:src="@{/js/bootstrap.min.js}"> </script>
+    <title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Forms :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
 
-<!-- Mainly scripts -->
-<script th:src="@{/js/jquery.metisMenu.js}"></script>
-<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
-<!-- Custom and plugin javascript -->
-<link th:href="@{/css/custom.css}" rel="stylesheet">
-<script th:src="@{/js/custom.js}"></script>
-<script th:src="@{/js/screenfull.js}"></script>
-<script>
-	$(function () {
-		$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
-		if (!screenfull.enabled) {
-			return false;
-		}
-		$('#toggle').click(function () {
-			screenfull.toggle($('#container')[0]);
-		});
-	});
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <link th:href="@{/css/style.css}" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
 
-	$(document).ready(function(){
-		var $practitionerLabel = $(document.getElementsByName("practitonerLabel")).first();		//获取最后一个email，以便再加一个
-		if($practitionerLabel.html()=="" || $practitionerLabel.html()==null){		//发现为空需要贴Label Practitioner
-			$practitionerLabel.html("Practitioners");
-		}
-	});
+    <!-- Mainly scripts -->
+	<script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/jquery.metisMenu.js}"></script>
+    <script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+    <!-- Custom and plugin javascript -->
+    <link th:href="@{/css/custom.css}" rel="stylesheet">
+    <script th:src="@{/js/custom.js}"></script>
+    <script th:src="@{/js/screenfull.js}"></script>
 
-	$(document).ready(function(){
-		var $row = $(document.getElementById("row_selector"));
-		var $col = $(document.getElementById("column_selector"));
+    <!----->
+</head>
 
-		var row_val = $row.attr("value");
-		var col_val = $col.attr("value");
+<style>
+    td{
+        width: 60px;
+        height: 60px;
+    }
 
-		$row.children("option")[row_val-1].selected=true;
-		$col.children("option")[col_val-1].selected=true;
+    td img{
+        width: 45px;
+        height: 45px;
+    }
 
-		var $num_of_trials = $(document.getElementById("numberOfTrials_selector"));
-		var num_of_trials_val = $row.attr("value");
-		$num_of_trials.children("option")[num_of_trials_val-1].selected=true;
-
-
-	});
-
-	function backToResults(){
-		window.location.href="/stimuli/results";
+	table{
+		margin:auto
 	}
+
+	img.wrong{
+		border-radius: 5px;
+		border: 2px solid #9a545c;
+		padding: 2px;
+	}
+</style>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.wrong').popover();
+    });
 </script>
 
-<!----->
-</head>
-<style>
-	span.block{
-		color:#fff;
-		font-size: 0.8em;
-		padding: 4px 7px;
-		font-family: 'Muli-Regular';
-	}
-	span.fam{
-		background:#3BB2D0;
-	}
-	span.fem{
-		background:#e094b6;
-	}
-	span.you{
-		background:#c4c4c4;
-	}
-	span.adu{
-		background:#888888;
-	}
-	span.old{
-		background:#4a4a4a;
-	}
-
-</style>
 <body>
 <div id="wrapper">
-	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
+    <div th:include="Nav :: NavBar"></div>                <!--引入公共元素-->
 
-	<div id="page-wrapper" class="gray-bg dashbard-1">
-       <div class="content-main">
- 
- 	<!--banner-->	
-		     <div class="banner">
-		    	<h2>
-				<a href="/stimuli/home">Home</a>
-				<i class="fa fa-angle-right"></i>
-				<span>Result Detail</span>
-				</h2>
-		    </div>
-		<!--//banner-->
- 	<!--grid-->
- 	<div class="grid-form">
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="content-main">
 
-		<div class="grid-form1">
+            <!--banner-->
+            <div class="banner">
+                <h2>
+                    <a href="/stimuli/home">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <span>Result Detail</span>
+                </h2>
+            </div>
+            <!--//banner-->
+            <!--grid-->
+            <div class="grid-form">
 
-			<h3>Result Detail</h3>
+                <div class="grid-form1">
 
-			<div class="tab-content">
-				<div class="tab-pane active" id="horizontal-form">
+                    <h3>Result Detail</h3>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="horizontal-form">
 
-					<form id="newStimuli_form" class="form-horizontal" action="/stimuli/results">
-						<div class="form-group">
+                            <form id="newStimuli_form" class="form-horizontal">
 
-							<label for="focusedinput" class="col-sm-3 control-label" style="color: #5e5e5e">Participant:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.p_username}" >username</span>
-								<!--<input type="text" disabled="" class="form-control1" id="NewStimuli_Input" th:value="${session.appResult.p_username}" name="app_name">-->
-							</span>
-							<label for="focusedinput" class="col-sm-3 control-label" style="color: #5e5e5e">Web App Name:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.webApp.app_name}">App Name</span>
-							</span>
-						</div>
+                                <div class="form-group required">
+                                    <label for="focusedinput" class="col-sm-2 control-label">Stimuli Name</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control1" value="Demo1"  name="app_name"> <!--th:value="${session.webApp.app_name}"-->
+                                    </div>
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">Age:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.age}">25</span>
-							</span>
+                                    <label for="focusedinput" class="col-sm-2 control-label">Testing Date</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control1" value="30/09/2019">
+                                    </div>
 
-							<label class="col-sm-3 control-label" style="color: #5e5e5e">Accuracy:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.accuracy+'%'}">25</span>
-							</span>
-						</div>
+                                </div>
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">Total Shapes:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.totalShapes}">25</span>
-							</span>
+                                <div class="form-group">
+                                    <label for="selector1" class="col-sm-2 control-label">Number of Trials</label>
+                                    <span class="col-sm-3">
+										<input type="text" class="form-control1" id="number_of_trials" name="total_accuracy" value="3" ><!--th:value="${session.webApp.numbers_of_trials}"-->
+									</span>
 
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">Target Amount:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.targetAmount}">25</span>
-							</span>
-						</div>
+                                    <label for="selector1" class="col-sm-2 control-label">Total Accuracy</label>
+                                    <span class="col-sm-3">
+										<input type="text" class="form-control1" id="total_accuracy" name="total_accuracy" value="45%">
+									</span>
+                                </div>
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">Near Distractor Amount:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.nearDistractorAmount}">25</span>
-							</span>
 
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">Far Distractor Amount:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.farDistractorAmount}">25</span>
-							</span>
-						</div>
+                                <hr>
+                                <span>  <!--th:each="trial : ${session.webApp.trials}"-->
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">Test Date:</label>
-							<span class="col-sm-2" style="margin: 6px;">
-								<span th:text="${session.appResult.test_date_string}">25</span>
-							</span>
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label"><h3 >Trial1</h3></label> <!--th:text="'Trial '+${trial.round}"-->
+										<span style="margin-top: 13px;" class="col-sm-1">
+											<a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><!-- th:href="'#collapseExample'+${trial.round}" -->
+												<i style="color: #7b8b71" class="fa fa-caret-down"></i>
+											</a>
+										</span>
+									</div>
 
-						</div>
 
-						<div class="form-group">
-							<label for="checkbox" class="col-sm-3 control-label" style="color: #5e5e5e">URL:</label>
-							<a target="_blank" th:href="@{${session.appResult.webApp.getURL()}}">
-								<span class="col-sm-9" style="margin-top: 6px;">
-									<span th:text="${session.appResult.webApp.getURL()}">http://</span>
+									<div class="collapse" id="collapseExample1" > <!--th:id="'collapseExample'+${trial.round}"-->
+									<div class="card card-body">
+
+										<div class="form-group" >
+											<label for="selector1" class="col-sm-2 control-label">Accuracy</label>
+											<span class="col-sm-3">
+												<input type="text" class="form-control1" name="trial_accuracy" value="65%">
+											</span>
+
+											<label for="checkbox" class="col-sm-2 control-label">Time</label>
+											<span class="col-sm-3">
+												<input disabled="" value="20" type="text" class="form-control1" name="timed">
+<!--												<input disabled="" th:if="${trial.timed>0}" th:value="${trial.timed}" type="text" class="form-control1" name="timed">-->
+<!--												<input disabled="" th:if="${trial.timed==0}" th:value="'No Time Limitation'" type="text" class="form-control1" name="timed">-->
+											</span>
+										</div>
+
+										<div class="form-group" >
+											<label for="selector1" class="col-sm-2 control-label">Proportion</label>
+
+											<span class="col-sm-8" style="margin-top: 8px;">
+												<div class="progress">
+
+													<div class="progress-bar" role="progressbar" style="width: 35%; background-color:#7b8b71" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Target 35%</div>
+													<div class="progress-bar" role="progressbar" style="width:40%; background-color:#c0c0c0" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Near Distractor 40%</div>
+													<div class="progress-bar" role="progressbar" style="width:25%; background-color:#788490" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Far Distractor 25%</div>
+
+												</div>
+											</span>
+										</div>
+
+										<div class="form-group">
+											<label for="selector1" class="col-sm-2 control-label" ></label>
+
+											<div class="col-sm-8" style="text-align: center">
+												<table>
+												  <tr>
+													<td><img src="/images/O_180_sharp.png"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/T_270_sharp_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img class="wrong" src="/images/T_270_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img class="wrong" src="/images/X_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+												  </tr>
+
+												  <tr>
+													<td><img src="/images/L_0_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/L_180_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="11s&nbsp;3s&nbsp;4s"></td>
+													<td><img class="wrong" src="/images/I_0_sharp_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="13s&nbsp;13s"></td>
+													<td><img src="/images/T_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="12s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_90_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+												  </tr>
+
+												  <tr>
+													<td><img  src="/images/I_0_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content=""></td>
+													<td><img src="/images/L_180_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content=""></td>
+													<td><img src="/images/T_0_sharp_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content=""></td>
+													<td><img src="/images/L_0_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img class="wrong" src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="3s&nbsp;4s"></td>
+													<td><img src="/images/L_0_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;6s"></td>
+												  </tr>
+
+												  <tr>
+													<td><img src="/images/I_90_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/T_270_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/T_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_90_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+												  </tr>
+
+												  <tr>
+													<td><img src="/images/L_0_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img class="wrong" src="/images/T_180_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/T_270_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/T_270_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/X_0_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+													<td><img src="/images/I_90_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
+												  </tr>
+												</table>
+											</div>
+										</div>
+
+									</div>
+									</div>
+									<hr>
 								</span>
-							</a>
-						</div>
 
-						<hr>
-						<div class="form-group">
-							<div class="col-sm-12 col-sm-offset-8">
-								<button class="btn-primary btn" onclick = "backToResults()" style="background-color: #7b8b71; border-color: #7b8b71;" >&nbsp;&nbsp;Back To Results&nbsp;&nbsp;</button>
-							</div>
-						</div>
+                            </form>
 
-					</form>
+                        </div>
 
-				</div>
-
-			</div>
-  </div>
- 	</div>
- 	<!--//grid-->
-		<!---->
-<div class="copy">
-	<div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
-		</div>
-		</div>
-		<div class="clearfix"> </div>
-       </div>
-     <!--scrolling js-->
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
-	<!--//scrolling js-->
-<!---->
-
+                    </div>
+                </div>
+            </div>
+            <!--//grid-->
+            <!---->
+            <div class="copy">
+                <div th:include="Footer :: Footer"></div>                <!--引入公共元素-->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+                                                          <!--scrolling js-->
+    <script th:src="@{/js/jquery.nicescroll.js}"></script>
+    <script th:src="@{/js/scripts.js}"></script>
+                                                          <!--//scrolling js-->
+                                                          <!---->
 </body>
 </html>
 

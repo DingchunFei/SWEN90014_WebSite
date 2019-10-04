@@ -81,149 +81,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript">
 		$(document).ready(function(){
 
-/*			$("#myRange1_1").bind("input propertychange",function(event){
-				$("#demo1_1").html($("#myRange1_1").val()+ '%');
-
-				$("#myRange1_2").attr('max',100-$("#myRange1_1").val())
-				$("#myRange1_2").val(100-$("#myRange1_1").val());
-				$("#demo1_2").html(100-$("#myRange1_1").val() + '%');
-
-				$("#myRange1_3").attr('max',100-$("#myRange1_1").val());
-				$("#demo1_3").html(0 + '%');
-				$("#myRange1_3").val(0);
-			});
-
-			$("#myRange1_2").bind("input propertychange",function(event){
-				$("#demo1_2").html($("#myRange1_2").val() + '%');
-
-				$("#myRange1_3").val($("#myRange1_2").attr('max')-$("#myRange1_2").val());
-				$("#demo1_3").html($("#myRange1_2").attr('max')-$("#myRange1_2").val() + '%');
-			});
-
-			$("#myRange1_3").bind("input propertychange",function(event){
-
-				$("#demo1_3").html($("#myRange1_3").val() + '%');
-
-				$("#myRange1_2").val($("#myRange1_3").attr('max')-$("#myRange1_3").val());
-				$("#demo1_2").html($("#myRange1_3").attr('max')-$("#myRange1_3").val() + '%');
-			});
-
-
-
-			$("#myRange2_1").bind("input propertychange",function(event){
-				$("#demo2_1").html($("#myRange2_1").val()+ '%');
-
-				$("#myRange2_2").attr('max',100-$("#myRange2_1").val())
-				$("#myRange2_2").val(100-$("#myRange2_1").val());
-				$("#demo2_2").html(100-$("#myRange2_1").val() + '%');
-
-				$("#myRange2_3").attr('max',100-$("#myRange2_1").val());
-				$("#demo2_3").html(0 + '%');
-				$("#myRange2_3").val(0);
-			});
-
-			$("#myRange2_2").bind("input propertychange",function(event){
-				$("#demo2_2").html($("#myRange2_2").val() + '%');
-
-				$("#myRange2_3").val($("#myRange2_2").attr('max')-$("#myRange2_2").val());
-				$("#demo2_3").html($("#myRange2_2").attr('max')-$("#myRange2_2").val() + '%');
-			});
-
-			$("#myRange2_3").bind("input propertychange",function(event){
-
-				$("#demo2_3").html($("#myRange2_3").val() + '%');
-
-				$("#myRange2_2").val($("#myRange2_3").attr('max')-$("#myRange2_3").val());
-				$("#demo2_2").html($("#myRange2_3").attr('max')-$("#myRange2_3").val() + '%');
-			});
-
-
-
-			$("#myRange3_1").bind("input propertychange",function(event){
-				$("#demo3_1").html($("#myRange3_1").val()+ '%');
-
-				$("#myRange3_2").attr('max',100-$("#myRange3_1").val())
-				$("#myRange3_2").val(100-$("#myRange3_1").val());
-				$("#demo3_2").html(100-$("#myRange3_1").val() + '%');
-
-				$("#myRange3_3").attr('max',100-$("#myRange3_1").val());
-				$("#demo3_3").html(0 + '%');
-				$("#myRange3_3").val(0);
-			});
-
-			$("#myRange3_2").bind("input propertychange",function(event){
-				$("#demo3_2").html($("#myRange3_2").val() + '%');
-
-				$("#myRange3_3").val($("#myRange3_2").attr('max')-$("#myRange3_2").val());
-				$("#demo3_3").html($("#myRange3_2").attr('max')-$("#myRange3_2").val() + '%');
-			});
-
-			$("#myRange3_3").bind("input propertychange",function(event){
-
-				$("#demo3_3").html($("#myRange3_3").val() + '%');
-
-				$("#myRange3_2").val($("#myRange3_3").attr('max')-$("#myRange3_3").val());
-				$("#demo3_2").html($("#myRange3_3").attr('max')-$("#myRange3_3").val() + '%');
-			});
-
-			$("#myRange4_1").bind("input propertychange",function(event){
-				$("#demo4_1").html($("#myRange4_1").val()+ '%');
-
-				$("#myRange4_2").attr('max',100-$("#myRange4_1").val())
-				$("#myRange4_2").val(100-$("#myRange4_1").val());
-				$("#demo4_2").html(100-$("#myRange4_1").val() + '%');
-
-				$("#myRange4_3").attr('max',100-$("#myRange4_1").val());
-				$("#demo4_3").html(0 + '%');
-				$("#myRange4_3").val(0);
-			});
-
-			$("#myRange4_2").bind("input propertychange",function(event){
-				$("#demo4_2").html($("#myRange4_2").val() + '%');
-
-				$("#myRange4_3").val($("#myRange4_2").attr('max')-$("#myRange4_2").val());
-				$("#demo4_3").html($("#myRange4_2").attr('max')-$("#myRange4_2").val() + '%');
-			});
-
-			$("#myRange4_3").bind("input propertychange",function(event){
-
-				$("#demo4_3").html($("#myRange4_3").val() + '%');
-
-				$("#myRange4_2").val($("#myRange4_3").attr('max')-$("#myRange4_3").val());
-				$("#demo4_2").html($("#myRange4_3").attr('max')-$("#myRange4_3").val() + '%');
-			});
-
-			$("#myRange5_1").bind("input propertychange",function(event){
-				$("#demo5_1").html($("#myRange5_1").val()+ '%');
-
-				$("#myRange5_2").attr('max',100-$("#myRange5_1").val())
-				$("#myRange5_2").val(100-$("#myRange5_1").val());
-				$("#demo5_2").html(100-$("#myRange5_1").val() + '%');
-
-				$("#myRange5_3").attr('max',100-$("#myRange5_1").val());
-				$("#demo5_3").html(0 + '%');
-				$("#myRange5_3").val(0);
-			});
-
-			$("#myRange5_2").bind("input propertychange",function(event){
-				$("#demo5_2").html($("#myRange5_2").val() + '%');
-
-				$("#myRange5_3").val($("#myRange5_2").attr('max')-$("#myRange5_2").val());
-				$("#demo5_3").html($("#myRange5_2").attr('max')-$("#myRange5_2").val() + '%');
-			});
-
-			$("#myRange5_3").bind("input propertychange",function(event){
-
-				$("#demo5_3").html($("#myRange5_3").val() + '%');
-
-				$("#myRange5_2").val($("#myRange5_3").attr('max')-$("#myRange5_3").val());
-				$("#demo5_2").html($("#myRange5_3").attr('max')-$("#myRange5_3").val() + '%');
-			});*/
-
-
-
-
-
 			$('#numberOfTrials_selector').change(function() {
 				//根据不同的值弹出不同数量的下拉菜单
 
@@ -455,6 +312,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$("#demo3_3").html($("#myRange3_3").val() + '%');
 			$("#myRange3_2").val($("#myRange3_3").attr('max')-$("#myRange3_3").val());
 			$("#demo3_2").html($("#myRange3_3").attr('max')-$("#myRange3_3").val() + '%');
+		}
+
+		function change4_1(){
+			$("#demo4_1").html($("#myRange4_1").val()+ '%');
+			$("#myRange4_2").attr('max',100-$("#myRange4_1").val())
+			$("#myRange4_2").val(100-$("#myRange4_1").val());
+			$("#demo4_2").html(100-$("#myRange4_1").val() + '%');
+			$("#myRange4_3").attr('max',100-$("#myRange4_1").val());
+			$("#demo4_3").html(0 + '%');
+			$("#myRange4_3").val(0);
+		}
+
+		function change4_2(){
+			$("#demo4_2").html($("#myRange4_2").val() + '%');
+			$("#myRange4_3").val($("#myRange4_2").attr('max')-$("#myRange4_2").val());
+			$("#demo4_3").html($("#myRange4_2").attr('max')-$("#myRange4_2").val() + '%');
+		}
+
+		function change4_3(){
+			$("#demo4_3").html($("#myRange4_3").val() + '%');
+			$("#myRange4_2").val($("#myRange4_3").attr('max')-$("#myRange4_3").val());
+			$("#demo4_2").html($("#myRange4_3").attr('max')-$("#myRange4_3").val() + '%');
+		}
+
+
+		function change5_1(){
+			$("#demo5_1").html($("#myRange5_1").val()+ '%');
+			$("#myRange5_2").attr('max',100-$("#myRange5_1").val())
+			$("#myRange5_2").val(100-$("#myRange5_1").val());
+			$("#demo5_2").html(100-$("#myRange5_1").val() + '%');
+			$("#myRange5_3").attr('max',100-$("#myRange5_1").val());
+			$("#demo5_3").html(0 + '%');
+			$("#myRange5_3").val(0);
+		}
+
+		function change5_2(){
+			$("#demo5_2").html($("#myRange5_2").val() + '%');
+			$("#myRange5_3").val($("#myRange5_2").attr('max')-$("#myRange5_2").val());
+			$("#demo5_3").html($("#myRange5_2").attr('max')-$("#myRange5_2").val() + '%');
+		}
+
+		function change5_3(){
+			$("#demo5_3").html($("#myRange5_3").val() + '%');
+			$("#myRange5_2").val($("#myRange5_3").attr('max')-$("#myRange5_3").val());
+			$("#demo5_2").html($("#myRange5_3").attr('max')-$("#myRange5_3").val() + '%');
 		}
 
 		function checkbox1(){

@@ -2,6 +2,7 @@ package com.fei.mapper;
 
 import com.fei.domain.AppResult;
 import com.fei.domain.TrialResult;
+import com.fei.domain.WebAppResult;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -22,6 +23,16 @@ public interface TrialResultMapper {
                     many = @Many(select ="com.fei.mapper.TrialResultShapeMapper.findTrialResultShapesByTrialResultId")),
     })
     List<TrialResult> findTrialResultsByWebAppResultId(String web_app_result_id);
+
+
+
+    @SelectKey(keyProperty = "id",resultType = String.class, before = true,
+            statement = "select uuid()")
+    @Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
+    @Insert("INSERT INTO t_trial_result(id,web_app_result_id,trial_accuracy,round,trial_id) " +
+            "VALUES(#{id},#{web_app_result_id}, #{trial_accuracy}, #{round}, #{trial_id})")
+    void insertTrialResultByTrialResult(TrialResult trialResult);
+
 
 
     /**

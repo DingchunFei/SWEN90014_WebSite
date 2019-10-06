@@ -2,10 +2,8 @@ package com.fei.mapper;
 
 import com.fei.domain.Participant;
 import com.fei.domain.TrialResult;
-import org.apache.ibatis.annotations.Many;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import com.fei.domain.User;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,4 +20,11 @@ public interface ParticipantMapper {
     })
     Participant findParticipantByParticipantId(String participaint_id);
 
+
+
+    @SelectKey(keyProperty = "id",resultType = String.class, before = true,
+            statement = "select uuid()")
+    @Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
+    @Insert("INSERT INTO t_participant(id,name,user_id) VALUES(#{id},#{name}, #{user_id})")
+    void insertParticipantByParticipant(Participant participant);
 }

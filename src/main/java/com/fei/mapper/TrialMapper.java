@@ -62,7 +62,7 @@ public interface TrialMapper {
 
 
 	/**
-	 * 根據trial_id 尋找 trial
+	 * 根据trial_id 寻找 trial
 	 */
 	@Select("SELECT * FROM t_trial WHERE id = #{trial_id}")
 	@Results({
@@ -89,4 +89,9 @@ public interface TrialMapper {
 	Integer insertTrial(Trial trial);
 
 
+	/**
+	 * 根据web_app_id 与 round 寻找唯一的 trial id
+	 */
+	@Select("SELECT id FROM t_trial WHERE web_app_id = #{web_app_id} AND round = #{round}")
+	String findTrialIdByWebAppIdAndRound(String web_app_id, Integer round);
 }

@@ -1,6 +1,7 @@
 package com.fei.mapper;
 
 import com.fei.domain.AppResult;
+import com.fei.domain.Participant;
 import com.fei.domain.TrialResultShape;
 import org.apache.ibatis.annotations.*;
 
@@ -25,4 +26,13 @@ public interface TrialResultShapeMapper {
                     many = @Many(select ="com.fei.mapper.TouchOrderMapper.findTouchOrdersByTrialResultShapeId")),
     })
     List<TrialResultShape> findTrialResultShapesByTrialResultId(String trial_result_id);
+
+
+
+    @SelectKey(keyProperty = "id",resultType = String.class, before = true,
+            statement = "select uuid()")
+    @Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
+    @Insert("INSERT INTO t_trial_result_shape(id,trial_result_id,shape_id,type,hit_count,grid_row,grid_column)" +
+            " VALUES(#{id},#{trial_result_id}, #{shape_id}, #{type}, #{hit_count}, #{grid_row}, #{grid_column})")
+    void insertTrialResultShapeByTrialResultShape(TrialResultShape trialResultShape);
 }

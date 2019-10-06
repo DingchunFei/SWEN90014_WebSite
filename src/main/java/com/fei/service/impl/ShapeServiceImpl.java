@@ -17,7 +17,12 @@ public class ShapeServiceImpl implements ShapeService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public Shape findShapeByShapeName(String shape_name){
+    public String findShapeIdByShapeName(String shape_name){
+        return shapeMapper.findShapeIdByShapeName(shape_name);
+    }
+
+    @Override
+    public Shape findShapeByShapeName(String shape_name) {
         return shapeMapper.findShapeByShapeName(shape_name);
     }
 

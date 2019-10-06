@@ -14,7 +14,6 @@ import java.util.List;
 
 public interface WebAppMapper {
 
-
 	/**
 	 * 根据webapp_id 查看该webapp的详细信息,填充内置数组
 	 */
@@ -77,4 +76,7 @@ public interface WebAppMapper {
 
 	@Delete("DELETE FROM t_web_app WHERE id =#{webApp_id}")
 	Integer deleteWebAppByWebAppId (String webApp_id);
+
+	@Select("SELECT id FROM t_web_app WHERE URL = #{URL}")
+	String findWebAppIdByWebAppURL(String URL);
 }

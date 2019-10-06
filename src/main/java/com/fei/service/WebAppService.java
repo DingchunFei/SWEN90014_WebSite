@@ -16,4 +16,6 @@ public interface WebAppService {
     public User insertWebApp(WebApp webApp,String[] emails, Integer round, String[][] targets,String[][] nearDistractors,String[][] farDistractors, Integer[] grid_row, Integer[] grid_column, Integer[] timed,Integer[] target_percentage,Integer[] near_distractor_percentage);                    //由于每次插入新的webApp URL也需要检查，因此要多一个URL参数
 
     public User updateWebApp(WebApp webApp,String[] emails, String user_id);                    //由于每次更新webApp URL也需要检查，因此要多一个URL参数; 因为防止把自己删掉，所以加一个用户id
+
+    public String findWebAppIdByWebAppURL(String URL);
 }

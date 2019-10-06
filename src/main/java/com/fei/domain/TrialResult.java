@@ -21,6 +21,16 @@ public class TrialResult {
 
     private List<TrialResultShape> trialResultShapeList;
 
+    public TrialResult() {
+    }
+
+    public TrialResult(String trial_id, Double trial_accuracy, Integer round, List<TrialResultShape> trialResultShapeList) {
+        this.trial_id = trial_id;
+        this.trial_accuracy = trial_accuracy;
+        this.round = round;
+        this.trialResultShapeList = trialResultShapeList;
+    }
+
     @Override
     public String toString() {
         return "TrialResult{" +

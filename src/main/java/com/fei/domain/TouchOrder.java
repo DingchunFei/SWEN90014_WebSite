@@ -4,7 +4,7 @@ public class TouchOrder {
 
     private String id;
     private String trial_result_shape_id;
-    private Integer touch_time;
+    private Double touch_time;
 
     @Override
     public String toString() {
@@ -31,11 +31,11 @@ public class TouchOrder {
         this.trial_result_shape_id = trial_result_shape_id;
     }
 
-    public Integer getTouch_time() {
+    public Double getTouch_time() {
         return touch_time;
     }
 
-    public void setTouch_time(Integer touch_time) {
+    public void setTouch_time(Double touch_time) {
         this.touch_time = touch_time;
     }
 }

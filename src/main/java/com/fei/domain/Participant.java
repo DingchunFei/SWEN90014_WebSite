@@ -5,7 +5,9 @@ import java.util.List;
 public class Participant {
 
     private String id;
-    private String user_id;
+
+    //临时设置关联
+    private String user_id = "be98e909-bf2c-11e9-9427-00059a3c7a00";
     private String name;
 
     private List<WebAppResult> webAppResultList;

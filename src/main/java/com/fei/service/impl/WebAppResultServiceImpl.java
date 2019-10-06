@@ -94,4 +94,9 @@ public class WebAppResultServiceImpl implements WebAppResultService {
 
         return webAppResult;
     }
+
+    @Override
+    public void deleteWebAppResultByWebAppResultId(String web_app_result_id) {
+        webAppResultMapper.deleteWebAppResultByWebAppResultId(web_app_result_id);
+    }
 }

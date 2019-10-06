@@ -24,7 +24,7 @@ public interface ShapeMapper {
 	Shape findShapeByShapeId(String shape_id);
 
 	/**
-	 * 根据name查看shape
+	 * 根据id查看shape
 	 */
 	@Select("SELECT * FROM t_shape WHERE s_name = #{shape_name}")
 	@Results({
@@ -32,4 +32,10 @@ public interface ShapeMapper {
 			@Result(column = "s_name",property = "s_name"),
 	})
 	Shape findShapeByShapeName(String shape_name);
+
+	/**
+	 * 根据name查看shape
+	 */
+	@Select("SELECT id FROM t_shape WHERE s_name = #{shape_name}")
+	String findShapeIdByShapeName(String shape_name);
 }

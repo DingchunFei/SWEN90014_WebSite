@@ -145,7 +145,7 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 												</a>
 											</li>-->
 											<li>
-												<a href="" class="font-red" title="">
+												<a th:href="@{/stimuli/delete_result(result_id=${webAppResult.id})}" class="font-red" title="">
 													<i class="fa fa-times" icon_9=""></i>
 														Delete</a>
 												</a>

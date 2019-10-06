@@ -19,6 +19,18 @@ public class TrialResultShape {
     private Shape shape;
     private TrialResult trialResult;
 
+    public TrialResultShape() {
+    }
+
+    public TrialResultShape(Integer type, Integer hit_count, Integer grid_row, Integer grid_column, String shape_id, List<TouchOrder> touchOrderList) {
+        this.type = type;
+        this.hit_count = hit_count;
+        this.grid_row = grid_row;
+        this.grid_column = grid_column;
+        this.shape_id = shape_id;
+        this.touchOrderList = touchOrderList;
+    }
+
     @Override
     public String toString() {
         return "TrialResultShape{" +
@@ -77,7 +89,7 @@ public class TrialResultShape {
 
         StringBuilder sb2 = new StringBuilder();
         for (TouchOrder touchOrder: touchOrderList) {
-            sb2.append(touchOrder.getTouch_time()+"s ");
+            sb2.append(touchOrder.getTouch_time()+"s    ");
         }
         setTouchOrderListIntoString(sb2.toString());
     }

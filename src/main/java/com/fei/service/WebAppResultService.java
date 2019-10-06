@@ -9,4 +9,6 @@ import org.springframework.stereotype.Service;
 public interface WebAppResultService {
 
     public WebAppResult findWebAppResultDetailByWebAppResultId(String web_app_result_id);
+
+    public void deleteWebAppResultByWebAppResultId(String web_app_result_id);
 }

@@ -141,4 +141,9 @@ public class WebAppServiceImpl implements WebAppService {
         webAppMapper.updateWebApp(webApp);
         return userMapper.refreshUserInfo(webApp.getUser_id());     //返回一个User，因为要更新Session中的内容
     }
+
+    @Override
+    public String findWebAppIdByWebAppURL(String URL) {
+        return webAppMapper.findWebAppIdByWebAppURL(URL);
+    }
 }

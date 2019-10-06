@@ -59,6 +59,16 @@ public interface WebAppResultMapper {
 
 
 
+    @SelectKey(keyProperty = "id",resultType = String.class, before = true,
+            statement = "select uuid()")
+    @Options(useGeneratedKeys=true, keyProperty="id")   //keyProperty java对象的属性；keyColumn表示数据库的字段
+    @Insert("INSERT INTO t_web_app_result(id,web_app_id,participant_id,total_accuracy,test_date) " +
+            "VALUES(#{id},#{web_app_id}, #{participant_id}, #{total_accuracy}, #{test_date})")
+    void insertWebAppResultByWebAppResult(WebAppResult webAppResult);
+
+    @Delete("DELETE FROM t_web_app_result WHERE id =#{web_app_result_id}")
+    void deleteWebAppResultByWebAppResultId(String web_app_result_id);
+
 /*
     @Select("SELECT * FROM t_web_app_result WHERE web_app_id = #{web_app_id}")
     @Results({

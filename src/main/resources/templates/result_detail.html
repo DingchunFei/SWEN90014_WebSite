@@ -132,14 +132,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="form-group">
 										<label for="selector1" class="col-sm-2 control-label"><h3 th:text="'Trial'+${trialResult.round}"></h3></label> <!--th:text="'Trial '+${trial.round}"-->
 										<span style="margin-top: 13px;" class="col-sm-1">
-											<a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><!-- th:href="'#collapseExample'+${trial.round}" -->
+											<a data-toggle="collapse" th:href="'#collapseExample'+${trialResult.round}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><!-- th:href="'#collapseExample'+${trial.round}" -->
 												<i style="color: #7b8b71" class="fa fa-caret-down"></i>
 											</a>
 										</span>
 									</div>
 
 
-									<div class="collapse" id="collapseExample1" > <!--th:id="'collapseExample'+${trial.round}"-->
+									<div class="collapse" th:id="'collapseExample'+${trialResult.round}" >
 										<div class="card card-body">
 											<div class="form-group" >
 												<label for="selector1" class="col-sm-2 control-label">Accuracy</label>
@@ -174,47 +174,68 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="col-sm-8" style="text-align: center">
 													<table>
 														<span th:each="trialResultShape,Stat: ${trialResult.getTrialResultShapeList()}">
-															<span th:if="${Stat.count==1}">
-																<tr><td>
+
+                                                            <span th:if="${trialResult.trial.grid_column !=1}">
+
+                                                                <span th:if="${Stat.count == 1}">
+                                                                    <tr><td>
+                                                                        <span th:if="${trialResultShape.correctness}">
+                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}" data="111"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                        <span th:if="${!trialResultShape.correctness}">
+                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="111" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                    </td>
+                                                                </span>
+
+                                                                <span th:if="${(Stat.count % trialResult.trial.grid_column ==1) && (Stat.count!=1) && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+                                                                    </tr><tr><td>
                                                                     <span th:if="${trialResultShape.correctness}">
-                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}" data="222"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                     </span>
                                                                     <span th:if="${!trialResultShape.correctness}">
-                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="222" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                     </span>
-                                                                </td>
-															</span>
-															<span th:if="${(Stat.count % trialResult.trial.grid_column ==1) && Stat.count!=1 && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
-																</tr><tr><td>
-                                                                <span th:if="${trialResultShape.correctness}">
-                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </td>
                                                                 </span>
-                                                                <span th:if="${!trialResultShape.correctness}">
-                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+
+                                                                 <span th:if="${(Stat.count % trialResult.trial.grid_column !=1)  && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+                                                                    <td>
+                                                                        <span th:if="${trialResultShape.correctness}">
+                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data="333" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                        <span th:if="${!trialResultShape.correctness}">
+                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="333" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                    </td>
                                                                 </span>
-                                                                </td>
-															</span>
-															<span th:if="${Stat.count==((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
-																<td>
-                                                                <span th:if="${trialResultShape.correctness}">
-                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+
+                                                                <span th:if="${Stat.count==((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+                                                                    <td>
+                                                                    <span th:if="${trialResultShape.correctness}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data="444" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    <span th:if="${!trialResultShape.correctness}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="444" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    </td></tr>
                                                                 </span>
-                                                                <span th:if="${!trialResultShape.correctness}">
-                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
-                                                                </span>
-                                                                </td></tr>
+
                                                             </span>
-															<span th:if="${(Stat.count % trialResult.trial.grid_column !=1) && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
-																<td>
-                                                                    <span th:if="${trialResultShape.correctness}">
-                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
-                                                                    </span>
-                                                                    <span th:if="${!trialResultShape.correctness}">
-                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
-                                                                    </span>
-                                                                </td>
-															</span>
+
+                                                            <span th:if="${trialResult.trial.grid_column ==1}">
+                                                            <tr><td>
+                                                                <span th:if="${trialResultShape.correctness}">
+                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}" data="111"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                                <span th:if="${!trialResultShape.correctness}">
+                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="111" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                            </td></tr>
+
+														    </span>
 														</span>
+
 													</table>
 												</div>
 											</div>
@@ -222,11 +243,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<hr>
 								</span>
-
                             </form>
-
                         </div>
-
                     </div>
                 </div>
             </div>

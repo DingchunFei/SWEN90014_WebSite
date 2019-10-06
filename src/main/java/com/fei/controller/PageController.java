@@ -241,6 +241,23 @@ public class PageController {
         return null;
     }
 
+    @GetMapping("delete_result")
+    public Object deleteResultByResultId(String result_id, HttpServletRequest req,HttpServletResponse resp) throws IOException {
+        webAppResultService.deleteWebAppResultByWebAppResultId(result_id);
+
+        HttpSession session = req.getSession();
+        User userInfo = (User) session.getAttribute("userInfo");
+
+        User newUserInfo = userService.refreshUserInfo(userInfo.getId());			//WebAppResult删除成功，重置session
+
+        if(newUserInfo!=null){
+            session.setAttribute("userInfo", newUserInfo);
+        }
+
+        resp.sendRedirect("home");
+        return null;
+
+    }
 
     /**
      * 功能描述：根据web_app_id删除一个web_app

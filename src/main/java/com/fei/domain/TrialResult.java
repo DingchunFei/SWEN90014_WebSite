@@ -8,26 +8,53 @@ public class TrialResult {
 
     private String web_app_result_id;
 
+    private String trial_id;
+
     private Double trial_accuracy;
 
-    private Integer timed;
-
+    private Integer round;
 
 
     private WebAppResult webAppResult;
 
-    private List<TrialResultShape> trialResultShapeList;
+    private Trial trial;
 
+    private List<TrialResultShape> trialResultShapeList;
 
     @Override
     public String toString() {
         return "TrialResult{" +
                 "id='" + id + '\'' +
                 ", web_app_result_id='" + web_app_result_id + '\'' +
+                ", trial_id='" + trial_id + '\'' +
                 ", trial_accuracy=" + trial_accuracy +
-                ", timed=" + timed +
+                ", round=" + round +
                 ", trialResultShapeList=" + trialResultShapeList +
                 '}';
+    }
+
+    public String getTrial_id() {
+        return trial_id;
+    }
+
+    public void setTrial_id(String trial_id) {
+        this.trial_id = trial_id;
+    }
+
+    public Trial getTrial() {
+        return trial;
+    }
+
+    public void setTrial(Trial trial) {
+        this.trial = trial;
+    }
+
+    public Integer getRound() {
+        return round;
+    }
+
+    public void setRound(Integer round) {
+        this.round = round;
     }
 
     public String getId() {
@@ -52,14 +79,6 @@ public class TrialResult {
 
     public void setTrial_accuracy(Double trial_accuracy) {
         this.trial_accuracy = trial_accuracy;
-    }
-
-    public Integer getTimed() {
-        return timed;
-    }
-
-    public void setTimed(Integer timed) {
-        this.timed = timed;
     }
 
     public WebAppResult getWebAppResult() {

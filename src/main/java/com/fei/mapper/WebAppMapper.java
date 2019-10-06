@@ -34,8 +34,8 @@ public interface WebAppMapper {
 			@Result(property = "webAppTargets" , column="id",
 					many = @Many(select ="com.fei.mapper.WebAppTargetMapper.findWebAppTargetByWebAppIdWithoutWebApp")),*/
 
-			@Result(property = "resultLists" , column="id",
-					many = @Many(select ="com.fei.mapper.ResultsMapper.findResultsByWebAppIdWithoutWebApp")),
+			@Result(property = "webAppResultList" , column="id",
+					many = @Many(select ="com.fei.mapper.WebAppResultMapper.findWebAppResultByWebAppIdWithoutDetail")),
 			@Result(property = "practitioners" , column="id",
 					many = @Many(select ="com.fei.mapper.FavouriteMapper.findPractitionersByWebAppId")),
 			@Result(property = "trials" , column="id",

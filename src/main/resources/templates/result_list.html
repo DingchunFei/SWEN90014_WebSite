@@ -92,51 +92,36 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 
 			<div class="mailbox-content">
 
-						<div th:include="Results_Nav :: Results_Nav"></div>				<!--引入公共元素-->
-
+				<div th:include="Results_Nav :: Results_Nav"></div>				<!--引入公共元素-->
 
 				<table class="table">
 					<tbody>
 
 					<span th:each="favourite : ${session.userInfo.favourites}">
 
-						<tr class="table-row" th:each="result : ${favourite.webApp.resultLists}">
+						<tr class="table-row" th:each="webAppResult : ${favourite.webApp.webAppResultList}">
 
 <!--						<td class="table-img" style="width:10%">
 							<img src="images/in.jpg" alt="" />
 						</td>-->
 
 							<td class="table-text" style="width:25%">
-								<a th:href="@{/stimuli/result_detail(result_id = ${result.id})}">
+								<a th:href="@{/stimuli/web_app_result_detail(web_app_result_id = ${webAppResult.id})}">
+									<h6 th:text="${webAppResult.participant.name}">Patient Username</h6>
+									<p th:text="'Test Date: '+${webAppResult.test_date_string}">2019-08-16</p>
+								</a>
+							</td>
 
-									<h6 th:text="${result.p_username}">Patient Username</h6>
-									<p th:text="'Test Date: '+${result.test_date_string}">2019-08-16</p>
+							<td class="table-text"  style="width:35%">
+								<a th:href="@{/stimuli/web_app_detail(webApp_id = ${webAppResult.webApp.id})}">
+									<p><h4 style="color: #7b8b71;" th:text="'Web App: '+${webAppResult.webApp.app_name}">Web App: </h4></p>
 								</a>
 							</td>
 
 							<td style="width:30%">
-								<p th:text="'Web App Name: '+${favourite.webApp.app_name}">Web App Name</p>
+								<p>Number Of Trials: <t6 th:text="${webAppResult.webApp.numbers_of_trials}">3</t6></p>
+								<p>Accuracy: <t6 th:text="${webAppResult.total_accuracy}+'%'">50%</t6></p>
 							</td>
-
-							<td style="width:15%">
-								<p>Age:&nbsp;&nbsp;
-<!--									<t6 th:if="${result.age>=20}" th:text="${result.age}">25</t6>-->
-
-									<span th:if="${result.age<=5}" class="fem" style="background: #8897a6;" th:text="${result.age}">25</span>
-									<span th:if="${result.age>5 && result.age<=10}" class="fem" style="background: #9da9b8;" th:text="${result.age}">25</span>
-									<span th:if="${result.age>10 && result.age<=15}" class="fem" style="background: #c1ccd7;" th:text="${result.age}">25</span>
-									<span th:if="${result.age>15 && result.age<=18}" class="fem" style="background: #cdcdcd;" th:text="${result.age}">25</span>
-									<span th:if="${result.age>18 && result.age<=45}" class="fem" style="background: #b6c4b2;" th:text="${result.age}">25</span>
-									<span th:if="${result.age>45 && result.age<=60}" class="fem" style="background: #97a58c;" th:text="${result.age}">25</span>
-									<span th:if="${result.age>60}" class="fem" style="background: #7b8b71;" th:text="${result.age}">25</span>
-
-								</p>
-							</td>
-
-							<td style="width:20%">
-								<p>Accuracy: <t6 th:text="${result.accuracy}+'%'">50%</t6></p>
-							</td>
-
 
 
 							<td style="width:10%">

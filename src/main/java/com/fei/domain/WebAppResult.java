@@ -1,5 +1,6 @@
 package com.fei.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class WebAppResult {
     private Double total_accuracy;
 
     private Date test_date;
+
+    private String test_date_string;
 
 
 
@@ -33,6 +36,14 @@ public class WebAppResult {
                 ", test_date=" + test_date +
                 ", trialResultList=" + trialResultList +
                 '}';
+    }
+
+    public String getTest_date_string() {
+        return test_date_string;
+    }
+
+    public void setTest_date_string(String test_date_string) {
+        this.test_date_string = test_date_string;
     }
 
     public Participant getParticipant() {
@@ -97,5 +108,7 @@ public class WebAppResult {
 
     public void setTest_date(Date test_date) {
         this.test_date = test_date;
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        setTest_date_string(ft.format(test_date));
     }
 }

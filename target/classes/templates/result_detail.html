@@ -53,11 +53,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		padding: 2px;
 	}
 </style>
-
+<style type="text/css">
+    .popover-content{
+        color: #000000 !important;/*black color*/
+    }
+</style>
 
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.wrong').popover();
+        $('td img').popover();
+
+        /*$('td img').each(function(){
+            if(typeof($(this).attr('data')) != "undefined"){
+                $(this).popover({trigger:'hover', placement: 'top', content: $(this).attr('data')});
+            }
+        });*/
     });
 </script>
 
@@ -91,12 +101,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-group required">
                                     <label for="focusedinput" class="col-sm-2 control-label">Stimuli Name</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control1" value="Demo1"  name="app_name"> <!--th:value="${session.webApp.app_name}"-->
+                                        <input type="text" class="form-control1" name="app_name" th:value="${session.webAppResult.webApp.app_name}">
                                     </div>
 
                                     <label for="focusedinput" class="col-sm-2 control-label">Testing Date</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control1" value="30/09/2019">
+                                        <input type="text" class="form-control1" th:value="${session.webAppResult.test_date_string}">
                                     </div>
 
                                 </div>
@@ -104,21 +114,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-group">
                                     <label for="selector1" class="col-sm-2 control-label">Number of Trials</label>
                                     <span class="col-sm-3">
-										<input type="text" class="form-control1" id="number_of_trials" name="total_accuracy" value="3" ><!--th:value="${session.webApp.numbers_of_trials}"-->
+										<input type="text" class="form-control1" id="number_of_trials" name="total_accuracy" th:value="${session.webAppResult.webApp.numbers_of_trials}" >
 									</span>
 
                                     <label for="selector1" class="col-sm-2 control-label">Total Accuracy</label>
                                     <span class="col-sm-3">
-										<input type="text" class="form-control1" id="total_accuracy" name="total_accuracy" value="45%">
+										<input type="text" class="form-control1" id="total_accuracy" name="total_accuracy" th:value="${session.webAppResult.total_accuracy}+'%'">
 									</span>
                                 </div>
 
 
+
+
                                 <hr>
-                                <span>  <!--th:each="trial : ${session.webApp.trials}"-->
+                                <span th:each="trialResult: ${session.webAppResult.trialResultList}">
 
 									<div class="form-group">
-										<label for="selector1" class="col-sm-2 control-label"><h3 >Trial1</h3></label> <!--th:text="'Trial '+${trial.round}"-->
+										<label for="selector1" class="col-sm-2 control-label"><h3 th:text="'Trial'+${trialResult.round}"></h3></label> <!--th:text="'Trial '+${trial.round}"-->
 										<span style="margin-top: 13px;" class="col-sm-1">
 											<a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><!-- th:href="'#collapseExample'+${trial.round}" -->
 												<i style="color: #7b8b71" class="fa fa-caret-down"></i>
@@ -128,90 +140,85 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 									<div class="collapse" id="collapseExample1" > <!--th:id="'collapseExample'+${trial.round}"-->
-									<div class="card card-body">
+										<div class="card card-body">
+											<div class="form-group" >
+												<label for="selector1" class="col-sm-2 control-label">Accuracy</label>
+												<span class="col-sm-3">
+													<input type="text" class="form-control1" name="trial_accuracy" th:value="${trialResult.trial_accuracy}+'%'">
+												</span>
 
-										<div class="form-group" >
-											<label for="selector1" class="col-sm-2 control-label">Accuracy</label>
-											<span class="col-sm-3">
-												<input type="text" class="form-control1" name="trial_accuracy" value="65%">
-											</span>
+												<label for="checkbox" class="col-sm-2 control-label">Time</label>
+												<span class="col-sm-3">
+													<input disabled="" th:if="${trialResult.trial.timed>0}" th:value="${trialResult.trial.timed}" type="text" class="form-control1" name="timed">
+													<input disabled="" th:if="${trialResult.trial.timed==0}" th:value="'No Time Limitation'" type="text" class="form-control1" name="timed">
+												</span>
+											</div>
 
-											<label for="checkbox" class="col-sm-2 control-label">Time</label>
-											<span class="col-sm-3">
-												<input disabled="" value="20" type="text" class="form-control1" name="timed">
-<!--												<input disabled="" th:if="${trial.timed>0}" th:value="${trial.timed}" type="text" class="form-control1" name="timed">-->
-<!--												<input disabled="" th:if="${trial.timed==0}" th:value="'No Time Limitation'" type="text" class="form-control1" name="timed">-->
-											</span>
-										</div>
+											<div class="form-group" >
+												<label for="selector1" class="col-sm-2 control-label">Proportion</label>
 
-										<div class="form-group" >
-											<label for="selector1" class="col-sm-2 control-label">Proportion</label>
+												<span class="col-sm-8" style="margin-top: 8px;">
+													<div class="progress">
 
-											<span class="col-sm-8" style="margin-top: 8px;">
-												<div class="progress">
+														<div class="progress-bar" role="progressbar" th:text="${trialResult.trial.target_percentage}+'%'+' Target'" th:style="'width:' +${trialResult.trial.target_percentage}+'%; background-color:#7b8b71'" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">35%</div>
+														<div class="progress-bar" role="progressbar" th:text="${trialResult.trial.near_distractor_percentage}+'%'+' Near Distractor'" th:style="'width:' +${trialResult.trial.near_distractor_percentage}+'%; background-color:#c0c0c0'" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+														<div class="progress-bar" role="progressbar" th:text="${trialResult.trial.far_distractor_percentage}+'%'+' Far Distractor'" th:style="'width:' +${trialResult.trial.far_distractor_percentage}+'%; background-color:#788490'" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">30%</div>
 
-													<div class="progress-bar" role="progressbar" style="width: 35%; background-color:#7b8b71" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Target 35%</div>
-													<div class="progress-bar" role="progressbar" style="width:40%; background-color:#c0c0c0" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Near Distractor 40%</div>
-													<div class="progress-bar" role="progressbar" style="width:25%; background-color:#788490" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Far Distractor 25%</div>
+													</div>
+												</span>
+											</div>
 
+											<div class="form-group">
+												<label for="selector1" class="col-sm-2 control-label" ></label>
+
+												<div class="col-sm-8" style="text-align: center">
+													<table>
+														<span th:each="trialResultShape,Stat: ${trialResult.getTrialResultShapeList()}">
+															<span th:if="${Stat.count==1}">
+																<tr><td>
+                                                                    <span th:if="${trialResultShape.correctness}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    <span th:if="${!trialResultShape.correctness}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                </td>
+															</span>
+															<span th:if="${(Stat.count % trialResult.trial.grid_column ==1) && Stat.count!=1 && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+																</tr><tr><td>
+                                                                <span th:if="${trialResultShape.correctness}">
+                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                                <span th:if="${!trialResultShape.correctness}">
+                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                                </td>
+															</span>
+															<span th:if="${Stat.count==((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+																<td>
+                                                                <span th:if="${trialResultShape.correctness}">
+                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                                <span th:if="${!trialResultShape.correctness}">
+                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                                </td></tr>
+                                                            </span>
+															<span th:if="${(Stat.count % trialResult.trial.grid_column !=1) && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+																<td>
+                                                                    <span th:if="${trialResultShape.correctness}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    <span th:if="${!trialResultShape.correctness}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                </td>
+															</span>
+														</span>
+													</table>
 												</div>
-											</span>
-										</div>
-
-										<div class="form-group">
-											<label for="selector1" class="col-sm-2 control-label" ></label>
-
-											<div class="col-sm-8" style="text-align: center">
-												<table>
-												  <tr>
-													<td><img src="/images/O_180_sharp.png"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/T_270_sharp_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img class="wrong" src="/images/T_270_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img class="wrong" src="/images/X_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-												  </tr>
-
-												  <tr>
-													<td><img src="/images/L_0_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/L_180_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="11s&nbsp;3s&nbsp;4s"></td>
-													<td><img class="wrong" src="/images/I_0_sharp_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="13s&nbsp;13s"></td>
-													<td><img src="/images/T_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="12s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_90_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-												  </tr>
-
-												  <tr>
-													<td><img  src="/images/I_0_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content=""></td>
-													<td><img src="/images/L_180_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content=""></td>
-													<td><img src="/images/T_0_sharp_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content=""></td>
-													<td><img src="/images/L_0_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img class="wrong" src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="3s&nbsp;4s"></td>
-													<td><img src="/images/L_0_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;6s"></td>
-												  </tr>
-
-												  <tr>
-													<td><img src="/images/I_90_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/T_270_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/T_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_0_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_90_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_90_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-												  </tr>
-
-												  <tr>
-													<td><img src="/images/L_0_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img class="wrong" src="/images/T_180_round_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/T_270_sharp_B.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/T_270_round.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/X_0_sharp.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-													<td><img src="/images/I_90_round_G.png" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" data-content="2s&nbsp;3s&nbsp;4s"></td>
-												  </tr>
-												</table>
 											</div>
 										</div>
-
-									</div>
 									</div>
 									<hr>
 								</span>

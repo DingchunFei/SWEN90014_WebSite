@@ -10,6 +10,9 @@ public class Participant {
 
     private List<WebAppResult> webAppResultList;
 
+    public Participant() {
+    }
+
     public Participant(String id, String user_id, String name, List<WebAppResult> webAppResultList) {
         this.id = id;
         this.user_id = user_id;

@@ -60,6 +60,24 @@ public interface TrialMapper {
 	})
 	List<Trial> findTrialByWebAppId(String web_app_id);
 
+
+	/**
+	 * 根據trial_id 尋找 trial
+	 */
+	@Select("SELECT * FROM t_trial WHERE id = #{trial_id}")
+	@Results({
+			@Result(column = "id",property = "id"),
+			@Result(column = "web_app_id",property = "web_app_id"),
+			@Result(column = "grid_row",property = "grid_row"),
+			@Result(column = "grid_column",property = "grid_column"),
+			@Result(column = "round",property = "round"),
+			@Result(column = "timed",property = "timed"),
+			@Result(column = "target_percentage",property = "target_percentage"),
+			@Result(column = "near_distractor_percentage",property = "near_distractor_percentage"),
+			@Result(column = "far_distractor_percentage",property = "far_distractor_percentage"),
+	})
+	Trial findTrialByTrialIdWithoutList(String trial_id);
+
 	/**
 	 * 插入新trial
 	 */

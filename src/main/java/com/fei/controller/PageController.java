@@ -1,10 +1,7 @@
 package com.fei.controller;
 
 import com.fei.domain.*;
-import com.fei.service.ResultsService;
-import com.fei.service.ShapeService;
-import com.fei.service.UserService;
-import com.fei.service.WebAppService;
+import com.fei.service.*;
 import com.fei.utils.HttpUtils;
 import com.fei.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +33,7 @@ public class PageController {
     private WebAppService  webAppService;
 
     @Autowired
-    private ResultsService resultsService;
+    private WebAppResultService webAppResultService;
 
     @Autowired
     private ShapeService shapeService;
@@ -245,8 +242,6 @@ public class PageController {
     }
 
 
-
-
     /**
      * 功能描述：根据web_app_id删除一个web_app
      * @return
@@ -308,12 +303,12 @@ public class PageController {
      * @param
      * @return
      */
-    @GetMapping("result_detail")
-    public Object viewResultDetail(String result_id, HttpServletRequest req){
-        AppResult appResult = resultsService.findResultDetailByResultId(result_id);
-        System.out.println(result_id);
+    @GetMapping("web_app_result_detail")
+    public Object webAppResultDetail(String web_app_result_id, HttpServletRequest req){
+        WebAppResult webAppResult = webAppResultService.findWebAppResultDetailByWebAppResultId(web_app_result_id);
+        System.out.println(webAppResult);
         HttpSession session = req.getSession();
-        session.setAttribute("appResult",appResult);
+        session.setAttribute("webAppResult",webAppResult);
 
         return "result_detail";
     }

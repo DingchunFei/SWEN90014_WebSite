@@ -90,7 +90,7 @@ public interface FavouriteMapper {
 			@Result(column = "user_id",property = "user_id"),
 			@Result(column = "web_app_id",property = "web_app_id"),
 	})
-	List<Favourite> findFavouritesByWebAppId(String webApp_id);
+	List<Favourite> findFavouritesByWebAppId(String web_app_id);
 
 	/**
 	 * 更新favourite的flag

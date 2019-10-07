@@ -119,12 +119,14 @@ public class WebAppServiceImpl implements WebAppService {
                 }
             }
         }
+        user_ids.add(current_user_id);      //把自己加进去，不然把自己删除了
+
         List<Favourite> favourites = favouriteMapper.findFavouritesByWebAppId(webApp.getId());
         List<String> missing_favourites = new LinkedList<String>();
         for (Favourite favourite: favourites) {             //查找在favourite表中，但不在新的email列表中的email，等待删除
             int flag =0;
             for (String user_id: user_ids) {
-                if(favourite.getUser_id().equals(user_id) || favourite.getUser_id().equals(current_user_id)){       //把自己排除，不然把自己也从favourite删了
+                if(favourite.getUser_id().equals(user_id)){
                     flag=1;                                 //找到了
                     break;
                 }
@@ -133,10 +135,10 @@ public class WebAppServiceImpl implements WebAppService {
                 missing_favourites.add(favourite.getId());
             }
         }
+
         for (String missing_favourite:missing_favourites) {
             favouriteMapper.deleteFavouriteByFavouriteId(missing_favourite);
         }
-
 
         webAppMapper.updateWebApp(webApp);
         return userMapper.refreshUserInfo(webApp.getUser_id());     //返回一个User，因为要更新Session中的内容

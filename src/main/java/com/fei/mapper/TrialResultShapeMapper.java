@@ -1,6 +1,5 @@
 package com.fei.mapper;
 
-import com.fei.domain.AppResult;
 import com.fei.domain.Participant;
 import com.fei.domain.TrialResultShape;
 import org.apache.ibatis.annotations.*;

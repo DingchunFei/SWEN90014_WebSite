@@ -1,5 +1,6 @@
 package com.fei.domain;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +18,6 @@ public class WebAppResult {
     private Date test_date;
 
     private String test_date_string;
-
 
 
     private WebApp webApp;
@@ -99,6 +99,8 @@ public class WebAppResult {
     }
 
     public void setTotal_accuracy(Double total_accuracy) {
+        //round the value
+        total_accuracy = new BigDecimal(total_accuracy).setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
         this.total_accuracy = total_accuracy;
     }
 

@@ -1,9 +1,7 @@
 package com.fei.service.impl;
 
 import com.fei.domain.*;
-import com.fei.mapper.ResultsMapper;
 import com.fei.mapper.WebAppResultMapper;
-import com.fei.service.ResultsService;
 import com.fei.service.WebAppResultService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

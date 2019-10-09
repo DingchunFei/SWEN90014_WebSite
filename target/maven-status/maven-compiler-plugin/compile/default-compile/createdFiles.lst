@@ -11,9 +11,7 @@ com\fei\service\WebAppResultService.class
 com\fei\service\impl\WebAppResultServiceImpl$2.class
 com\fei\mapper\WebAppMapper.class
 com\fei\controller\WebAppController.class
-com\fei\service\ResultsService.class
 com\fei\domain\WebApp.class
-com\fei\domain\AppResult.class
 com\fei\controller\PageController.class
 com\fei\utils\HttpUtils.class
 com\fei\utils\User_favourite_sort.class
@@ -22,7 +20,6 @@ com\fei\domain\User.class
 com\fei\service\impl\WebAppResultServiceImpl.class
 com\fei\service\impl\WebAppResultServiceImpl$1.class
 com\fei\service\TrialService.class
-com\fei\mapper\ResultsMapper.class
 com\fei\mapper\UserMapper.class
 com\fei\service\impl\WebAppResultServiceImpl$3.class
 com\fei\controller\PageController$2.class

@@ -1,5 +1,6 @@
 package com.fei.domain;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class TrialResult {
@@ -84,10 +85,14 @@ public class TrialResult {
     }
 
     public Double getTrial_accuracy() {
+        //round the value
+        trial_accuracy = new BigDecimal(trial_accuracy).setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
         return trial_accuracy;
     }
 
     public void setTrial_accuracy(Double trial_accuracy) {
+        //round the value
+        trial_accuracy = new BigDecimal(trial_accuracy).setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
         this.trial_accuracy = trial_accuracy;
     }
 

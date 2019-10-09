@@ -117,7 +117,7 @@ public class WebAppServiceImpl implements WebAppService {
                     //借用之前的一个方法
                     favouriteMapper.insertWebFavouriteByNewWebApp(new Favourite(user_id, webApp.getId()));
                 }
-
+            }
         }
         user_ids.add(current_user_id);      //把自己加进去，不然把自己删除了
 

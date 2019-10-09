@@ -114,13 +114,39 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 
 							<td class="table-text"  style="width:35%">
 								<a th:href="@{/stimuli/web_app_detail(webApp_id = ${webAppResult.webApp.id})}">
-									<p><h4 style="color: #7b8b71;" th:text="'Web App: '+${webAppResult.webApp.app_name}">Web App: </h4></p>
+									<p><h5 style="color: #666666;" th:text="'Web App: '+${webAppResult.webApp.app_name}">Web App: </h5></p>
 								</a>
+								<p>Number Of Trials: <t6 th:text="${webAppResult.webApp.numbers_of_trials}">3</t6></p>
 							</td>
 
+							<style>
+
+							</style>
+
+
+<!--								<span  th:if="${favourite.webApp.age.charAt(0) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #8897a6;">0-5</span>
+								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #9da9b8;">5-10</span>
+								<span  th:if="${favourite.webApp.age.charAt(2) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #c1ccd7;">10-15</span>
+								<span  th:if="${favourite.webApp.age.charAt(3) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #cdcdcd;">15-18</span>
+								<span  th:if="${favourite.webApp.age.charAt(4) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #b6c4b2;">18-45</span>
+								<span  th:if="${favourite.webApp.age.charAt(5) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #97a58c;">45-60</span>
+								<span  th:if="${favourite.webApp.age.charAt(6) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #7b8b71;">60+</span>-->
+
 							<td style="width:30%">
-								<p>Number Of Trials: <t6 th:text="${webAppResult.webApp.numbers_of_trials}">3</t6></p>
-								<p>Accuracy: <t6 th:text="${webAppResult.total_accuracy}+'%'">50%</t6></p>
+<!--								<p>Number Of Trials: <t6 th:text="${webAppResult.webApp.numbers_of_trials}">3</t6></p>-->
+								<p>Accuracy:&nbsp;&nbsp;&nbsp;
+									<span th:if="${webAppResult.total_accuracy<20}" class="fem" style="background: #9a545c;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+								    <span th:if="${webAppResult.total_accuracy>=20 && webAppResult.total_accuracy<35}" class="fem" style="background: #a46269;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=35 && webAppResult.total_accuracy<50}" class="fem" style="background: #be7c84;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=50 && webAppResult.total_accuracy<60}" class="fem" style="background: #d7afb4;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=60 && webAppResult.total_accuracy<70}" class="fem" style="background: #cdcdcd;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=70 && webAppResult.total_accuracy<80}" class="fem" style="background: #b6c4b2;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=80 && webAppResult.total_accuracy<90}" class="fem" style="background: #97a58c;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=90}" class="fem" style="background: #7b8b71;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+
+
+
+								</p>
 							</td>
 
 

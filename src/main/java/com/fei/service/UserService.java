@@ -24,5 +24,7 @@ public interface UserService {
 	public Long checkEmail(String email);
 
 	public User refreshUserInfo(String id);
+
+	public Integer updateUserInstitution(User user);
 	
 }

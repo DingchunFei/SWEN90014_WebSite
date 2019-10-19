@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Forms :: w3layouts</title>
+    <title>Stimuli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -62,12 +62,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript">
     $(document).ready(function() {
         $('td img').popover();
-
-        /*$('td img').each(function(){
-            if(typeof($(this).attr('data')) != "undefined"){
-                $(this).popover({trigger:'hover', placement: 'top', content: $(this).attr('data')});
-            }
-        });*/
     });
 </script>
 
@@ -101,28 +95,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="form-group required">
                                     <label for="focusedinput" class="col-sm-2 control-label">Stimuli Name</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control1" name="app_name" th:value="${session.webAppResult.webApp.app_name}">
+                                        <input type="text" disabled="" class="form-control1" name="app_name" th:value="${session.webAppResult.webApp.app_name}">
                                     </div>
 
                                     <label for="focusedinput" class="col-sm-2 control-label">Testing Date</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control1" th:value="${session.webAppResult.test_date_string}">
+                                        <input type="text" disabled="" class="form-control1" th:value="${session.webAppResult.test_date_string}">
                                     </div>
-
                                 </div>
 
                                 <div class="form-group">
                                     <label for="selector1" class="col-sm-2 control-label">Number of Trials</label>
                                     <span class="col-sm-3">
-										<input type="text" class="form-control1" id="number_of_trials" name="total_accuracy" th:value="${session.webAppResult.webApp.numbers_of_trials}" >
+										<input type="text" disabled="" class="form-control1" id="number_of_trials" name="total_accuracy" th:value="${session.webAppResult.webApp.numbers_of_trials}" >
 									</span>
 
                                     <label for="selector1" class="col-sm-2 control-label">Total Accuracy</label>
                                     <span class="col-sm-3">
-										<input type="text" class="form-control1" id="total_accuracy" name="total_accuracy" th:value="${session.webAppResult.total_accuracy}+'%'">
+										<input type="text" disabled="" class="form-control1" id="total_accuracy" name="total_accuracy" th:value="${session.webAppResult.total_accuracy}+'%'">
 									</span>
                                 </div>
 
+
+                                <div class="form-group">
+                                    <label for="selector1" class="col-sm-2 control-label">Participant</label>
+                                    <span class="col-sm-3">
+										<input type="text" disabled="" class="form-control1"   th:if="${session.userInfo.status==0}" th:value="${session.webAppResult.participant.name}">
+                                        <input type="text" disabled="" class="form-control1"   th:if="${session.userInfo.status!=0}" th:value="Anonimity">
+                                    </span>
+
+
+                                    <label for="selector1" class="col-sm-6 control-label"></label>
+                                    <span class="col-sm-1">
+                                        <a data-toggle="collapse" th:href=".collapse_trial" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                            <i style="color: #788490" class="fa fa-angle-double-down"></i>
+                                        </a>
+                                    </span>
+                                </div>
 
 
 
@@ -139,7 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 
 
-									<div class="collapse" th:id="'collapseExample'+${trialResult.round}" >
+									<div class="collapse collapse_trial" th:id="'collapseExample'+${trialResult.round}" >
 										<div class="card card-body">
 											<div class="form-group" >
 												<label for="selector1" class="col-sm-2 control-label">Accuracy</label>
@@ -180,10 +189,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <span th:if="${Stat.count == 1}">
                                                                     <tr><td>
                                                                         <span th:if="${trialResultShape.correctness}">
-                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}" data="111"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                         </span>
                                                                         <span th:if="${!trialResultShape.correctness}">
-                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="111" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                         </span>
                                                                     </td>
                                                                 </span>
@@ -191,10 +200,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <span th:if="${(Stat.count % trialResult.trial.grid_column ==1) && (Stat.count!=1) && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
                                                                     </tr><tr><td>
                                                                     <span th:if="${trialResultShape.correctness}">
-                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}" data="222"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                     </span>
                                                                     <span th:if="${!trialResultShape.correctness}">
-                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="222" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                     </span>
                                                                     </td>
                                                                 </span>
@@ -202,10 +211,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                  <span th:if="${(Stat.count % trialResult.trial.grid_column !=1)  && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
                                                                     <td>
                                                                         <span th:if="${trialResultShape.correctness}">
-                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data="333" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                         </span>
                                                                         <span th:if="${!trialResultShape.correctness}">
-                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="333" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                         </span>
                                                                     </td>
                                                                 </span>
@@ -213,10 +222,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                 <span th:if="${Stat.count==((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
                                                                     <td>
                                                                     <span th:if="${trialResultShape.correctness}">
-                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data="444" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                     </span>
                                                                     <span th:if="${!trialResultShape.correctness}">
-                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="444" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                     </span>
                                                                     </td></tr>
                                                                 </span>
@@ -226,10 +235,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                             <span th:if="${trialResult.trial.grid_column ==1}">
                                                             <tr><td>
                                                                 <span th:if="${trialResultShape.correctness}">
-                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}" data="111"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                 </span>
                                                                 <span th:if="${!trialResultShape.correctness}">
-                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data="111" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
                                                                 </span>
                                                             </td></tr>
 

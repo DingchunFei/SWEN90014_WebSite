@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Profile :: w3layouts</title>
+<title>Stimuli</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -132,14 +132,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<tr>
 							<td>Email</td>
-							<td> :</td>
-							<td><a th:href="${session.userInfo.id}" th:text="${session.userInfo.email}">info@lorem.com</a></td>
+							<td>:</td>
+							<td th:text="${session.userInfo.email}">info@lorem.com</td>
 						</tr>
 
 						<tr>
 							<td>Institution</td>
 							<td>:</td>
-							<td th:value="${session.userInfo.institution}"></td>
+							<td><input name="institution" style="border:none;outline:medium;" th:value="${session.userInfo.institution}" /></td>
+<!--							<td th:value="${session.userInfo.institution}"></td>-->
+
 						</tr>
 						<tr>
 							<td>Gender</td>
@@ -148,6 +150,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<td th:if="${session.userInfo.gender}==0">Female</td>
 						</tr>
 					</table>
+					<br>
 				</div>
 				<div class="clearfix"></div>
 
@@ -157,9 +160,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<script>
 
 				function submitForm(){
-					if($("#image_upload").val()!=""){
+					//if($("#image_upload").val()!=""){
 						$("#form").submit();
-					}
+					//}
 				}
 
 				function back(){

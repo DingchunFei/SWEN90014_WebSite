@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Stimuli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+<!-- Custom Theme files -->
+<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+<script th:src="@{/js/jquery.min.js}"> </script>
+<script th:src="@{/js/bootstrap.min.js}"> </script>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+<!-- Custom and plugin javascript -->
+<link th:href="@{/css/custom.css}" rel="stylesheet">
+<script th:src="@{/js/custom.js}"></script>
+<script th:src="@{/js/screenfull.js}"></script>
+<script th:src="@{/js/jquery.nicescroll.js}"></script>
+<script th:src="@{/js/scripts.js}"></script>
+		<script>
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+			if (!screenfull.enabled) {
+				return false;
+			}
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});
+		});
+
+		function changepic(file) {
+/*			var reads= new FileReader();
+			f=document.getElementById('image_upload').files[0];
+			reads.readAsDataURL(f);
+			reads.οnlοad=function (e) {
+				alert(this.result);
+				document.getElementById('user_img').src=this.result;
+			};*/
+			var MAXWIDTH = 120;  // 最大图片宽度
+			var MAXHEIGHT = 120;  // 最大图片高度
+			if (file.files && file.files[0]) {
+				var img = document.getElementById('user_img');
+				img.onload = function () {
+					var rect = getZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+					img.width = rect.width;
+					img.height = rect.height;
+				}
+				var reader = new FileReader();
+				reader.onload = function (evt) {
+					img.src = evt.target.result;
+				}
+				reader.readAsDataURL(file.files[0]);
+			} else {
+				//兼容IE
+				file.select();
+				var src = document.selection.createRange().text;
+				var img = document.getElementById('preview');
+				img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+			}
+		}
+		</script>
+
+
+
+</head>
+<body>
+<div id="wrapper">
+      <!----->
+	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
+		 <div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="content-main">
+ 
+ 	<!--banner-->	
+		    <div class="banner">
+		    	<h2>
+				<a href="/stimuli/home">Home</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Profile</span>
+				</h2>
+		    </div>
+		<!--//banner-->
+ 	 <!--gallery-->
+ 	 <div class=" profile">
+
+		<div class="profile-bottom">
+			<h3><i class="fa fa-user"></i>Profile</h3>
+			<div class="profile-bottom-top">
+				<form id="form" enctype="multipart/form-data" action="uploadImg" method="post">
+					<!--隐藏图片input，由button来引导-->
+					<input type="file" class="image_upload" name="image_upload" id="image_upload" accept="image/png, image/jpeg, image/gif, image/jpg" onchange="changepic(this)" style="display:none;">
+
+					<div  class="col-md-4 profile-bottom-img">
+						<button class="btn_img" type="button" style="border:none; background: none">
+							<div style="position:relative;">
+								<a class="select"  href="#">
+                                    <img id="user_img" class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}!=null" th:src="@{${session.userInfo.img_src}}">
+									<img id="user_img" class="user_img" height="150"  width="150"  alt="" th:if="${session.userInfo.img_src}==null" th:src="@{/images/default.jpg}">
+
+									<div class="user_img_d" style="position:absolute; z-index:1; left:62px; top:62px">
+										<div class="user_img_div"  style="visibility: hidden; ">
+											<i style="color: #DCDCDC" class="fa fa-2x fa-plus"></i>
+										</div>
+									</div>
+								</a>
+							</div>
+						</button>
+					</div>
+					<input type="text"  name="userId" style="display: none" th:value="${session.userInfo.id}">
+				<div class="col-md-8 profile-text">
+					<h6 th:text="${session.userInfo.full_name}">Jack Dorsey</h6>
+					<table>
+						<tr>
+							<td>Username</td>
+							<td>:</td>
+							<td th:text="${session.userInfo.username}">Username</td>
+						</tr>
+						<tr>
+							<td>User Level</td>
+							<td>:</td>
+							<td th:if="${session.userInfo.status}==0">Practitoner</td>
+							<td th:if="${session.userInfo.status}==1">Researcher</td>
+						</tr>
+
+						<tr>
+							<td>Email</td>
+							<td>:</td>
+							<td th:text="${session.userInfo.email}">info@lorem.com</td>
+						</tr>
+
+						<tr>
+							<td>Institution</td>
+							<td>:</td>
+							<td><input name="institution" style="border:none;outline:medium;" th:value="${session.userInfo.institution}" /></td>
+<!--							<td th:value="${session.userInfo.institution}"></td>-->
+
+						</tr>
+						<tr>
+							<td>Gender</td>
+							<td>:</td>
+							<td th:if="${session.userInfo.gender}==1">Male</td>
+							<td th:if="${session.userInfo.gender}==0">Female</td>
+						</tr>
+					</table>
+					<br>
+				</div>
+				<div class="clearfix"></div>
+
+				</form>
+			</div>
+
+			<script>
+
+				function submitForm(){
+					//if($("#image_upload").val()!=""){
+						$("#form").submit();
+					//}
+				}
+
+				function back(){
+					window.location.href="/stimuli/home";
+				}
+
+
+				$(document).ready(function(){
+					$(".user_img,.user_img_d").hover(
+							function(){
+								$(".user_img").attr("style","filter:brightness(70%);");
+								$(".user_img_div").attr("style","visibility:display");
+							},
+							function(){
+								$(".user_img").attr("style","filter:brightness(100%);");
+								$(".user_img_div").attr("style","visibility:hidden");
+							}
+					);
+
+					//通过button触发input的点击事件！
+					$(".btn_img").click(function(){
+						$(".image_upload").trigger("click");
+					});
+
+				});
+
+			</script>
+
+			<div class="profile-btn" style="float:left">
+				<!--				<a href="/stimuli/home" class="pro">Back</a>-->
+
+				<button type="button" href="#" class="btn bg-red" onclick="back();" style="background: #5e5e5e">Back</button>
+				<div class="clearfix"></div>
+			</div>
+
+			<div class="profile-btn">
+<!--				<a href="/stimuli/home" class="pro">Back</a>-->
+
+				<button type="button" href="#" class="btn bg-red" onclick="submitForm();">Save changes</button>
+				<div class="clearfix"></div>
+			</div>
+
+<!--			<div class="col-md-6 profile-btn">
+			</div>
+			<div class="col-md-6 profile-btn">
+				<div class="col-md-6">
+					<a href="/stimuli/home" class="pro">Back</a>
+				</div>
+				<div class="col-md-6">
+					<button type="button" href="#" class="btn bg-red" onclick="submitForm();">Save changes</button>
+				</div>
+				<div class="clearfix"></div>
+			</div>-->
+
+			
+		</div>
+	</div>
+	<!--//gallery-->
+		<!---->
+		   <div class="copy">
+			   <div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
+		   </div>
+	   </div>
+			 <div class="clearfix"> </div>
+		 </div>
+
+<!--scrolling js-->
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
+	<!--//scrolling js-->
+</div>
+</body>
+</html>
+
+
+

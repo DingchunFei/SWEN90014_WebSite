@@ -1,0 +1,235 @@
+[
+    {
+        "name": "X",
+        "rotate": 0,
+        "sharp": true,
+        "node": 4,
+        "width": 3,
+        "file": "X_0_sharp.png"
+    },
+    {
+        "name": "X",
+        "rotate": 0,
+        "sharp": false,
+        "node": 4,
+        "width": 3,
+        "file": "X_0_round.png"
+    },
+    
+    
+    {
+        "name": "T",
+        "rotate": 0,
+        "sharp": true,
+        "node": 3,
+        "width": 3,
+        "file": "T_0_sharp.png"
+    },
+    {
+        "name": "T",
+        "rotate": 90,
+        "sharp": true,
+        "node": 3,
+        "width": 2,
+        "file": "T_90_sharp.png"
+    },
+    {
+        "name": "T",
+        "rotate": 180,
+        "sharp": true,
+        "node": 3,
+        "width": 3,
+        "file": "T_180_sharp.png"
+    },
+    {
+        "name": "T",
+        "rotate": 270,
+        "sharp": true,
+        "node": 3,
+        "width": 2,
+        "file": "T_270_sharp.png"
+    },
+    {
+        "name": "T",
+        "rotate": 0,
+        "sharp": false,
+        "node": 3,
+        "width": 3,
+        "file": "T_0_round.png"
+    },
+    {
+        "name": "T",
+        "rotate": 90,
+        "sharp": false,
+        "node": 3,
+        "width": 2,
+        "file": "T_90_round.png"
+    },
+    {
+        "name": "T",
+        "rotate": 180,
+        "sharp": false,
+        "node": 3,
+        "width": 3,
+        "file": "T_180_round.png"
+    },
+    {
+        "name": "T",
+        "rotate": 270,
+        "sharp": false,
+        "node": 3,
+        "width": 2,
+        "file": "T_270_round.png"
+    },
+
+
+    {
+        "name": "L",
+        "rotate": 0,
+        "sharp": true,
+        "node": 2,
+        "width": 2,
+        "file": "L_0_sharp.png"
+    },
+    {
+        "name": "L",
+        "rotate": 90,
+        "sharp": true,
+        "node": 2,
+        "width": 2,
+        "file": "L_90_sharp.png"
+    },
+    {
+        "name": "L",
+        "rotate": 180,
+        "sharp": true,
+        "node": 2,
+        "width": 2,
+        "file": "L_180_sharp.png"
+    },
+    {
+        "name": "L",
+        "rotate": 270,
+        "sharp": true,
+        "node": 2,
+        "width": 2,
+        "file": "L_270_sharp.png"
+    },
+    {
+        "name": "L",
+        "rotate": 0,
+        "sharp": false,
+        "node": 2,
+        "width": 2,
+        "file": "L_0_round.png"
+    },
+    {
+        "name": "L",
+        "rotate": 90,
+        "sharp": false,
+        "node": 2,
+        "width": 2,
+        "file": "L_90_round.png"
+    },
+    {
+        "name": "L",
+        "rotate": 180,
+        "sharp": false,
+        "node": 2,
+        "width": 2,
+        "file": "L_180_round.png"
+    },
+    {
+        "name": "L",
+        "rotate": 270,
+        "sharp": false,
+        "node": 2,
+        "width": 2,
+        "file": "L_270_round.png"
+    },
+
+
+    {
+        "name": "I",
+        "rotate": 0,
+        "sharp": true,
+        "node": 1,
+        "width": 1,
+        "file": "I_0_sharp.png"
+    },
+    {
+        "name": "I",
+        "rotate": 90,
+        "sharp": true,
+        "node": 1,
+        "width": 3,
+        "file": "I_90_sharp.png"
+    },
+    {
+        "name": "I",
+        "rotate": 0,
+        "sharp": false,
+        "node": 1,
+        "width": 1,
+        "file": "I_0_round.png"
+    },
+    {
+        "name": "I",
+        "rotate": 90,
+        "sharp": false,
+        "node": 1,
+        "width": 3,
+        "file": "I_90_round.png"
+    },
+
+    
+    {
+        "name": "O",
+        "rotate": 0,
+        "sharp": true,
+        "node": 1,
+        "width": 1,
+        "file": "O_0_sharp.png"
+    },
+    {
+        "name": "O",
+        "rotate": 90,
+        "sharp": true,
+        "node": 1,
+        "width": 2,
+        "file": "O_90_sharp.png"
+    },
+    {
+        "name": "O",
+        "rotate": 180,
+        "sharp": true,
+        "node": 1,
+        "width": 1,
+        "file": "O_180_sharp.png"
+    },
+    {
+        "name": "O",
+        "rotate": 0,
+        "sharp": false,
+        "node": 1,
+        "width": 1,
+        "file": "O_0_round.png"
+    },
+    {
+        "name": "O",
+        "rotate": 90,
+        "sharp": false,
+        "node": 1,
+        "width": 2,
+        "file": "O_90_round.png"
+    },
+    {
+        "name": "O",
+        "rotate": 180,
+        "sharp": false,
+        "node": 1,
+        "width": 1,
+        "file": "O_180_round.png"
+    }
+]
+

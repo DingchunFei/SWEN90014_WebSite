@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<title>Minimal an Admin Panel Category Flat Bootstrap Responsive Website Template | Layout :: w3layouts</title>
+<title>Stimuli</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -107,7 +107,8 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 
 							<td class="table-text" style="width:25%">
 								<a th:href="@{/stimuli/web_app_result_detail(web_app_result_id = ${webAppResult.id})}">
-									<h6 th:text="${webAppResult.participant.name}">Patient Username</h6>
+									<h6 th:if="${session.userInfo.status!=1}" th:text="${webAppResult.participant.name}">Patient Username</h6>
+									<h6 th:if="${session.userInfo.status==1}">Anonimity</h6>
 									<p th:text="'Test Date: '+${webAppResult.test_date_string}">2019-08-16</p>
 								</a>
 							</td>
@@ -170,6 +171,13 @@ function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发fa
 													Download
 												</a>
 											</li>-->
+
+<!--											<li>-->
+<!--												<a th:href="@{/stimuli/download_result(result_id=${webAppResult.id})}" onclick="downloadFilebyAjax()" title="">-->
+<!--													<i class="fa fa-download icon_9"></i>-->
+<!--													Download-->
+<!--												</a>-->
+<!--											</li>-->
 											<li>
 												<a th:href="@{/stimuli/delete_result(result_id=${webAppResult.id})}" class="font-red" title="">
 													<i class="fa fa-times" icon_9=""></i>

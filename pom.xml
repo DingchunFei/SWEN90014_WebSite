@@ -37,7 +37,7 @@
       <optional>true</optional>
     </dependency>
 
-    <!-- 引入starter-->
+    <!-- 引入starter123-->
     <dependency>
       <groupId>org.mybatis.spring.boot</groupId>
       <artifactId>mybatis-spring-boot-starter</artifactId>

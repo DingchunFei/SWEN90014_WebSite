@@ -1,6 +1,8 @@
 package com.fei.utils;
 
 import java.io.IOException;
+import java.util.Observer;
+import java.util.concurrent.locks.ReentrantLock;
 
 import org.springframework.util.StringUtils;
 
@@ -22,7 +24,7 @@ public class JsonUtils {
             return null;
         }
     }
-    
+
     //字符串转对象
     public static <T> T string2Obj(String str,Class<T> clazz){
         if (StringUtils.isEmpty(str) || clazz == null){

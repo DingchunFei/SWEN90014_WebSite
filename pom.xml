@@ -30,7 +30,7 @@
     </dependency>
 
 
-    <!-- 热部署 -->
+    <!-- 热部署部署 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>

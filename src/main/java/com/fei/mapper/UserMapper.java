@@ -129,10 +129,11 @@ public interface UserMapper {
 	/**
 	 * 暂时只用来更新用户的头像地址
 	 */
-	@Update("UPDATE t_user SET img_src=#{img_src} WHERE id =#{id}")
+	@Update("UPDATE t_user SET img_src=#{img_src},institution=#{institution} WHERE id =#{id}")
 	int updateUser(User user);
 
-
+	@Update("UPDATE t_user SET institution=#{institution} WHERE id =#{id}")
+	int updateUserInstitution(User user);
 	/**
 	 * 注册账户
 	 * 查看Email是否已经被占用

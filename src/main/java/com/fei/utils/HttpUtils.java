@@ -94,7 +94,7 @@ public class HttpUtils {
         public static void main(String[] args) throws Exception{
 
             //模拟一个json字符串
-            String s1 = HttpUtils.sendPost("http://101.116.96.228:10000/stimuli/data", "jsonData={\n" +
+            String s1 = HttpUtils.sendPost("https://www.stimulisite.com:8443/stimuli/data", "jsonData={\n" +
                     "\t\"nearPercent\":20,\n" +
                     "\t\"farPercent\":5,\n" +
                     "\t\"column\":10,\n" +

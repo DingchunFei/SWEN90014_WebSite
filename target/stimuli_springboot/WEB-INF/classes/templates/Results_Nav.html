@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<div th:fragment="Results_Nav">
+
+    <div class="mail-toolbar clearfix">
+        <div class="float-left">
+    <div class="btn-group m-r-sm mail-hidden-options" style="display: inline-block;">
+        <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-sort"></i> </a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+<!--                <li><a href="web_app_list_S_stimuli">Sort By Name</a></li>
+                <li><a href="web_app_list_S_age">Sort By Age</a></li>
+                <li><a href="web_app_list_S_date">Sort By Date</a></li>-->
+            </ul>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-filter"></i> </a>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <!--  <li><a href="web_app_list_F_0-5">0-5 Only</a></li>
+                <li><a href="web_app_list_F_5-10">5-10 Only</a></li>
+                <li><a href="web_app_list_F_10-15">10-15 Only</a></li>
+
+                <li><a href="web_app_list_F_15-18">15-18 Only</a></li>
+                <li><a href="web_app_list_F_18-45">18-45 Only</a></li>
+
+                <li><a href="web_app_list_F_45-60">45-60 Only</a></li>
+                <li><a href="web_app_list_F_60+">60+ Only</a></li>
+
+                <li><a href="web_app_list_F_favourite">Favourite Only</a></li>
+                <li><a href="home">All</a></li>-->
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<div class="float-right">
+    <div th:if="${session.userInfo.status>0}"  class="dropdown">
+        <a href="#" title="" class="btn btn-default" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-cog icon_8"></i>
+            <i class="fa fa-chevron-down icon_8"></i>
+            <div class="ripple-wrapper"></div></a>
+        <ul class="dropdown-menu float-right">
+            <li>
+<!--                <a href="newWebApp" title="">
+                    <i class="fa fa-plus-circle"></i>
+                    New template
+                </a>-->
+            </li>
+<!--
+            <li>
+                <a href="#" title="">
+                    <i class="fa fa-calendar icon_9"></i>
+                    Schedule
+                </a>
+            </li>
+            <li>
+                <a href="#" title="">
+                    <i class="fa fa-download icon_9"></i>
+                    Download
+                </a>
+            </li>
+-->
+
+<!--            <li>
+                <a href="#" class="font-red" title="">
+                    <i class="fa fa-times" icon_9=""></i>
+                    Delete
+                </a>
+            </li>-->
+        </ul>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-default"><i class="fa fa-angle-left"></i></a>
+        <a class="btn btn-default"><i class="fa fa-angle-right"></i></a>
+    </div>
+
+
+</div>
+
+</div>
+</div>
+</html>

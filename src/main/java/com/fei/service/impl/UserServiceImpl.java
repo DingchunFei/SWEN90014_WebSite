@@ -75,6 +75,11 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
+	@Override
+	public Integer updateUserInstitution(User user) {
+		return userMapper.updateUserInstitution(user);
+	}
+
 	 
 /*	@Override
 	public int add(User user) {

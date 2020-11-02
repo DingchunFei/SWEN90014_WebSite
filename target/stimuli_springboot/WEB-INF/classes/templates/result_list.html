@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Stimuli</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link th:href="@{/css/style.css}" rel='stylesheet' type='text/css' />
+<link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+<script th:src="@{/js/jquery.min.js}"> </script>
+<script th:src="@{/js/bootstrap.min.js}"> </script>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+<!-- Custom and plugin javascript -->
+<link th:href="@{/css/custom.css}" rel="stylesheet">
+<script th:src="@{/js/custom.js}"></script>
+<script th:src="@{/js/screenfull.js}"></script>
+<script th:src="@{/js/jquery.nicescroll.js}"></script>
+<script th:src="@{/js/scripts.js}"></script>
+<script>
+$(function () {
+	$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+	if (!screenfull.enabled) {
+		return false;
+	}
+	$('#toggle').click(function () {
+		screenfull.toggle($('#container')[0]);
+	});
+
+});
+
+function favourite_star (id,favourite_id,user_id){
+	if(id.style.color =="rgb(192, 192, 192)") {			//非ie格式颜色表示
+		id.style.color = "rgb(0,0,0)";
+		favourite_ajax(favourite_id,user_id,true);			//true表示喜欢
+	}else if(id.style.color =="#C0C0C0"){				//ie格式颜色表示
+		id.style.color="#000000";
+		favourite_ajax(favourite_id,user_id,true);
+	}else if(id.style.color =="rgb(0, 0, 0)"){
+		id.style.color = "rgb(192,192,192)";
+		favourite_ajax(favourite_id,user_id,false);				//false表示取消喜欢
+	}else if(id.style.color =="#000000"){
+		id.style.color="#C0C0C0";
+		favourite_ajax(favourite_id,user_id,false);
+	}
+}
+
+function favourite_ajax(favourite_id,user_id,flag) {			//点击小星星触发favourite的ajax请求
+	$.post("/stimuli/favourite/favourite_ajax", {id: favourite_id,user_id: user_id ,flag: flag}, function (data, status) {
+	});
+
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+        <!----->
+
+	<div th:include="Nav :: NavBar"></div>				<!--引入公共元素-->
+
+
+
+		 <div id="page-wrapper" class="gray-bg dashbard-1">
+       <div class="content-main">
+
+ 	<!--banner-->
+		    <div class="banner">
+		    	<h2>
+				<a href="/stimuli/home">Home</a>
+				<i class="fa fa-angle-right"></i>
+				<span>Results</span>
+				</h2>
+		    </div>
+		<!--//banner-->
+ 	<!--grid-->
+ 	<div class="grid-system">
+ 		<!---->
+ 		<div class="horz-grid">
+ 		<div class="grid-hor">
+			<h3 id="grid-example-basic">Results</h3>
+			<!--  		<p class="">Using a single set of <code>.col-md-*</code> grid classes,
+                         you can create a basic grid system that starts out stacked on mobile devices and tablet devices
+                         (the extra small to small range)
+                         before becoming horizontal on desktop (medium) devices. Place grid columns in any <code>.row</code>.</p> -->
+		</div>
+
+			<div class="mailbox-content">
+
+				<div th:include="Results_Nav :: Results_Nav"></div>				<!--引入公共元素-->
+
+				<table class="table">
+					<tbody>
+
+					<span th:each="favourite : ${session.userInfo.favourites}">
+
+						<tr class="table-row" th:each="webAppResult : ${favourite.webApp.webAppResultList}">
+
+<!--						<td class="table-img" style="width:10%">
+							<img src="images/in.jpg" alt="" />
+						</td>-->
+
+							<td class="table-text" style="width:25%">
+								<a th:href="@{/stimuli/web_app_result_detail(web_app_result_id = ${webAppResult.id})}">
+									<h6 th:if="${session.userInfo.status!=1}" th:text="${webAppResult.participant.name}">Patient Username</h6>
+									<h6 th:if="${session.userInfo.status==1}">Anonimity</h6>
+									<p th:text="'Test Date: '+${webAppResult.test_date_string}">2019-08-16</p>
+								</a>
+							</td>
+
+							<td class="table-text"  style="width:35%">
+								<a th:href="@{/stimuli/web_app_detail(webApp_id = ${webAppResult.webApp.id})}">
+									<p><h5 style="color: #666666;" th:text="'Web App: '+${webAppResult.webApp.app_name}">Web App: </h5></p>
+								</a>
+								<p>Number Of Trials: <t6 th:text="${webAppResult.webApp.numbers_of_trials}">3</t6></p>
+							</td>
+
+							<style>
+
+							</style>
+
+
+<!--								<span  th:if="${favourite.webApp.age.charAt(0) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #8897a6;">0-5</span>
+								<span  th:if="${favourite.webApp.age.charAt(1) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #9da9b8;">5-10</span>
+								<span  th:if="${favourite.webApp.age.charAt(2) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #c1ccd7;">10-15</span>
+								<span  th:if="${favourite.webApp.age.charAt(3) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #cdcdcd;">15-18</span>
+								<span  th:if="${favourite.webApp.age.charAt(4) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #b6c4b2;">18-45</span>
+								<span  th:if="${favourite.webApp.age.charAt(5) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #97a58c;">45-60</span>
+								<span  th:if="${favourite.webApp.age.charAt(6) == favourite.webApp.test.charAt(0)}" class="fem" style="background: #7b8b71;">60+</span>-->
+
+							<td style="width:30%">
+<!--								<p>Number Of Trials: <t6 th:text="${webAppResult.webApp.numbers_of_trials}">3</t6></p>-->
+								<p>Accuracy:&nbsp;&nbsp;&nbsp;
+									<span th:if="${webAppResult.total_accuracy<20}" class="fem" style="background: #9a545c;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+								    <span th:if="${webAppResult.total_accuracy>=20 && webAppResult.total_accuracy<35}" class="fem" style="background: #a46269;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=35 && webAppResult.total_accuracy<50}" class="fem" style="background: #be7c84;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=50 && webAppResult.total_accuracy<60}" class="fem" style="background: #d7afb4;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=60 && webAppResult.total_accuracy<70}" class="fem" style="background: #cdcdcd;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=70 && webAppResult.total_accuracy<80}" class="fem" style="background: #b6c4b2;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=80 && webAppResult.total_accuracy<90}" class="fem" style="background: #97a58c;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+									<span th:if="${webAppResult.total_accuracy>=90}" class="fem" style="background: #7b8b71;" th:text="${webAppResult.total_accuracy}+'%'">50%</span>
+
+
+
+								</p>
+							</td>
+
+
+							<td style="width:10%">
+								<div >
+									<div class="dropdown">
+										<a href="#" title="" class="btn btn-default" data-toggle="dropdown" aria-expanded="false">
+											<i class="fa fa-cog icon_8"></i>
+											<i class="fa fa-chevron-down icon_8"></i>
+											<div class="ripple-wrapper"></div></a>
+										<ul class="dropdown-menu float-right">
+<!--											<li>
+												<a href="#" title="">
+													<i class="fa fa-pencil-square-o icon_9"></i>
+													Edit
+												</a>
+											</li>-->
+<!--											<li>
+												<a href="#" title="">
+													<i class="fa fa-download icon_9"></i>
+													Download
+												</a>
+											</li>-->
+
+											<script type="text/javascript">
+												// 直接通过ajax请求文件数据
+												// jquery下载文件时不能触发浏览器弹出保存文件对话框！
+												// 可以在javascript中访问下载的文件数据
+												function downloadFilebyAjax() {
+													console.log("ajaxDownloadDirectly");
+													var url = "http://localhost:8080/ajaxDownloadServlet.do";
+													$.ajax({
+														url: url,
+														type: 'post',
+														data: {'fileName': "testAjaxDownload.txt"},
+														success: function (data, status, xhr) {
+															console.log("Download file DONE!");
+															console.log(data); // ajax方式请求的数据只能存放在javascipt内存空间，可以通过javascript访问，但是无法保存到硬盘
+															console.log(status);
+															console.log(xhr);
+															console.log("=====================");
+														}
+													});
+												}
+											</script>
+<!--											<li>-->
+<!--												<a th:href="@{/stimuli/download_result(result_id=${webAppResult.id})}" onclick="downloadFilebyAjax()" title="">-->
+<!--													<i class="fa fa-download icon_9"></i>-->
+<!--													Download-->
+<!--												</a>-->
+<!--											</li>-->
+											<li>
+												<a th:href="@{/stimuli/delete_result(result_id=${webAppResult.id})}" class="font-red" title="">
+													<i class="fa fa-times" icon_9=""></i>
+														Delete</a>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+
+					    </tr>
+                    </span>
+
+					</tbody>
+				</table>
+
+
+
+			</div>
+
+  </div>
+
+
+<!---->
+		<div class="copy">
+			<div th:include="Footer :: Footer"></div>				<!--引入公共元素-->
+		</div>
+		</div>
+		<div class="clearfix"> </div>
+       </div>
+</div>
+<!---->
+<!--scrolling js-->
+
+	<!--//scrolling js-->
+
+</body>
+</html>
+
+

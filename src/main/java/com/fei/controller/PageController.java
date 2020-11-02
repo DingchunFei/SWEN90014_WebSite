@@ -72,36 +72,51 @@ public class PageController {
     }
 
     @RequestMapping("uploadImg")
-    public Object uploadImg(@RequestParam("image_upload")MultipartFile file, HttpServletRequest request) throws FileNotFoundException {
+    public Object uploadImg(@RequestParam("image_upload")MultipartFile file,String institution ,HttpServletRequest request) throws FileNotFoundException {
 
         String userId = request.getParameter("userId");
-        System.out.println("图片上传的userid为"+userId);
 
-        //获取文件名
-        String fileName = file.getOriginalFilename();
-        //获取文件的后缀名
-        String suffixName = fileName.substring(fileName.lastIndexOf("."));
+        if(file.getOriginalFilename().length()!=0){
+            //获取文件名
+            String fileName = file.getOriginalFilename();
 
-        fileName = UUID.randomUUID() + suffixName;
-        //获取项目的绝对路径 ResourceUtils.getURL()
-        File dest = new File(ResourceUtils.getURL("classpath:").getPath()+"/static/images/"+fileName);
-        System.out.println("static/images/"+fileName);
+            //获取文件的后缀名
+            String suffixName = fileName.substring(fileName.lastIndexOf("."));
 
-        User user = new User();
-        user.setId(userId);
-        user.setImg_src("/images/"+fileName);
+            fileName = UUID.randomUUID() + suffixName;
+            //获取项目的绝对路径 ResourceUtils.getURL()
+            File dest = new File(ResourceUtils.getURL("classpath:").getPath()+"/static/images/"+fileName);
+            System.out.println("static/images/"+fileName);
 
-        try{
-            file.transferTo(dest);
-            userService.updateUser(user);
+            User user = new User();
+            user.setId(userId);
+            user.setImg_src("/images/"+fileName);
+
+            user.setInstitution(institution);
+
+            try{
+                file.transferTo(dest);
+                userService.updateUser(user);
+                //刷新用戶信息
+                user = userService.refreshUserInfo(user.getId());
+                request.getSession().setAttribute("userInfo",user);
+                return "profile";
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "profile";
+        }else{
+            User user = new User();
+            user.setId(userId);
+            user.setInstitution(institution);
+
+            userService.updateUserInstitution(user);
             //刷新用戶信息
             user = userService.refreshUserInfo(user.getId());
             request.getSession().setAttribute("userInfo",user);
             return "profile";
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return "profile";
+
     }
 
 
@@ -198,7 +213,7 @@ public class PageController {
             jsonStr = "jsonData="+jsonStr;
             try{
                 System.out.println(jsonStr);
-                String URL = HttpUtils.sendPost("http://101.116.96.228:10000/stimuli/data", jsonStr);
+                String URL = HttpUtils.sendPost("https://www.stimulisite.com:10000/stimuli/data", jsonStr);
                 Integer jsonStrRespLength = URL.length();
                 //截取URL
                 String url = URL.substring(9,jsonStrRespLength-2);
@@ -254,10 +269,11 @@ public class PageController {
             session.setAttribute("userInfo", newUserInfo);
         }
 
-        resp.sendRedirect("home");
+        resp.sendRedirect("results");
         return null;
 
     }
+
 
     /**
      * 功能描述：根据web_app_id删除一个web_app
@@ -400,6 +416,26 @@ public class PageController {
         });
         return "web_app_list";
     }
+
+
+//    @GetMapping("result_list_S_date")
+//    public Object ResultListSortByDate(HttpServletRequest req){
+//        HttpSession session = req.getSession();
+//        User user = (User) session.getAttribute("userInfo");
+//        List<Favourite> favourites = user.getFavourites();
+//        List<WebAppResult> webAppResults = new LinkedList<WebAppResult>();
+//        for (Favourite favourite: favourites) {
+//            webAppResults.addAll(favourite.getWebApp().getWebAppResultList());  //将结果全部加入
+//        }
+//        Collections.sort(webAppResults,new Comparator<WebAppResult>(){
+//            public int compare(WebAppResult res1, WebAppResult res2) {
+//                return res1.getTest_date().compareTo(res2.getTest_date());
+//            }
+//        });
+//        req.getSession().setAttribute("results",webAppResults);
+//        return "web_app_list";
+//    }
+
 
     @GetMapping("web_app_list_F_0-5")
     public Object WebAppListFilterBy0_5(HttpServletRequest req){

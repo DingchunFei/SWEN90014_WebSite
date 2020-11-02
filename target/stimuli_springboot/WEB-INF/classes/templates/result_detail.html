@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stimuli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="Minimal Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <link th:href="@{/css/bootstrap.min.css}" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <link th:href="@{/css/style.css}" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/css/font-awesome.css}" rel="stylesheet">
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
+    <!-- Mainly scripts -->
+	<script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/jquery.metisMenu.js}"></script>
+    <script th:src="@{/js/jquery.slimscroll.min.js}"></script>
+    <!-- Custom and plugin javascript -->
+    <link th:href="@{/css/custom.css}" rel="stylesheet">
+    <script th:src="@{/js/custom.js}"></script>
+    <script th:src="@{/js/screenfull.js}"></script>
+
+    <!----->
+</head>
+
+<style>
+    td{
+        width: 60px;
+        height: 60px;
+    }
+
+    td img{
+        width: 45px;
+        height: 45px;
+    }
+
+	table{
+		margin:auto
+	}
+
+	img.wrong{
+		border-radius: 5px;
+		border: 2px solid #9a545c;
+		padding: 2px;
+	}
+</style>
+<style type="text/css">
+    .popover-content{
+        color: #000000 !important;/*black color*/
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('td img').popover();
+    });
+</script>
+
+<body>
+<div id="wrapper">
+    <div th:include="Nav :: NavBar"></div>                <!--引入公共元素-->
+
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="content-main">
+
+            <!--banner-->
+            <div class="banner">
+                <h2>
+                    <a href="/stimuli/home">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                    <span>Result Detail</span>
+                </h2>
+            </div>
+            <!--//banner-->
+            <!--grid-->
+            <div class="grid-form">
+
+                <div class="grid-form1">
+
+                    <h3>Result Detail</h3>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="horizontal-form">
+
+                            <form id="newStimuli_form" class="form-horizontal">
+
+                                <div class="form-group required">
+                                    <label for="focusedinput" class="col-sm-2 control-label">Stimuli Name</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" disabled="" class="form-control1" name="app_name" th:value="${session.webAppResult.webApp.app_name}">
+                                    </div>
+
+                                    <label for="focusedinput" class="col-sm-2 control-label">Testing Date</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" disabled="" class="form-control1" th:value="${session.webAppResult.test_date_string}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="selector1" class="col-sm-2 control-label">Number of Trials</label>
+                                    <span class="col-sm-3">
+										<input type="text" disabled="" class="form-control1" id="number_of_trials" name="total_accuracy" th:value="${session.webAppResult.webApp.numbers_of_trials}" >
+									</span>
+
+                                    <label for="selector1" class="col-sm-2 control-label">Total Accuracy</label>
+                                    <span class="col-sm-3">
+										<input type="text" disabled="" class="form-control1" id="total_accuracy" name="total_accuracy" th:value="${session.webAppResult.total_accuracy}+'%'">
+									</span>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="selector1" class="col-sm-2 control-label">Participant</label>
+                                    <span class="col-sm-3">
+										<input type="text" disabled="" class="form-control1"   th:if="${session.userInfo.status==0}" th:value="${session.webAppResult.participant.name}">
+                                        <input type="text" disabled="" class="form-control1"   th:if="${session.userInfo.status!=0}" th:value="Anonimity">
+                                    </span>
+
+
+                                    <label for="selector1" class="col-sm-6 control-label"></label>
+                                    <span class="col-sm-1">
+                                        <a data-toggle="collapse" th:href=".collapse_trial" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                            <i style="color: #788490" class="fa fa-angle-double-down"></i>
+                                        </a>
+                                    </span>
+                                </div>
+
+
+
+                                <hr>
+                                <span th:each="trialResult: ${session.webAppResult.trialResultList}">
+
+									<div class="form-group">
+										<label for="selector1" class="col-sm-2 control-label"><h3 th:text="'Trial'+${trialResult.round}"></h3></label> <!--th:text="'Trial '+${trial.round}"-->
+										<span style="margin-top: 13px;" class="col-sm-1">
+											<a data-toggle="collapse" th:href="'#collapseExample'+${trialResult.round}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><!-- th:href="'#collapseExample'+${trial.round}" -->
+												<i style="color: #7b8b71" class="fa fa-caret-down"></i>
+											</a>
+										</span>
+									</div>
+
+
+									<div class="collapse collapse_trial" th:id="'collapseExample'+${trialResult.round}" >
+										<div class="card card-body">
+											<div class="form-group" >
+												<label for="selector1" class="col-sm-2 control-label">Accuracy</label>
+												<span class="col-sm-3">
+													<input type="text" class="form-control1" name="trial_accuracy" th:value="${trialResult.trial_accuracy}+'%'">
+												</span>
+
+												<label for="checkbox" class="col-sm-2 control-label">Time</label>
+												<span class="col-sm-3">
+													<input disabled="" th:if="${trialResult.trial.timed>0}" th:value="${trialResult.trial.timed}" type="text" class="form-control1" name="timed">
+													<input disabled="" th:if="${trialResult.trial.timed==0}" th:value="'No Time Limitation'" type="text" class="form-control1" name="timed">
+												</span>
+											</div>
+
+											<div class="form-group" >
+												<label for="selector1" class="col-sm-2 control-label">Proportion</label>
+
+												<span class="col-sm-8" style="margin-top: 8px;">
+													<div class="progress">
+
+														<div class="progress-bar" role="progressbar" th:text="${trialResult.trial.target_percentage}+'%'+' Target'" th:style="'width:' +${trialResult.trial.target_percentage}+'%; background-color:#7b8b71'" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">35%</div>
+														<div class="progress-bar" role="progressbar" th:text="${trialResult.trial.near_distractor_percentage}+'%'+' Near Distractor'" th:style="'width:' +${trialResult.trial.near_distractor_percentage}+'%; background-color:#c0c0c0'" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+														<div class="progress-bar" role="progressbar" th:text="${trialResult.trial.far_distractor_percentage}+'%'+' Far Distractor'" th:style="'width:' +${trialResult.trial.far_distractor_percentage}+'%; background-color:#788490'" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">30%</div>
+
+													</div>
+												</span>
+											</div>
+
+											<div class="form-group">
+												<label for="selector1" class="col-sm-2 control-label" ></label>
+
+												<div class="col-sm-8" style="text-align: center">
+													<table>
+														<span th:each="trialResultShape,Stat: ${trialResult.getTrialResultShapeList()}">
+
+                                                            <span th:if="${trialResult.trial.grid_column !=1}">
+
+                                                                <span th:if="${Stat.count == 1}">
+                                                                    <tr><td>
+                                                                        <span th:if="${trialResultShape.correctness}">
+                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                        <span th:if="${!trialResultShape.correctness}">
+                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                    </td>
+                                                                </span>
+
+                                                                <span th:if="${(Stat.count % trialResult.trial.grid_column ==1) && (Stat.count!=1) && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+                                                                    </tr><tr><td>
+                                                                    <span th:if="${trialResultShape.correctness}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    <span th:if="${!trialResultShape.correctness}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    </td>
+                                                                </span>
+
+                                                                 <span th:if="${(Stat.count % trialResult.trial.grid_column !=1)  && Stat.count!=((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+                                                                    <td>
+                                                                        <span th:if="${trialResultShape.correctness}">
+                                                                            <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                        <span th:if="${!trialResultShape.correctness}">
+                                                                            <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                        </span>
+                                                                    </td>
+                                                                </span>
+
+                                                                <span th:if="${Stat.count==((trialResult.trial.grid_row*trialResult.trial.grid_column))}">
+                                                                    <td>
+                                                                    <span th:if="${trialResultShape.correctness}">
+                                                                        <img th:src="'/images/'+${trialResultShape.shape.s_name}"  data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    <span th:if="${!trialResultShape.correctness}">
+                                                                        <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                    </span>
+                                                                    </td></tr>
+                                                                </span>
+
+                                                            </span>
+
+                                                            <span th:if="${trialResult.trial.grid_column ==1}">
+                                                            <tr><td>
+                                                                <span th:if="${trialResultShape.correctness}">
+                                                                    <img th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                                <span th:if="${!trialResultShape.correctness}">
+                                                                    <img class="wrong" th:src="'/images/'+${trialResultShape.shape.s_name}" data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true" th:data-content="${trialResultShape.touchOrderListIntoString}">
+                                                                </span>
+                                                            </td></tr>
+
+														    </span>
+														</span>
+
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<hr>
+								</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//grid-->
+            <!---->
+            <div class="copy">
+                <div th:include="Footer :: Footer"></div>                <!--引入公共元素-->
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+                                                          <!--scrolling js-->
+    <script th:src="@{/js/jquery.nicescroll.js}"></script>
+    <script th:src="@{/js/scripts.js}"></script>
+                                                          <!--//scrolling js-->
+                                                          <!---->
+</body>
+</html>
+

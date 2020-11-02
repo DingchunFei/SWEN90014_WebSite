@@ -51,7 +51,7 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- 引入第三方数据源 -->
+    <!-- 引入第三方数据源数据 -->
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
